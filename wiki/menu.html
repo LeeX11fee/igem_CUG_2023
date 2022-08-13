@@ -25,7 +25,6 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
           </ul>
         </li>
 
@@ -67,7 +66,12 @@
 
         <!---- HUMAN PRACTICES ---->
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a>
+          <a class="nav-link" href="{{ url_for('pages', page='human-practices') }}">
+            Human Practices
+            </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
+          </ul>
         </li>
 
         <!---- AWARDS ---->
