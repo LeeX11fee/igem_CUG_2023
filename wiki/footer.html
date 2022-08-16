@@ -1,35 +1,122 @@
-<footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
-  <div class="container">
-    <div class="row mb-4">
-      <div class="col-lg-6 col-xs-12">
-        <h4 class="mb-3">Heading</h4>
-        <p>123456789</p>
-      </div>
-      <div class="col-lg-3 col-xs-12">
-        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
-          <ul class="m-2 p-2">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Nam mauris velit</a></li>
-            <li><a href="#">Etiam vitae mauris</a></li>
-            <li><a href="#">Fusce scelerisque</a></li>
-            <li><a href="#">Sed faucibus</a></li>
-            <li><a href="#">Mauris efficitur nulla</a></li>
-          </ul>
-      </div>
-      <div class="col-lg-3 col-xs-12">
-        <h4 class="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
-        <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
-        <p class="mb-0">(541) 754-3010</p>
-        <p>info@hsdf.com</p>
+footer{
+    background: #4F545F;
+    width: 100%;
+    height:100%;
+    margin-top: 2%;
+}
+.footer-container{
+    padding: 1rem 0 2rem 0;
+}
+.footer-row{
+    margin:1rem 2rem;
+}
+footer .colOne{
+    display: flex;
+    justify-content: space-between;
+    padding:0;
+}
+footer .colTwo{
+    display: flex;
+    flex-direction: column;
+    padding:0;
+    margin:1rem 0;
+    height:50px;
+}
+footer .col-12{
+    padding-right: 0;
+    padding-left: 0;
+}
+.col-two-icon{
+    display: flex;
+    justify-content: space-evenly;
+    align-self: top;
+    padding:0;
+}
+.colOne img{
+    height:70px;
+    width: 60px;
+    margin:0;
+    padding:0;
+    margin:0 0 10px 0;
+}
+.colTwo img{
+    height:30px;
+    width: 30px;
+    margin:0;
+}
+.footer-text{
+    align-self: baseline;
+    color: white;
+    font-family: sans-serif;
+}
+footer a:link{
+    text-decoration: none;
+}
+/*large device like computer*/
+@media (min-width: 992px) { 
+    .colOne img{
+        height:100px;
+        width: 80px;
+        margin:0;
+        padding:0;
+        margin:0;
+    }
+    .col-two-icon{
+        justify-content:space-between;
+    }
+}
+/*footer end*/
+</style>
+
+<footer>
+    <div class="container footer-container">
+      <div class="row footer-row">
+        <div class="col-12 col-md-6 colOne">
+          <!--icon of logo-->
+          <div id="gutImage">
+            <a href="https://2019.igem.org/Team:NCKU_Tainan"><img src="https://static.igem.org/mediawiki/2019/thumb/f/fe/T--NCKU_Tainan--Logotext_icon.png/499px-T--NCKU_Tainan--Logotext_icon.png"></a>
+          </div>
+          <!--icon of NCKUigem-->
+          <div>
+            <a href="https://www.facebook.com/igem.ncku"><img src="https://static.igem.org/mediawiki/2019/thumb/d/da/T--NCKU_Tainan--Footer_iGEM_NCKU.png/428px-T--NCKU_Tainan--Footer_iGEM_NCKU.png"></a>
+          </div>
+          <!--icon of NCKU-->
+          <div>
+            <a href="http://www.ncku.edu.tw/"><img src="https://static.igem.org/mediawiki/2019/thumb/f/f3/T--NCKU_Tainan--NCKUtext_icon.png/499px-T--NCKU_Tainan--NCKUtext_icon.png"></a>
+          </div>
+          <!--icon of Diamond-->
+          <div>
+            <a href="http://www.diamondcapital.com.tw/"><img src="https://static.igem.org/mediawiki/2019/thumb/f/f1/T--NCKU_Tainan--Diamodtext_icon.png/499px-T--NCKU_Tainan--Diamodtext_icon.png"></a>
+          </div>
+        </div>
+        <div class="col-md-1 footer-col1" style='border-right:3px solid #ffffff;'></div>
+        <div class="col-md-1 footer-col1"></div>
+        <div class="col-12 col-md-4 colTwo">
+          <div class="col-12 col-md-12 col-two-icon">
+            <!--icon of phone-->
+            <div>
+              <a href="tel:+88662757575"><img src="https://static.igem.org/mediawiki/2019/thumb/b/b4/T--NCKU_Tainan--Phone_icon.png/600px-T--NCKU_Tainan--Phone_icon.png"></a>
+            </div>
+            <!--icon of mail-->
+            <div>
+              <a href="mailto:igem.ncku.tainan@gmail.com"><img src="https://static.igem.org/mediawiki/2019/thumb/f/fe/T--NCKU_Tainan--Mail_icon.png/600px-T--NCKU_Tainan--Mail_icon.png"></a>
+            </div>
+            <!--icon of instagram-->
+            <div>
+              <a href="https://www.instagram.com/igemncku/" target="_blank"><img src="https://static.igem.org/mediawiki/2019/thumb/4/44/T--NCKU_Tainan--Instagram_icon.png/600px-T--NCKU_Tainan--Instagram_icon.png"></a>
+            </div>
+            <!--icon of facebook-->
+            <div>
+              <a href="https://www.facebook.com/igem.ncku" target="_blank"><img src="https://static.igem.org/mediawiki/2019/thumb/e/ec/T--NCKU_Tainan--Facebook_icon.png/600px-T--NCKU_Tainan--Facebook_icon.png"></a>
+            </div>
+          </div>
+          <p class="col-12 footer-text" style="font-size:1.1rem;">
+            e-mail : igem.ncku.tainan@gmail.com 
+            <br>
+            phone : 06-2757575
+          </p>
+        </div>
+        <!--end of col-4-->
       </div>
     </div>
-    <hr>
-    <!-- The following MUST be on every page: license information and link to the repository on gitlab.igem.org -->
-    <div class="row mt-4">
-      <div class="col">
-        <p class="mb-0"><small>© 2022 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
-	      <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2022/cug-china">gitlab.igem.org/2022/cug-china</a>.</small></p>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
