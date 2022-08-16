@@ -1,72 +1,79 @@
-footer{
-    background: #4F545F;
-    width: 100%;
-    height:100%;
-    margin-top: 2%;
-}
-.footer-container{
-    padding: 1rem 0 2rem 0;
-}
-.footer-row{
-    margin:1rem 2rem;
-}
-footer .colOne{
-    display: flex;
-    justify-content: space-between;
-    padding:0;
-}
-footer .colTwo{
-    display: flex;
-    flex-direction: column;
-    padding:0;
-    margin:1rem 0;
-    height:50px;
-}
-footer .col-12{
-    padding-right: 0;
-    padding-left: 0;
-}
-.col-two-icon{
-    display: flex;
-    justify-content: space-evenly;
-    align-self: top;
-    padding:0;
-}
-.colOne img{
-    height:70px;
-    width: 60px;
-    margin:0;
-    padding:0;
-    margin:0 0 10px 0;
-}
-.colTwo img{
-    height:30px;
-    width: 30px;
-    margin:0;
-}
-.footer-text{
-    align-self: baseline;
-    color: white;
-    font-family: sans-serif;
-}
-footer a:link{
-    text-decoration: none;
-}
-/*large device like computer*/
-@media (min-width: 992px) { 
-    .colOne img{
-        height:100px;
-        width: 80px;
-        margin:0;
+<style>
+    #bodyContent a[href ^="mailto:"], .link-mailto{
+        padding-right:0;
+    }
+    /*footer start*/    
+    footer{
+        background: #4F545F;
+        width: 100%;
+        height:100%;
+        margin-top: 2%;
+    }
+    .footer-container{
+        padding: 1rem 0 2rem 0;
+    }
+    .footer-row{
+        margin:1rem 2rem;
+    }
+    footer .colOne{
+        display: flex;
+        justify-content: space-between;
         padding:0;
-        margin:0;
+    }
+    footer .colTwo{
+        display: flex;
+        flex-direction: column;
+        padding:0;
+        margin:1rem 0;
+        height:50px;
+    }
+    footer .col-12{
+        padding-right: 0;
+        padding-left: 0;
     }
     .col-two-icon{
-        justify-content:space-between;
+        display: flex;
+        justify-content: space-evenly;
+        align-self: top;
+        padding:0;
     }
-}
-/*footer end*/
-</style>
+    .colOne img{
+        height:70px;
+        width: 60px;
+        margin:0;
+        padding:0;
+        margin:0 0 10px 0;
+    }
+    .colTwo img{
+        height:30px;
+        width: 30px;
+        margin:0;
+    }
+    .footer-text{
+        align-self: baseline;
+        color: white;
+        font-family: sans-serif;
+    }
+    footer a:link{
+        text-decoration: none;
+    }
+    /*large device like computer*/
+    @media (min-width: 992px) { 
+        .colOne img{
+            height:100px;
+            width: 80px;
+            margin:0;
+            padding:0;
+            margin:0;
+        }
+        .col-two-icon{
+            justify-content:space-between;
+        }
+    }
+    /*footer end*/
+    </style>
+
+
 
 <footer>
     <div class="container footer-container">
