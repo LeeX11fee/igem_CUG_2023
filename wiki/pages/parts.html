@@ -1,11 +1,10 @@
+
 {% extends "layout.html" %}
   
 {% block title %}Parts{% endblock %}
 {% block lead %}This page contains information about the parts created by the team.{% endblock %}
 
 {% block page_content %}
-
-
 
 /*----------Joe's preset---------*/
 /*page name*/
@@ -430,50 +429,5 @@ $(document).ready(function() {
 </body>
 
 
-<style>
-#gotop {
-        position:fixed;
-        z-index:90;
-        right:30px;
-        bottom:31px;
-        display:none;
-        width:50px;
-        height:50px;
-        line-height:50px;
-        border-radius:50%;
-        transition:all 0.5s;
-        text-align: center;
-        box-shadow: 0 0.9px 1px 0 rgba(0,0,0,0.16), 0 1px 3px 0 rgba(0,0,0,0.12);
-    }
-    #gotop :hover{
-           border-radius:50%;
-           box-shadow: 0 3px 7px 0 rgba(0,0,0,0.16), 0 4px 8px 0 rgba(0,0,0,0.12);
-    }
-</style>
-<a href="" id="gotop">
-        <img style="width:100%;" src="https://static.igem.org/mediawiki/2019/thumb/7/7f/T--NCKU_Tainan--Up.png/240px-T--NCKU_Tainan--Up.png">
-    </a>
-<script>
-$(function() {
-            $('#gotop').click(function(e){ 
-                e.preventDefault();
-                console.log("in");
-		        $('html,body').animate({scrollTop:0}, 333);
-	        });
-            /* 偵測卷軸滑動時，往下滑超過400px就讓GoTop按鈕出現 */
-            $(window).scroll(function() {
-                if ( $(this).scrollTop() > 400){
-                    $('#gotop').fadeIn();
-                } else {
-                    $('#gotop').fadeOut();
-                }
-            });
-        });
-</script>
 
-
-<style>
-#bodyContent a[href ^="mailto:"], .link-mailto{
-    padding-right:0;
-}
-
+{% endblock %}
