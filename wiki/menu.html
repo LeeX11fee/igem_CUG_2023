@@ -1,94 +1,228 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-
-    <!---- TEAM NAME ---->
-    <a class="navbar-brand" href="#">CUG-China</a>
-
-    <!---- SMALL SCREEN MENU ICON ---->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto left-aligned">
-
-        <!---- HOME ---->
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
-        </li>
-
-        <!---- TEAM ---->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='Team') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Team
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
-          </ul>
-        </li>
-
-        <!---- PROJECT ---->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Project
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='safety') }}">Safety</a></li>
-          </ul>
-        </li>
-
-        <!---- PARTS ---->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Parts
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a></li>
-          </ul>
-        </li>
-
-        <!---- HUMAN PRACTICES ---->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Human Practices
-            </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
-          </ul>
-        </li>
-
-        <!---- AWARDS ---->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Awards
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='measurement') }}">Measurement</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='plant') }}">Plant</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainable</a></li>
-          </ul>
-        </li>
-
-      </ul>
-    </div>
-  </div>
-</nav>
+<style>
+    /* Navagation Bar */
+    /* Works only in media wiki */
+    #bodyContent nav a[href ^="https://"]:hover, .link-https:hover{
+        background:#afcee2;
+        padding-right:none;
+    }
+    /*fix public engagement oversize*/
+    #bodyContent nav a[href ^="https://"], .link-https {
+        padding-right:1.5rem;
+    }
+    /* compansate the background above */
+    #bodyContent .navbar .navbar-brand:hover{
+        background:none;
+    }
+    a:visited {
+        color:black;
+    }
+    .fixed-top {
+        top: 16px;
+    }
+    nav {
+        background-color: #172544;
+        opacity:0.96;
+        font-size:1.3rem;
+    }
+    .navbar {
+        padding: 0rem 1rem;
+    }
+    nav .fake {
+        width:56px;
+        height:40px;
+    }
+    .navbar-brand {
+        width: 30vw;
+        height:auto;
+        margin-right: 0;
+    }
+    
+    .navbar-brand img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .navbar-dark .navbar-nav .nav-link {
+        color:white;
+    }
+    .dropdown-menu {
+        background-color: #fffdf6;
+        border-radius: 0 0 .25rem .25rem;
+        margin-top:0;
+        border-style: none;
+        display:none;
+        z-index:5;
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu::before {
+        /*在menu跟dropdown中間加一塊透明的block*/
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100px;
+        width:160px;
+        top: -30px;
+        left: 0;
+        background-color:transparent;
+        cursor: pointer;
+        z-index:-2;
+    }
+    
+    .dropdown > .dropdown-toggle:active {
+        /*Without this, clicking will make it sticky*/
+        /*target active才不會讓滑鼠滑上去的時候沒改變*/
+        pointer-events: none;
+    }
+    
+    /* Large devices (desktops, 992px and up)*/
+    @media (min-width: 992px) { 
+        .navbar-expand-lg .navbar-nav.navbar-nav {
+            flex-grow: 1;
+            padding: 0 10% 0 15%;
+        }
+        .navbar-brand {
+            width: 13vw;
+            height:auto;
+        }
+    }
+    .bread {
+        height: 2.5rem;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        opacity:0.96;
+        z-index:-5;
+    }
+    .bread .shape {
+        width: calc(20% - 2.5rem);
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        background: #172544;
+    }
+    .bread::after {
+        content: ""; 
+        position: absolute;
+        left: calc(20% - 2.5rem);
+        width: 0;
+        height: 0;
+        border-top: 2.5rem solid #172544;
+        border-right: 2.5rem solid transparent;
+    }
+    #breadtext{
+      font-style:none;
+      color:white;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    #breadtext a{
+      color: #A6A7A7;
+    }
+    #breadtext a:link, #breadtext a:visited{
+      color: white;
+    }
+    #navbarDropdownMenuLink span{
+        font-size: 1.3rem;
+    }
+    </style>
+        <header class="fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="d-inline-block d-lg-none " width="56" height="40" ></div>
+                <a class="navbar-brand d-flex align-items-center" href="https://2019.igem.org/Team:NCKU_Tainan">
+                    <img class="d-none d-lg-inline-block" src="https://static.igem.org/mediawiki/2019/thumb/d/da/T--NCKU_Tainan--Logo.png/800px-T--NCKU_Tainan--Logo.png" alt="Logo">
+                    <img class="d-inline-block d-lg-none" src="https://static.igem.org/mediawiki/2019/thumb/0/08/T--NCKU_Tainan--Logo_mobile.png/320px-T--NCKU_Tainan--Logo_mobile.png" alt="logo-mobile">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav justify-content-around align-items-stretch">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>Project</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Description">Description</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Design">Design</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Measurement">Measurement</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Model">Model</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Hardware">Hardware</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Entrepreneurship">Entrepreneurship</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Safety">Safety</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>Results</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Results">Results</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Demonstrate">Demonstrate</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Future">Future</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>HP</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Human_Practices">Human Practice</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Public_Engagement">Public Engagement</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Collaborations">Collaboration</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Software">OMG Game Room</a>
+                            </div>
+                        </li>
+    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>Parts</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Parts">Parts</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Improve">Improvement</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>Team</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Team">Team</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Attributions">Attributions</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>Notebook</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Notebook">Notebook</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Protocols">Protocols</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>Awards</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Awards">Awards</a>
+                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Criteria">Criteria</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="bread d-none d-lg-block">
+                <div class="shape">
+                    <p id="breadtext"><a href="#"></a> > <a href="#"></a>
+                    </p>
+                </div>  
+            </div>
+        </header>
+    <script>
+    
+    </script>
+    
