@@ -22,425 +22,190 @@
 </div> -->
 
 <style>
-/*----------Joe's preset---------*/
-/*page name*/
-.carousel h1 {
-    font-size: 5rem;
-    color:#172544;
-    padding: 0;
-    text-align: center;
-    font-weight: 700;
-}
-/*half hr setting*/
-.content-hr-half{
-    /*border-color:#620E15;*/
-    position: relative;
-    left: 25%;
-    width: 50%;
-    border-width: 5px;
-}
-/*layout settings*/
-.margin-up-bottom-m{
-    margin-bottom: 5%;
-    margin-top: 5%;
-}
-.margin-top-10{
-    margin-top: 10%;
-}
-.margin-top-5{
-    margin-top: 5%;
-}
-.margin-bottom-5{
-    margin-bottom: 5%;
-}
-.margin-bottom-10{
-    margin-bottom: 10%;
-}
-.center-flex{
-    display: flex;
-    justify-content: center;
-}
-.margin-auto{
-    margin:auto;
-}
-/*figure default settings*/
-.figure-default{
-    margin:1rem;
-}
-.figure-default a{
-    width: 100%;
-}
-.figure-default a img{
-    width: 100%;
-}
-/*font settings*/
-figcaption{
-    font-weight: 700;
-}
-.center-font{
-    text-align: center;
-}
-.bold-font{
-    font-weight: bold;
-}
-.h5-font{
-    font-size: 1.2rem;
-}
-.text-color-deepBlue{
-    color: #172544;
-}
-.text-color-lightBlue{
-    color:#3490B9;
-}
-/*overall media setting*/
 @media (max-width:576px){
-    .pageName h1{
-        font-size: 2.5rem;
-        font-weight: bold;
+    main table{
+        font-size: 0.6rem;
     }
 }
-/*----------Joe's preset END---------*/
-/* parts start */
-/* SideNav */
-@media (min-width: 992px) { 
-    .sidenav {
-        -ms-flex: 0 0 20%;
-        flex: 0 0 20%;
-        max-width: 20%;
-        height: 100vh;
-        margin: 0;
-        padding-top: 30vh;
-    }
-}
-.sidenav ul {
-    font-family: 'Sansita',"微軟正黑體",sans-serif;
-    list-style-type: none;
-    position:fixed;
-}
-.sidenav a {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #767676;
-}
-.sidenav a.active {
-    color: white;
-    background-color: #8BBED5;
-    border-radius: 1rem;
-}
-/* main */
-main {
-    padding-top: 12vh;
-}
-#Subtitle1{
-    margin:1rem 1rem;
-}
-#Subtitle2{
-    margin:1rem 1rem;
-}
-.pageName {
-    width: 100%;
-    border-bottom-style:solid; 
-    border-bottom-width:medium;
-    margin-bottom: 5vh;
-    margin-top:0;
-    padding-left: 5%;
-}
-main section {
-    padding: 5vh 6vw 5vh 6vw;
-}
-main hr {
-    border-style: solid;
-    border-color: #2C2C2C;
-    margin-right: 3vw;
-    margin-left: 3vw;
-}
-.block-property{
-    display: block !important;
-    clear: both;
-}
-main .ref ol {
-    margin-left: 1.1em;
-}
-.ref h2 {
-    font-weight: normal;
-}
-figure {
-    margin: 1vh 0 3vh 0;
-}
-.table{
-    width:200px;
-    border-radius: 5px 5px 0 0;
-    display: block !important;
-}
-table th, table td{
-    font-size: 1rem;
-    padding:.5rem;
-    border: 1px solid #172544 !important;
-}
-table.table-bordered thead tr th{
-    border:1px solid #172544 !important;
-}
-table.table-bordered tbody tr td{
-    border:1px solid #172544 ;
-}
-.table{
-    background-color: #f0f0f0;
-}
-/*lg: destop*/
-@media (min-width: 992px) { 
-    main {
-        -ms-flex: 0 0 80%;
-        flex: 0 0 80%;
-        max-width: 80%;
-        margin: 0;
-        padding-left: 6vw;
-    }
-    main hr {
-        margin-right: 7vw;
-        margin-left: 0vw;
-    }
-    .pageName {
-        padding-left: 0%;
-        margin-top:2vh;
-    }
-    main section {
-        padding: 1vh 10vw 1vh 0;
-    }
-    .table{
-        width:100%;
-        height: 100%;
-    }
-}
-/* parts end */
 </style>
+<body data-spy="scroll" data-target=".sidenav" data-offset="101">
+    <div class="content container-fluid">
+        <div class="row">
+            <!--Sidebar (Remember to change the subtitle context, but don't change the id)-->
+                <aside class="sidenav d-none d-lg-flex flex-column justify-content-start align-items-center col-2">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Subtitle1">Overview</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Subtitle2">Experimental Results</a>
+                        </li>
+                     </ul>
+                </aside>
+            <main class="">
+            <!--The Page Name-->
+                <div class="pageName">
+                    <h1>Improvement</h1>
+                    <div class="divider"></div>
+                </div>
+                <section>
+            <!--section name:Overview-->
+                    <h2 id ="Subtitle1">Overview</h2>
+                        <p>    In our project, one of the major goals is to reduce the uremic toxin, <i>p</i>-Cresol. <i>Clostridium</i> bacteria inside the gut will ferment excess tyrosine into <i>p</i>-Cresol. With the help of <a href="https://2019.igem.org/Team:NCKU_Tainan/Parts" target="_blank">tyrosine ammonia-lyase (TAL)</a> , we are able to convert this excess tyrosine into a harmless product, <i>p</i>-Coumaric acid instead of the toxic <i>p</i>-Cresol.  As such, the concentration of <i>p</i>-Cresol can be reduced.</p>
+                        <p>    For our construct design, we focused on <a href="http://parts.igem.org/Part:BBa_I742148" target="_blank">BioBrick BBa_I742148</a> from the <a href="https://2007.igem.org/Edinburgh" target="_blank">2007 iGEM Edinburgh team</a><sup>[<a href="#ref1">1</a>]</sup> in the iGEM BioBrick library. This enzyme has been shown to have the highest Km value compared to other TAL enzyme. </p>
+                        <p>    We hypothesized that the native ribosome binding site (NRBS) from <i>Saccharothrix espanaensis</i> will not have a high translation efficiency in <i>E. coli</i> Nissle, so we changed the NRBS in front of TAL into a strong ribosome binding site B0034. Also, we noticed that there was no spacer sequence between NRBS and the TAL coding sequence(CDS) in <a href="http://parts.igem.org/Part:BBa_I742148" target="_blank">BBa_I742148</a>. </p>
+                        <p>    According to research, the length of the spacer sequence between RBS and CDS strongly affects translation efficiency.<sup>[<a href="#ref2">2</a>]</sup>  We decided to follow the standard iGEM BioBrick assembly rule to add 6 bp of scar sequence between RBS and CDS. The schematic below depicts how we improved the BioBrick.</p>
+                        <div class="container-fluid p-0">
+                            <div class="row no-gutters">
+                                <div class="col-lg ">
+                                    <figure class="d-flex flex-column justify-content-center align-items-center px-lg-3">
+                                        <!-- put link in href &amp; src , width in a can adjust-->
+                                        <a href="https://static.igem.org/mediawiki/2019/a/a9/T--NCKU_Tainan--Improve_improvement_biobrick.png" target="_blank" style="width:50%"><img src="https://static.igem.org/mediawiki/2019/a/a9/T--NCKU_Tainan--Improve_improvement_biobrick.png" alt="" title="" style="width:100%"></a>
+                                        <figcaption>Fig. 1. A schematic depicting our approach.</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <hr>
+                <section>
+            <!--section name:Experimental Approach &amp; Results-->
+                    <h2 id ="Subtitle2">Experimental Results</h2>
+                        <p>    We wanted to prove that TAL expression was improved with the change of RBS (<a href="http://parts.igem.org/Part:BBa_I742146" target="_blank">BBa_I742146</a> into B0034). First, RT-PCR experiment was used to confirm that the constructed TAL Biobrick is being transcribed. As seen in Fig.2, cDNA for both bacteria carrying TAL constructs are being detected by PCR, thus confirming that the TAL genes is actually being transcribed in <i>E. coli</i> Nissle.</p>
+                        <div class="container-fluid p-0">
+                            <div class="row no-gutters">
+                                <div class="col-lg ">
+                                    <figure class="d-flex flex-column justify-content-center align-items-center px-lg-3">
+                                        <!-- put link in href &amp; src , width in a can adjust-->
+                                        <a href="https://static.igem.org/mediawiki/2019/6/62/T--NCKU_Tainan--RT-PCR.png" target="_blank" style="width:70%"><img src="https://static.igem.org/mediawiki/2019/6/62/T--NCKU_Tainan--RT-PCR.png" alt="" title="" style="width:100%"></a>
+                                    </figure>
+                                    <div class="table-responsive" style="overflow-x:auto;">
+                                        <table class="table-bordered table-striped" style="word-wrap:break-word;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align: center">Lane</th>
+                                                    <th style="text-align: center">Template</th>
+                                                    <th style="text-align: center">Primers</th>
+                                                    <th style="text-align: center">Lane</th>
+                                                    <th style="text-align: center">Template</th>
+                                                    <th style="text-align: center">Primers</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="text-align: center">1</td>
+                                                    <td>PCR positive control</td>
+                                                    <td></td>
+                                                    <td style="text-align: center">8</td>
+                                                    <td>BBa_K2997009 cDNA</td>
+                                                    <td style="text-align: center">3+4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center">2</td>
+                                                    <td>BBa_K2997009 cDNA</td>
+                                                    <td style="text-align: center">1+2</td>
+                                                    <td style="text-align: center">9</td>
+                                                    <td>BBa_K2997010 cDNA</td>
+                                                    <td style="text-align: center">3+4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center">3</td>
+                                                    <td>BBa_K2997009 RNA</td>
+                                                    <td style="text-align: center">1+2</td>
+                                                    <td style="text-align: center">10</td>
+                                                    <td>BBa_K2997009 RNA</td>
+                                                    <td style="text-align: center">3+4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center">4</td>
+                                                    <td>BBa_K2997009 plasmid</td>
+                                                    <td style="text-align: center">1+2</td>
+                                                    <td style="text-align: center">11</td>
+                                                    <td>BBa_K2997010 RNA</td>
+                                                    <td style="text-align: center">3+4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center">5</td>
+                                                    <td>BBa_K2997010 cDNA</td>
+                                                    <td style="text-align: center">1’+2</td>
+                                                    <td style="text-align: center">12</td>
+                                                    <td>BBa_K2997009 plasmid</td>
+                                                    <td style="text-align: center">3+4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center">6</td>
+                                                    <td>BBa_K2997010 RNA</td>
+                                                    <td style="text-align: center">1’+2</td>
+                                                    <td style="text-align: center">13</td>
+                                                    <td>BBa_K2997010 plasmid</td>
+                                                    <td style="text-align: center">3+4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center">7</td>
+                                                    <td>BBa_K2997010 plasmid</td>
+                                                    <td style="text-align: center">1’+2</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <figcaption>Fig. 2. Reverse Transcription (RT)-PCR Results to confirm that our construct is being transcribed. (a) Schematics show location of amplified regions and primers. (b) 1.5 % Agarose gel shows PCR results. All products have expected size of 250 bp as shown in (a). Template and primers used in this experiment are listed in the table. (cDNA: Total cDNA; RNA: Total RNA; plasmid: pSB1C3 containing respective Biobrick.)</figcaption>
+                                </div>
+                            </div>
+                        </div>
 
+                        <p><p>    Then, we carried out SDS-PAGE to check the protein expression of TAL, both with TyrP and without TyrP. The expected protein size of TAL is 54 kDa and the expected protein size of TyrP is 43 kDa. As seen in the results below, however, there’s no distinguishable band around both sizes.</p>
+                        <div class="container-fluid p-0">
+                            <div class="row no-gutters">
+                                <div class="col-lg ">
+                                    <figure class="d-flex flex-column justify-content-center align-items-center px-lg-3">
+                                        <!-- put link in href &amp; src , width in a can adjust-->
+                                        <a href="https://static.igem.org/mediawiki/2019/0/02/T--NCKU_Tainan--Result-SDSPAGE_2.jpg" target="_blank" style="width:50%"><img src="https://static.igem.org/mediawiki/2019/0/02/T--NCKU_Tainan--Result-SDSPAGE_2.jpg" alt="" title="" style="width:100%"></a>
+                                        <figcaption>Fig. 3. 12% SDS PAGE of <i>E. coli</i> Nissle 1917 with different plasmids. M: Marker; Lane 1: Wild Type; Lane 2: pSB1C3; Lane 3: BBa_K2997009 ; Lane 4: BBa_K2997010; Lane 5: Dual plasmid containing BBa_K2997009 and BBa_K2997000; Lane 6: Dual plasmid containing BBa_K29970010  and BBa_K2997000 ; Lane 7: Positive control (c.d. 3392)</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <p>    Finally, to confirm the protein activity of TAL and TyrP, we performed a functional test using <a href="https://2019.igem.org/Team:NCKU_Tainan/Design#Subtitle1" target="_blank"><i>n</i>-octanol extraction method</a>, which was previously proposed by iGEM_Uppsala 2013 and has been verified by HPLC<sup>[<a href="#ref3">3</a>]</sup>. The <i>p</i>-Coumaric acid concentration was measured through the absorbance value at 310 nm wavelength under Nanodrop UV-Vis wavelength. </p>
+                        <div class="container-fluid p-0">
+                            <div class="row no-gutters">
+                                <div class="col-lg ">
+                                    <figure class="d-flex flex-column justify-content-center align-items-center px-lg-3">
+                                        <!-- put link in href &amp; src , width in a can adjust-->
+                                        <a href="https://static.igem.org/mediawiki/2019/d/d3/T--NCKU_Tainan--Results_tyrosine_to_pCA%2C_RBS_improve.png" target="_blank" style="width:50%"><img src="https://static.igem.org/mediawiki/2019/d/d3/T--NCKU_Tainan--Results_tyrosine_to_pCA%2C_RBS_improve.png" alt="" title="" style="width:100%"></a>
+                                        <figcaption>Fig. 4. <i>p</i>-Coumaric acid/OD600 levels of <i>E. coli</i> Nissle with TAL and tyrP in LB with 1mM tyrosine incubated for 48 hours.</figcaption>
+                                     </figure>
+                                </div>
+                            </div>
+                        </div>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <title>Collab</title>  
-</head>
-<body data-spy="scroll" data-target=".sidenav">
-<!--parts main body-->
-  <div class="content container-fluid">
-    <div class="row justify-content-center">
-      <!--Sidebar (Remember to change the subtitle context, but don't change the id)-->
-      <aside class="sidenav d-none d-lg-flex flex-column justify-content-start align-items-center col-2"> 
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="#Subtitle1">Basic Parts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#Subtitle2">Composite Parts</a>
-          </li>
-        </ul>
-      </aside>
-      <!--two tables in here-->
-      <main class="block-property margin-top-5">
-        <!--The Page Name-->
-        <div class="pageName">
-          <h1>Parts</h1>
-          <div class="divider"></div>
+                        <p>    We compared the TAL constructs containing the native and B0034 ribosome binding sites, (<a href="http://parts.igem.org/Part:BBa_K2997009" target="_blank">BBa_K2997009</a> and <a href="http://parts.igem.org/Part:BBa_K2997010" target="_blank">BBa_K2997010</a>) to determine if <i>p</i>-Coumaric Acid production is improved by changing the ribosome binding sites. From the results seen in Fig. 4, <a href="http://parts.igem.org/Part:BBa_K2997010" target="_blank">BBa_K2997010</a> is able to produce a higher amount of <i>p</i>-Coumaric acid. Hence, we are able to prove that by changing the RBS (from Native to B0034), the conversion of tyrosine into <i>p</i>-Coumaric acid can increase by 1.73-fold. Therefore, we have shown that we have improved a previous BioBrick.</p>
+                        <p>    For more information, please visit our <a href="https://2019.igem.org/Team:NCKU_Tainan/Results" target="_blank">Results page.</a></p>
+                </section>
+                
+                <section class="ref">
+                    <h2>References</h2>
+                    <ol>
+            <!--id name must corespond -->
+                        <li id="ref1">https://2007.igem.org/wiki/index.php/Edinburgh/Team </li>
+                        <li id="ref2">Chen, H., Bjerknes, M., Kumar, R., &amp; Jay, E. (1994). Determination of the optimal aligned spacing between the Shine – Dalgarno sequence and the translation initiation codon of <i>Escherichia coli</i>  mRNAs. <i>Nucleic Acids Research, 22</i>(23), 4953–4957. </li>
+                        <li id="ref3">https://2013.igem.org/Team:Uppsala</li>
+                    </ol>
+                </section>
+            </main>
         </div>
-        <!--overview part-->
-        <div style="margin-top:7%;">
-          <h2>Overview</h2>
-          <p style="padding-right: 10%;text-align: justify;">    BioBricks have always been the foundational building blocks for iGEM projects. When constructing our BioBricks, we made use of the IDT synthesis offer to generate our required parts in a fast and efficient way. Additionally, we made use of PCR amplification with our constructed expression plasmids as a template to construct several BioBricks. All of the parts contain a coding sequence, some of which extended with promoters or introns. We created a part collection comprised of 14 basic parts and 10 improved composite parts. All parts were generated during our project.</p>
-        </div>
-        <!--parts-->
-        <section>
-          <h2 id ="Subtitle1">Basic parts</h2>
-          <!--If you want to divide it into two block use below part-->
-          <div class="table-responsive" style="overflow-x:auto;">
-            <table class="table table-bordered table-hover">
-              <thead>
-                <tr>
-                  <th scope="col" style="text-align: center;">Name</th>
-                  <th scope="col" style="text-align: center;">Description</th>
-                  <th scope="col" style="text-align: center;">Type</th>
-                  <th scope="col" style="text-align: center;">Length</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_J23100">BBa_J23100</a></th>
-                  <td>Constitutive promoter (<i>P<sub>J23100</sub></i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Promotor</td>
-                  <td style="text-align: center; vertical-align:middle;">35bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K1123000">BBa_K1123000</a></th>
-                  <td>FNR promoter (<i>P<sub>fnr</sub></i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Promoter</td>
-                  <td style="text-align: center; vertical-align:middle;">120bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_I742146">BBa_ I742146</a></th>
-                  <td>Tyrosine ammonia-lyase native RBS (<i>N<sub>RBS</sub></i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">RBS</td>
-                  <td style="text-align: center; vertical-align:middle;">14bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_B0017">BBa_B0017</a></th>
-                  <td>Double terminator (B0010-B0010)</td>
-                  <td style="text-align: center; vertical-align:middle;">Terminator</td>
-                  <td style="text-align: center; vertical-align:middle;">160bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997000">BBa_K2997000</a></th>
-                  <td>Tyrosine transporter (<i>tyrP</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">1297bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_I742142">BBa_I742142</a></th>
-                  <td>Tyrosine ammonia-lyase (<i>sam8</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">1536bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997001">BBa_K2997001</a></th>
-                  <td>Bacteriocin Full length (CBM-B)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">867bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997002">BBa_K2997002</a></th>
-                  <td>Bacteriocin short length (sCBM-B)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">252bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997003">BBa_K2997003</a></th>
-                  <td>Sigma 54-dependent transcriptional regulator (<i>pchR</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">1854bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997004">BBa_K2997004</a></th>
-                  <td><i>pchR</i> binding range</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">567bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_J18921">BBa_J18921</a></th>
-                  <td>6aa [GS]x linker</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">18bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K1610300">BBa_K1610300</a></th>
-                  <td>Secretion tag (<i>yebF</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">354bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_E0040">BBa_E0040</a></th>
-                  <td>Wild type green fluorescence protein (<i>wtgfp</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">720bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2762017">BBa_K2762017</a></th>
-                  <td>Superfolder green fluorescence protein (<i>sfgfp</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">720bp</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-        <!--comsposite parts-->
-        <section style="margin-bottom:5%;">
-        <h2 id ="Subtitle2">Composite Parts</h2>
-          <div class="table-responsive" style="overflow-x:auto;">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col" style="text-align: center;">Name</th>
-                  <th scope="col" style="text-align: center;">Description</th>
-                  <th scope="col" style="text-align: center;">Type</th>
-                  <th scope="col" style="text-align: center;">Length</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997005">BBa_K2997005</a></th>
-                  <td>K880005 - <i>yebF</i> - GS linker - sCBM-B</td>
-                  <td style="vertical-align:middle;text-align:center;" rowspan="9">Composite</td>
-                  <td style="text-align: center; vertical-align:middle;">685bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997006">BBa_K2997006</a></th>
-                  <td>K880005 - <i>yebF</i>- TB linker - sCBM-B</td>
-                  <td style="text-align: center; vertical-align:middle;">120bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997007">BBa_K2997007</a></th>
-                  <td>K880005 - <i>yebF</i> - CBM-B</td>
-                  <td style="text-align: center; vertical-align:middle;">1282bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997008">BBa_K2997008</a></th>
-                  <td>Native promoter - <i>pchR</i> - sfgfp</td>
-                  <td style="text-align: center; vertical-align:middle;">3137bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997009">BBa_K2997009</a></th>
-                  <td>J23100 - <i>N<sub>RBS</sub></i> - <i>sam8</i></td>
-                  <td style="text-align: center; vertical-align:middle;">1606bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997010">BBa_K2997010</a></th>
-                  <td>K880005 - <i>sam8</i></td>
-                  <td style="text-align: center; vertical-align:middle;">1613bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997011">BBa_K2997011</a></th>
-                  <td>B0034 - <i>sam8</i></td>
-                  <td style="text-align: center; vertical-align:middle;">1572bp</td>
-                </tr>
-                <tr>
-                  <th scope="row"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997012">BBa_K2997012</a></th>
-                  <td><i>P<sub>fnr</sub></i>-B0034-GFP</td>
-                  <td>866bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_I742106">BBa_I742106</a></th>
-                  <td><i>sam8</i> with ribosome binding site</td>
-                  <td style="text-align: center; vertical-align:middle;">1550bp</td>
-                </tr>
-                <tr>
-                  <th scope="row"><a target="blank" href="http://parts.igem.org/Part:BBa_K880005">BBa_K880005</a></th>
-                  <td>Strong promoter J23100 and strong RBS B0034</td>
-                  <td>Promoter+RBS</td>
-                  <td>55bp</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-      </main>
     </div>
-  </div>
 <script src="https://2019.igem.org/Team:NCKU_Tainan/js/jquery-3_4_1_min_js?action=raw&amp;ctype=text/javascript"></script>
-    <script src="https://2019.igem.org/Team:NCKU_Tainan/js/4.3.1/bootstrap_min_js?action=raw&amp;ctype=text/javascript"></script>
+<script src="https://2019.igem.org/Team:NCKU_Tainan/js/4.3.1/bootstrap_min_js?action=raw&amp;ctype=text/javascript"></script>
+<script src="https://2019.igem.org/Team:NCKU_Tainan/js/Universal?action=raw&amp;ctype=text/javascript"></script>
 <script>
-$(document).ready(function() {
-    //scroll spy
-    $("a[href^='#']").click(function(e) {
-        e.preventDefault();
-        
-        var position = $($(this).attr("href")).offset().top - 100;
-        console.log(position);
-        $("body, html").animate({
-            scrollTop: position
-        }, 200);
-    });
+// remember to edit this according to page
+$( document ).ready(function() {
+$("#breadtext").html('<a href="https://2019.igem.org/Team:NCKU_Tainan/Parts">Parts</a> > <a>Improvement</a>')
 });
-  $( document ).ready(function() {
-    $("#breadtext").html('<a href="https://2019.igem.org/Team:NCKU_Tainan">Home</a> > <a>Parts</a>')
-  });
 </script>
 </body>
+
 {% endblock %}
