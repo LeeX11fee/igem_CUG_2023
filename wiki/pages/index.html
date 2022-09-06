@@ -316,24 +316,32 @@ a.des-link {
 </style>
 
 <!--page1-->
-<section id="" class="section">
-  <div class="container-fluid wrapper text-wrapper center-adjust">
-    <div class="container-fluid py-2 d-flex flex-column justify-content-center align-items-center" style="min-height: 100%;">
-      <div class="row">
-        <div class="col-lg py-lg-0 py-2">
-          <h2 style="text-align:center;">Abstract</h2>
-          <p>here</p>
-          <p>here</p>
-        </div>
-        <div class="col-lg py-lg-0 py-2">
-          <figure class="d-flex flex-column justify-content-center align-items-center px-lg-3">
-            <!-- put link in href &amp; src-->
-            <a class="img-full" href="#" target="_blank"><img src="#" alt="" title="" style="width:100%"></a>
-          </figure>  
-        </div>
+<main id="fullpage">
+  <section id="Logo" class="section d-flex flex-column justify-content-around align-items-center">
+    <div class="logo-wrapper center-adjust d-lg-flex flex-column justify-content-center align-items-center d-none">
+      <div id="loading" class="d-flex justify-content-center align-items-center">
+        <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
       </div>
+      <video style="z-index: -1;" data-keepplaying id="Logo-video" preload muted>
+        <source src="https://static.igem.org/mediawiki/2019/e/ea/T--NCKU_Tainan--Home_logo_video.mp4" type="video/mp4" />
+        Your browser doesn't support the video tag.
+      </video>
+      <a class="down bounce" href="#">
+        <img class="d-lg-none" src="https://static.igem.org/mediawiki/2019/thumb/f/ff/T--NCKU_Tainan--Arrow_down.png/236px-T--NCKU_Tainan--Arrow_down.png">
+      </a>
     </div>
-  </div>
+    <div class="logo-wrapper center-adjust d-lg-none flex-column justify-content-center align-items-center d-flex">
+      <img class="big-logo" src="https://static.igem.org/mediawiki/2019/4/4a/T--NCKU_Tainan--Logo_big.jpg">
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <h1 class="pagename" style="text-align: center;">OH MY GUT</h1>
+        <hr class="pagename">
+        <p class="pagename" style="text-align: center;">A comprehensive solution for the accumulation of <i>p</i>-Cresol</p>
+      </div>
+      <a class="down bounce" href="#" style="z-index: 5;">
+        <img src="https://static.igem.org/mediawiki/2019/thumb/f/ff/T--NCKU_Tainan--Arrow_down.png/236px-T--NCKU_Tainan--Arrow_down.png">
+      </a>
+    </div>
+  </section>
 </section>
 
 <!--page2-->
