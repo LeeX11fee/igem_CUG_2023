@@ -2,6 +2,7 @@
   
 
 {% block page_content %}
+
 <style>
     /*carousel*/
     
@@ -578,9 +579,11 @@
                 </div>
               </div> 
             </div>
-            <script src="{{ url_for('static', filename = 'Team.js') }}"></script>
-            <script src="{{ url_for('static', filename = 'bootstrap_min.js') }}"></script>
             <script src="{{ url_for('static', filename = 'jquery-3_4_1_min.js') }}"></script>
+            <script src="{{ url_for('static', filename = 'bootstrap_min.js') }}"></script>
+            <script src="{{ url_for('static', filename = 'Team.js') }}"></script>
+           
+            
             <script>
               $( document ).ready(function() {
                   $("#breadtext").html('<a href="https://2019.igem.org/Team:NCKU_Tainan">Home</a> > <a>Team</a>')
@@ -588,4 +591,4 @@
           </script>
         </body>
     
-  {% endblock %}
+        {% endblock %}
