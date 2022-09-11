@@ -578,9 +578,9 @@ body.blurring {
             </div>
           </div> 
         </div>
-        <script src="https://gitlab.igem.org/2022/cug-china/-/blob/main/static/jquery-3_4_1_min_js?action=raw&amp;ctype=text/javascript"></script>
-        <script src="https://gitlab.igem.org/2022/cug-china/-/blob/main/static/bootstrap_min_js_2?action=raw&amp;ctype=text/javascript"></script>
-        <script src="https://gitlab.igem.org/2022/cug-china/-/blob/main/static/Team?action=raw&amp;ctype=text/javascript"></script>
+        <script src="{{ url_for('static', filename = 'Team.js') }}?action=raw&amp;ctype=text/javascript"></script>
+        <script src="{{ url_for('static', filename = 'bootstrap_min.js') }}?action=raw&amp;ctype=text/javascript"></script>
+        <script src="{{ url_for('static', filename = 'jquery-3_4_1_min.js') }}?action=raw&amp;ctype=text/javascript"></script>
         <script>
           $( document ).ready(function() {
               $("#breadtext").html('<a href="https://2019.igem.org/Team:NCKU_Tainan">Home</a> > <a>Team</a>')
@@ -588,6 +588,3 @@ body.blurring {
       </script>
     </body>
     
-
-
-    {% endblock %}
