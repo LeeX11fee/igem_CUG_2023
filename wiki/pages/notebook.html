@@ -7,12 +7,6 @@
 
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <title>Collab</title>
-
-</head>
-head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i,800,800i,900,900i|Sansita:400,400i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
 </head>
@@ -23,7 +17,7 @@ head>
 }
 /* Compete with HQ */
 #mw-content-text {
-    background-color: #F8F5D6;
+    background-color: #f0f0f0;
     color: #2C2C2C;
 }
 #mw-content-text p{
@@ -44,7 +38,7 @@ body {
     position: relative;
     width:100%;
     height: auto;
-    background-color: #F8F5D6;
+    background-color: #f0f0f0;
     font-family: 'Nunito',"微軟正黑體",sans-serif;
     overflow-y: scroll;
 }
@@ -97,7 +91,267 @@ main a:hover {
 
 </style>
 
+
 <style>
+/* Navagation Bar */
+/* Works only in media wiki */
+#bodyContent nav a[href ^="https://"]:hover, .link-https:hover{
+    background:#afcee2;
+    padding-right:none;
+}
+/*fix public engagement oversize*/
+#bodyContent nav a[href ^="https://"], .link-https {
+    padding-right:1.5rem;
+}
+/* compansate the background above */
+#bodyContent .navbar .navbar-brand:hover{
+    background:none;
+}
+a:visited {
+    color:black;
+}
+.fixed-top {
+    top: 16px;
+}
+nav {
+    background-color: #172544;
+    opacity:0.96;
+    font-size:1.3rem;
+}
+.navbar {
+    padding: 0rem 1rem;
+}
+nav .fake {
+    width:56px;
+    height:40px;
+}
+.navbar-brand {
+    width: 30vw;
+    height:auto;
+    margin-right: 0;
+}
+
+.navbar-brand img {
+    width: 100%;
+    height: auto;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color:white;
+}
+.dropdown-menu {
+    background-color: #fffdf6;
+    border-radius: 0 0 .25rem .25rem;
+    margin-top:0;
+    border-style: none;
+    display:none;
+    z-index:5;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu::before {
+    /*在menu跟dropdown中間加一塊透明的block*/
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100px;
+    width:160px;
+    top: -30px;
+    left: 0;
+    background-color:transparent;
+    cursor: pointer;
+    z-index:-2;
+}
+
+.dropdown > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    /*target active才不會讓滑鼠滑上去的時候沒改變*/
+    pointer-events: none;
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+    .navbar-expand-lg .navbar-nav.navbar-nav {
+        flex-grow: 1;
+        padding: 0 10% 0 15%;
+    }
+    .navbar-brand {
+        width: 13vw;
+        height:auto;
+    }
+}
+.bread {
+    height: 2.5rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    opacity:0.96;
+    z-index:-5;
+}
+.bread .shape {
+    width: calc(20% - 2.5rem);
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: #172544;
+}
+.bread::after {
+    content: ""; 
+    position: absolute;
+    left: calc(20% - 2.5rem);
+    width: 0;
+    height: 0;
+    border-top: 2.5rem solid #172544;
+    border-right: 2.5rem solid transparent;
+}
+#breadtext{
+  font-style:none;
+  color:white;
+  margin: 0;
+  font-size: 0.9rem;
+}
+#breadtext a{
+  color: #A6A7A7;
+}
+#breadtext a:link, #breadtext a:visited{
+  color: white;
+}
+#navbarDropdownMenuLink span{
+    font-size: 1.3rem;
+}
+</style>
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="d-inline-block d-lg-none " width="56" height="40" ></div>
+            <a class="navbar-brand d-flex align-items-center" href="https://2019.igem.org/Team:NCKU_Tainan">
+                <img class="d-none d-lg-inline-block" src="https://static.igem.org/mediawiki/2019/thumb/d/da/T--NCKU_Tainan--Logo.png/800px-T--NCKU_Tainan--Logo.png" alt="Logo">
+                <img class="d-inline-block d-lg-none" src="https://static.igem.org/mediawiki/2019/thumb/0/08/T--NCKU_Tainan--Logo_mobile.png/320px-T--NCKU_Tainan--Logo_mobile.png" alt="logo-mobile">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav justify-content-around align-items-stretch">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Project</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Description">Description</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Design">Design</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Measurement">Measurement</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Model">Model</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Hardware">Hardware</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Entrepreneurship">Entrepreneurship</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Safety">Safety</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Results</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Results">Results</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Demonstrate">Demonstrate</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Future">Future</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>HP</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Human_Practices">Human Practice</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Public_Engagement">Public Engagement</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Collaborations">Collaboration</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Software">OMG Game Room</a>
+                        </div>
+                    </li>
+<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Parts</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Parts">Parts</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Improve">Improvement</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Team</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Team">Team</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Attributions">Attributions</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Notebook</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Notebook">Notebook</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Protocols">Protocols</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Awards</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Awards">Awards</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Criteria">Criteria</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="bread d-none d-lg-block">
+            <div class="shape">
+                <p id="breadtext"><a href="#"></a> > <a href="#"></a>
+                </p>
+            </div>  
+        </div>
+    </header>
+<script>
+
+</script>
+
+
+<style>
+/*carousel start here*/
+.carousel .pageName  {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+}
+/*page name*/
+.carousel h1 {
+    font-size: 4rem;
+    color:#172544;
+    /*for wiki*/
+    padding: 0;
+}
+.carousel .carousel-item {
+    height: auto;
+}
+#carousel-team .carousel-item img {
+    min-height: 55vh;
+    max-height: 55vh;
+    object-fit: cover;
+    filter: opacity(50%);
+}
+.carousel-inner .carousel-item img {
+    min-height: 55vh;
+    max-height: 100vh;
+}
+
+/*carousel end here*/
 /*----------Joe's preset---------*/
 /*page name*/
 .carousel h1 {
@@ -176,349 +430,1267 @@ figcaption{
     }
 }
 /*----------Joe's preset END---------*/
-/* parts start */
-/* SideNav */
-@media (min-width: 992px) { 
-    .sidenav {
-        -ms-flex: 0 0 20%;
-        flex: 0 0 20%;
-        max-width: 20%;
-        height: 100vh;
-        margin: 0;
-        padding-top: 30vh;
-    }
+/*NOTEBOOK.css start*/
+.overall{
+    padding:0 10%;
 }
-.sidenav ul {
-    font-family: 'Sansita',"微軟正黑體",sans-serif;
-    list-style-type: none;
-    position:fixed;
-}
-.sidenav a {
+.align-font{
     text-align: center;
-    font-size: 1.2rem;
-    color: #767676;
 }
-.sidenav a.active {
-    color: white;
-    background-color: #8BBED5;
-    border-radius: 1rem;
+.center-padding{
+    padding:1rem auto;
 }
-/* main */
-main {
-    padding-top: 12vh;
+.bold-font-600{
+    font-weight: 600;
 }
-#Subtitle1{
-    margin:1rem 1rem;
+.bold-font-500{
+    font-weight: 100;
 }
-#Subtitle2{
-    margin:1rem 1rem;
+.margin-bottom-lg{
+    margin-bottom:5%;
 }
-.pageName {
+.margin-bottom-lg-px{
+    margin-bottom: 100px;
+}
+.margin-bottom-m{
+    margin-bottom: 2rem;
+}
+.margin-top-small{
+    margin-top:1rem;
+}
+.margin-top-lg{
+    margin-top:5%;
+}
+.half-hr{
+    width:50%;
+    border-width: 5px;
+    margin: 0rem auto 1rem auto;
+}
+.wet-hr{
+    background-color:#8BBED5;
+}
+.dry-hr{
+    background-color:#F4BF8F;
+}
+.hp-hr{
+    background-color:#D18284;
+}
+.align-font-relative{
+    position: relative;
+    left:40%;
+}
+.block-size{
     width: 100%;
-    border-bottom-style:solid; 
-    border-bottom-width:medium;
-    margin-bottom: 5vh;
-    margin-top:0;
-    padding-left: 5%;
+    height: 40%;
 }
-main section {
-    padding: 5vh 6vw 5vh 6vw;
+.small-table{
+    width: 50%;
 }
-main hr {
-    border-style: solid;
-    border-color: #2C2C2C;
-    margin-right: 3vw;
-    margin-left: 3vw;
+.small-font{
+    font-size: 14px;
 }
-.block-property{
-    display: block !important;
-    clear: both;
+.item-center-align{
+    justify-content: center;
 }
-main .ref ol {
-    margin-left: 1.1em;
+.table-relative-center-align{
+    position: relative;
+    left: 20%;
 }
-.ref h2 {
-    font-weight: normal;
+.margin-up-bottom-m{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
-figure {
-    margin: 1vh 0 3vh 0;
+h2{
+    padding:0;
 }
-.table{
-    width:200px;
-    border-radius: 5px 5px 0 0;
-    display: block !important;
+.color-block{
+    height:100px;
+    background-color: #f0f0f0;
+    text-align: center;
 }
-table th, table td{
-    font-size: 1rem;
-    padding:.5rem;
-    border: 1px solid #172544 !important;
+.card-header{
+    background-color: #f0f0f0;
+    padding:0;
+    /* 邊界 看要不要
+    border-style: dashed;
+    */
+    border-bottom:0px;
 }
-table.table-bordered thead tr th{
-    border:1px solid #172544 !important;
+.card-header:hover{
+    transition: 1s;
 }
-table.table-bordered tbody tr td{
-    border:1px solid #172544 ;
+.btn{
+    padding:0;  
+    padding:15px 0px 15px 0;
+    border-radius: 0;
+    font-weight: bold;
+    text-align: center;
+    display:inline-block;
 }
-.table{
-    background-color: #F8F5D6;
+.btn:focus{
+    box-shadow: none;
 }
-/*lg: destop*/
-@media (min-width: 992px) { 
-    main {
-        -ms-flex: 0 0 80%;
-        flex: 0 0 80%;
-        max-width: 80%;
-        margin: 0;
-        padding-left: 6vw;
-    }
-    main hr {
-        margin-right: 7vw;
-        margin-left: 0vw;
-    }
-    .pageName {
-        padding-left: 0%;
-        margin-top:2vh;
-    }
-    main section {
-        padding: 1vh 10vw 1vh 0;
-    }
-    .table{
-        width:100%;
-        height: 100%;
-    }
+.card{
+    border:none;
+    background-color: #f0f0f0;
 }
-/* parts end */
+.card-body{
+    width: 99%;
+    margin:0 2rem 2rem 0rem;
+    padding:1rem 0.5rem 1rem 0.5rem;
+    z-index: 5;
+    border:2px solid #172544;
+    border-radius: 0 0 8px 8px;
+    border-top:0;
+}
+.col{
+    padding:0 1rem;
+}
+#firstOne{
+    border-top: 1px solid #A6A7A7;
+}
+.mb-0{
+    width:95%;
+    border-bottom: 1px solid #A6A7A7;
+    border-top: 1px solid #A6A7A7;
+    position: relative;
+    left: 2%;
+    text-align: center;
+    background: #f0f0f0;
+    cursor: pointer;
+}
+.mb-0:after,.mb-0:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #E3E5E8;
+    z-index:-2;
+}
+.mb-0:hover{
+    z-index:1;
+    background:transparent;
+}            
+.mb-0:before {
+    transition: .5s;
+    background: #DBDBDB;
+    z-index:-1;
+    border-radius: 4px;
+}          
+.mb-0:hover:after,.mb-0:hover:before {
+    width: 100%;
+}
+.accordion{
+    justify-content: center;
+    justify-items: center;
+    display: contents;
+    width:20%;
+    left:300px;
+}
+.title-fontStyle{
+    font-size: 24px;
+    font-family: 'Sansita';
+    font-weight: 600;
+}
+/*NOTEBOOK end here*/
 </style>
 
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Collab</title>  
+</head>
 <body data-spy="scroll" data-target=".sidenav">
-<!--parts main body-->
-  <div class="content container-fluid">
-    <div class="row justify-content-center">
-      <!--Sidebar (Remember to change the subtitle context, but don't change the id)-->
-      <aside class="sidenav d-none d-lg-flex flex-column justify-content-start align-items-center col-2"> 
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="#Subtitle1">Basic Parts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#Subtitle2">Composite Parts</a>
-          </li>
-        </ul>
-      </aside>
-
-
-      <!--two tables in here-->
-      <main class="block-property margin-top-5">
-        <!--The Page Name-->
-        <div class="pageName">
-          <h1>Parts</h1>
-          <div class="divider"></div>
-        </div>
-        <!--overview part-->
-        <div style="margin-top:7%;">
-          <h2>Overview</h2>
-          <p style="padding-right: 10%;text-align: justify;"> 工作简介</p>
-        </div>
-        <!--parts-->
-        <section>
-          <h2 id ="Subtitle1">Basic parts</h2>
-          <!--If you want to divide it into two block use below part-->
-          <div class="table-responsive" style="overflow-x:auto;">
-            <table class="table table-bordered table-hover">
-              <thead>
-                <tr>
-                  <th scope="col" style="text-align: center;">Name</th>
-                  <th scope="col" style="text-align: center;">Description</th>
-                  <th scope="col" style="text-align: center;">Type</th>
-                  <th scope="col" style="text-align: center;">Length</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_J23100">BBa_J23100</a></th>
-                  <td>Constitutive promoter (<i>P<sub>J23100</sub></i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Promotor</td>
-                  <td style="text-align: center; vertical-align:middle;">35bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K1123000">BBa_K1123000</a></th>
-                  <td>FNR promoter (<i>P<sub>fnr</sub></i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Promoter</td>
-                  <td style="text-align: center; vertical-align:middle;">120bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_I742146">BBa_ I742146</a></th>
-                  <td>Tyrosine ammonia-lyase native RBS (<i>N<sub>RBS</sub></i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">RBS</td>
-                  <td style="text-align: center; vertical-align:middle;">14bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_B0017">BBa_B0017</a></th>
-                  <td>Double terminator (B0010-B0010)</td>
-                  <td style="text-align: center; vertical-align:middle;">Terminator</td>
-                  <td style="text-align: center; vertical-align:middle;">160bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997000">BBa_K2997000</a></th>
-                  <td>Tyrosine transporter (<i>tyrP</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">1297bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_I742142">BBa_I742142</a></th>
-                  <td>Tyrosine ammonia-lyase (<i>sam8</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">1536bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997001">BBa_K2997001</a></th>
-                  <td>Bacteriocin Full length (CBM-B)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">867bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997002">BBa_K2997002</a></th>
-                  <td>Bacteriocin short length (sCBM-B)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">252bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997003">BBa_K2997003</a></th>
-                  <td>Sigma 54-dependent transcriptional regulator (<i>pchR</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">1854bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997004">BBa_K2997004</a></th>
-                  <td><i>pchR</i> binding range</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">567bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_J18921">BBa_J18921</a></th>
-                  <td>6aa [GS]x linker</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">18bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K1610300">BBa_K1610300</a></th>
-                  <td>Secretion tag (<i>yebF</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">354bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_E0040">BBa_E0040</a></th>
-                  <td>Wild type green fluorescence protein (<i>wtgfp</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">720bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2762017">BBa_K2762017</a></th>
-                  <td>Superfolder green fluorescence protein (<i>sfgfp</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">720bp</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-        <!--comsposite parts-->
-        <section style="margin-bottom:5%;">
-          
-        <h2 id ="Subtitle2">Composite Parts</h2>
-          <div class="table-responsive" style="overflow-x:auto;">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col" style="text-align: center;">Name</th>
-                  <th scope="col" style="text-align: center;">Description</th>
-                  <th scope="col" style="text-align: center;">Type</th>
-                  <th scope="col" style="text-align: center;">Length</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997005">BBa_K2997005</a></th>
-                  <td>K880005 - <i>yebF</i> - GS linker - sCBM-B</td>
-                  <td style="vertical-align:middle;text-align:center;" rowspan="9">Composite</td>
-                  <td style="text-align: center; vertical-align:middle;">685bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997006">BBa_K2997006</a></th>
-                  <td>K880005 - <i>yebF</i>- TB linker - sCBM-B</td>
-                  <td style="text-align: center; vertical-align:middle;">120bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997007">BBa_K2997007</a></th>
-                  <td>K880005 - <i>yebF</i> - CBM-B</td>
-                  <td style="text-align: center; vertical-align:middle;">1282bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997008">BBa_K2997008</a></th>
-                  <td>Native promoter - <i>pchR</i> - sfgfp</td>
-                  <td style="text-align: center; vertical-align:middle;">3137bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997009">BBa_K2997009</a></th>
-                  <td>J23100 - <i>N<sub>RBS</sub></i> - <i>sam8</i></td>
-                  <td style="text-align: center; vertical-align:middle;">1606bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997010">BBa_K2997010</a></th>
-                  <td>K880005 - <i>sam8</i></td>
-                  <td style="text-align: center; vertical-align:middle;">1613bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997011">BBa_K2997011</a></th>
-                  <td>B0034 - <i>sam8</i></td>
-                  <td style="text-align: center; vertical-align:middle;">1572bp</td>
-                </tr>
-                <tr>
-                  <th scope="row"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997012">BBa_K2997012</a></th>
-                  <td><i>P<sub>fnr</sub></i>-B0034-GFP</td>
-                  <td>866bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_I742106">BBa_I742106</a></th>
-                  <td><i>sam8</i> with ribosome binding site</td>
-                  <td style="text-align: center; vertical-align:middle;">1550bp</td>
-                </tr>
-                <tr>
-                  <th scope="row"><a target="blank" href="http://parts.igem.org/Part:BBa_K880005">BBa_K880005</a></th>
-                  <td>Strong promoter J23100 and strong RBS B0034</td>
-                  <td>Promoter+RBS</td>
-                  <td>55bp</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-      </main>
+<!--carousol-->
+  <div id="carousel-team" class="carousel slide" data-ride="carousel">
+    <div class="pageName"><h1>Notebook</h1></div>
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-team" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-team" data-slide-to="1"></li>
+      <li data-target="#carousel-team" data-slide-to="2"></li>
+      <li data-target="#carousel-team" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://static.igem.org/mediawiki/2019/e/ed/T--NCKU_Tainan--Notebook_Carousel_2.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://static.igem.org/mediawiki/2019/1/1b/T--NCKU_Tainan--Notebook_Carousel_1.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://static.igem.org/mediawiki/2019/3/31/T--NCKU_Tainan--Notebook_Carousel_3.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://static.igem.org/mediawiki/2019/6/64/T--NCKU_Tainan--Notebook_Carousel_4.jpg" class="d-block w-100" alt="...">
+      </div>
     </div>
+    <a class="carousel-control-prev" href="#carousel-team" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-team" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-  
-<script src="https://2019.igem.org/Team:NCKU_Tainan/js/jquery-3_4_1_min_js?action=raw&amp;ctype=text/javascript"></script>
-    <script src="https://2019.igem.org/Team:NCKU_Tainan/js/4.3.1/bootstrap_min_js?action=raw&amp;ctype=text/javascript"></script>
-
+  <!--end of carousel-->
+<!--BOTEBOOK start from here-->
+  <main class="overall">
+    <!--color block-->
+    <div class="color-block margin-up-bottom-m">
+      <h3 style="color: #A55E65;">Check this page out to see what we did!<br> Enjoy!</h3>
+    </div>
+    <div class="accordion" id="accordionExample">
+      <!--FIRST WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="headingEleven">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapseEleven">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapseEleven">
+              <h3 class="bold-font-600">Week 1 (6/2 - 6/8)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Fragment preparation: cmR from pkD3 for <i>can</i> gene knockout and <i>dap</i> gene knockout.</p></li>
+                    <li><p>Learning to prepare high CFU heat shock competent cell.</p></li>
+                    <li><p>Basic lab skills.</p></li>
+                    <li><p>PCR to get <i>tyrP</i>, <i>yebF</i>, CBMB fragment.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>Design and fabricate the first version of microfluidic chip.</p></li>
+                    <li><p>Design Wiki page structure.</p></li>
+                    <li><p>Modeling research and brainstorming about possible modeling topic.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Write news script for NCKU News Agency.</p></li>
+                    <li><p>Review Tainan First Senior High School’s feedback.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--SECOND WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="headingTwo">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapseTwo">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapseTwo">
+              <h3 class="bold-font-600">Week 2 (6/9 - 6/15)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>First attempt <i>can</i> gene knockout and <i>dap</i> gene knockout by electroporation in <i>E. coli</i> MG1655 and <i>E. coli</i> Nissle.</p></li>
+                    <li><p>First attempt to ligate each PCR product into pSB1C3.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Contact Genemont and Geneferm companies to entreprise visit.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--THIRD WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="headingThird">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapseThird">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapseThird">
+              <h3 class="bold-font-600">Week 3 (6/16 - 6/24)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapseThird" class="collapse" aria-labelledby="headingThird">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p><i>E. coli</i> MG1655 Δ<i>can</i>::cmR, <i>E. coli</i> Nissle Δ<i>can</i>::cmR, <i>E. coli</i> MG1655 Δ<i>dap</i>::cmR, <i>E. coli</i> Nissle Δ<i>dap</i>::cmR genotype and phenotype check.</p></li>
+                    <li><p>Vector: pSB3K3 transformation and extraction.</p></li>
+                    <li><p>Colony PCR to check colony of bacteriocin constructs and <i>tyrP</i> construct.</p></li>
+                    <li><p>Use commercial cloning kit to subclone each PCR product into pCR-Blunt II-TOPO and pJET1.2 cloning vector.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Contact  tFDA, NHI.</p></li>
+                    <li><p>Design and choose our souvenirs.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--FOURTH WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading4">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse4">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse4">
+              <h3 class="bold-font-600">Week 4 (6/23 - 6/29)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse4" class="collapse" aria-labelledby="heading4">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Kill-switch comparison.</p></li>
+                    <li><p>Remove pkD46 from <i>E. coli</i> MG1655 Δ<i>can</i>::cmR and <i>E. coli</i> Nissle Δ<i>can</i>::cmR.</p></li>
+                    <li><p>Double digest vector pSB3K3 and Topo-<i>tyrP</i> and further ligation.</p></li>
+                    <li><p>Use pJET1.2 to subclone <i>yebF</i>-CBMB.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>Design the second version of microfluidic chip.</p></li>
+                    <li><p>Test and calibrate the detector.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Contact with Taiwan Chronic Kidney Disease foundation to join their event on August.</p></li>
+                    <li><p>iGEM Collaboration.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--FIFTH WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading5">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse5">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse5">
+              <h3 class="bold-font-600">Week 5 (6/30 - 7/6)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse5" class="collapse" aria-labelledby="heading5">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>IDT fragment preparation and first PCR.</p></li>
+                    <li><p>First attempt to construct <i>E. coli</i> Nissle Δ<i>can</i>::FRT.</p></li>
+                    <li><p>Sequencing Topo-<i>tyrP</i>, to confirm our <i>tyrP</i> is correct.</p></li>
+                    <li><p>Ligation and Transformation for pSB3K3-<i>tyrP</i> into <i>E. coli</i> DH5&#945;.</p></li>
+                    <li><p>Ligation and Transformation for pSB3K3-<i>yebF</i>-CBMBs into <i>E. coli</i> DH5&#945;.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>Design Wiki layout.</p></li>
+                    <li><p>Design spinner and control rotation speed through Arduino.</p></li>
+                    <li><p>Brainstorming IoT implementations for hardware.</p></li>
+                    <li><p>Bacteriocin model experiment</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Oh My Gut logo design.</p></li>
+                    <li><p>Video for wiki.</p></li>
+                    <li><p>Genmont Enterprise Visit</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--SIXTH WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading6">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse6">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse6">
+              <h3 class="bold-font-600">Week 6 (7/7 - 7/13)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse6" class="collapse" aria-labelledby="heading6">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Vector: pSB1C3 transformation and extraction.</p></li>
+                    <li><p>Second and third overhang extension PCR, double digestion and ligation for pSB1C3-FNR-native RBS-TAL, pSB1C3-FNR-B0034-TAL, pSB1C3-<i>pchR</i>-native RBS-GFP construct.</p></li>
+                    <li><p>Extraction for pSB3K3-<i>tyrP</i>, and check by Colony PCR and Double Digestion</p></li>
+                    <li><p>Transformation for pFNR-GFP for part characterized.</p></li>
+                    <li><p>SDS-PAGE for pSB3K3-<i>tyrP</i> protein expression.</p></li>
+                    <li><p>Ligation and Transformation for pSB3K3-<i>yebF</i>-CBMBs into <i>E. coli</i> DH5&#945;.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>Identify cause of spinner vibration.</p></li>
+                    <li><p><i>p</i>-cresol sensing model experiment.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Radio interview confirmation.</p></li>
+                    <li><p>Discuss events (escape room or workshop).</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--SEVENTH WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading7">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse7">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse7">
+              <h3 class="bold-font-600">Week 7 (7/14 - 7/20)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse7" class="collapse" aria-labelledby="heading7">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Transform pSB1C3-FNR-native RBS-TAL, pSB1C3-FNR-B0034-TAL, pSB1C3-<i>pchR</i>-native RBS-GFP to <i>E. coli</i> top10, checked by colony PCR.</p></li>
+                    <li><p>pFNR-GFP streak on plate, and put them in 37 degree incubator and anaerobic incubator.</p></li>
+                    <li><p>SDS-PAGE for pSB3K3-<i>tyrP</i> to check protein expression.</p></li>
+                    <li><p>Transformation of pSB3K3-<i>tyrP</i> into <i>E. coli</i> Nissle and <i>E. coli</i> BL21.</p></li>
+                    <li><p>Amplify each IDT synthesis fragment.</p></li>
+                    <li><p>Double digest pSB3K3-<i>yebF</i>-CBMBs to confirm successful of cloning.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>Microfluidic chip test failed. Redesign microfluidic chip and find other ways to separate blood.</p></li>
+                    <li><p>IoT connection ongoing.</p></li>
+                    <li><p>Snake game programming.</p></li>
+                    <li><p>Seeking possibility of CKD microbiome modelling (meeting with Prof. Liu and asking for NGS data).</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Arrange HP timelines.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--EIGTH WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading8">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse8">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse8">
+              <h3 class="bold-font-600">Week 8 (7/21 - 7/27)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse8" class="collapse" aria-labelledby="heading8">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p><i>E. coli</i> top10 pSB1C3-FNR-native RBS-TAL, pSB1C3-FNR-B0034-TAL, and pSB1C3-<i>pchR</i>-native RBS-GFP plasmid extraction and structure checking by digestion.</p></li>
+                    <li><p>First attempt  SDS-PAGE and western blot for <i>E. coli</i> top10 pSB1C3-FNR-native RBS-TAL, pSB1C3-FNR-B0034-TAL, and pSB1C3-<i>pchR</i>-native RBS-GFP.</p></li>
+                    <li><p>SDS-PAGE for <i>E. coli</i> Nissle, DH5&#945;, BL21 pSB3K3-<i>tyrP</i>.</p></li>
+                    <li><p>PCR to add his-tag on pSB3K3-<i>tyrP</i> for Western Blot.</p></li>
+                    <li><p>First attempt Western Blot for pSB3K3-<i>tyrP</i> in <i>E. coli</i> BL21 and Nissle.</p></li>
+                    <li><p>Sequencing for pSB3K3-<i>yebF</i>-GS-CBMBs and pSB3K3-<i>yebF</i>-TB-CBMBs.</p></li>
+                    <li><p>Run SDS-PAGE for bacteriocin constructs.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>Team page coding.</p></li>
+                    <li><p>Tweaking sensing model.</p></li>
+                    <li><p>Arduino code debug.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Mentor iGEM Korea_HS.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--NINTH WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading9">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse9">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse9">
+              <h3 class="bold-font-600">Week 9 (7/28 - 8/3)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse9" class="collapse" aria-labelledby="heading9">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Transform pSB1C3-FNR-native RBS-TAL, pSB1C3-FNR-B0034-TAL to <i>E. coli</i> Nissle, checked by colony PCR and digestion.</p></li>
+                    <li><p>First functional test for pSB1C3-<i>pchR</i>-native RBS-GFP.</p></li>
+                    <li><p>SDS-PAGE for pFNR-GFP in <i>E. coli</i> Nissle, samples include different time (every 8hr).</p></li>
+                    <li><p>Transformation of pSB3K3-<i>tyrP</i> and TAL with B0034,TAL with NRBS in to same <i>E. coli</i> Nissle.</p></li>
+                    <li><p>PCR to check if transformation of pSB3K3-<i>tyrP</i> and TAL with B0034 success or not.</p></li>
+                    <li><p>Run SDS-PAGE and Western blot for bacteriocin constructs.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>sfGFP <i>E. coli</i> test for detector.</p></li>
+                    <li><p>Protocols &amp; Main page in progress.</p></li>
+                    <li><p>Meeting with Prof. Wu.</p></li>
+                    <li><p>Populating Wiki</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>National Education Radio Kaohsiung interview.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--TENTH WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading10">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse10">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse10">
+              <h3 class="bold-font-600">Week 10 (8/4 - 8/10)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse10" class="collapse" aria-labelledby="heading10">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Second functional test for pSB1C3-<i>pchR</i>-native RBS-GFP.</p></li>
+                    <li><p>SDS-PAGE and western blot for <i>E. coli</i> top10 and <i>E. coli</i> Nissle pSB1C3-FNR-native RBS-TAL, pSB1C3-FNR-B0034-TAL,  pSB1C3-<i>pchR</i>-GFP.</p></li>
+                    <li><p>SDS-PAGE for pFNR-GFP in <i>E. coli</i> Nissle, samples include different time (4hr, 8hr, 12hr).</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>Start acrylic disk fabrication.</p></li>
+                    <li><p>Research about promoter activity.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>iGEM Taiwan Conference.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--11 WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading11">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse11">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse11">
+              <h3 class="bold-font-600">Week 11 ( 8/11 - 8/17)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse11" class="collapse" aria-labelledby="heading11">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Second overhang extension PCR for FNR-B0034-TAL due to mutation and third overhang extension PCR for K880005-<i>yebF</i>-CBMB, K880005-<i>yebF</i>-GS-CBMBs, and K880005-<i>yebF</i>-TB-CBMBs.</p></li>
+                    <li><p>Vector: pSB1C3 extraction.</p></li>
+                    <li><p>Double digest pSB1C3, B0034-TAL, K880005-<i>yebF</i>-CBMB, K880005-<i>yebF</i>-GS-CBMBs, and K880005-<i>yebF</i>-TB-CBMBs. Also, ligation.</p></li>
+                    <li><p>First TAL and <i>tyrP</i> functional assay.</p></li>
+                    <li><p>SDS-PAGE for pSB3K3-<i>tyrP</i>.</p></li>
+                    <li><p>Western Blot for TAL with NRBS/B0034.</p></li>
+                    <li><p>Prepare M9 Medium for Second TAL and <i>tyrP</i> assay.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>IPTG &amp; Arabinose test.</p></li>
+                    <li><p>Model <i>p</i>-cresol Growth.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Go to Yunlin for volunteer with Taiwan Chronic Kidney Disease Foundation.</p></li>
+                    <li><p>Geneferm entreprise visit.</p></li>
+                    <li><p>NAR(National Applied Research) Lab Visit.</p></li>
+                    <li><p>iGEM collaboration with iGEM UNSW.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--12 WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading12">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse12">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse12">
+              <h3 class="bold-font-600">Week 12 (8/18 - 8/24)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse12" class="collapse" aria-labelledby="heading12">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Transform pSB1C3- FNR-B0034-TAL, pSB1C3-K880005-<i>yebF</i>-CBMB, pSB1C3-K880005-<i>yebF</i>-GS-CBMBs, pSB1C3-K880005-<i>yebF</i>-TB-CBMBs to <i>E. coli</i> Top10. Checked by colony PCR and double digest. The right size plasmids were sent for sequencing.</p></li>
+                    <li><p>Mutation found in B0034-TAL original plasmid IDT sent.</p></li>
+                    <li><p>Construction of pSB1C3-<i>pchR</i>-B0034-GFP and transformed to <i>E. coli</i> DH5&#945;.</p></li>
+                    <li><p>Construction of pSB4A3-<i>tyrP</i> and transformed to <i>E. coli</i> Nissle.</p></li>
+                    <li><p>pFNR-GFP fluorescent intensity test.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>Experiment of <i>p</i>-cresol growth rate.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Escape room preparation.</p></li>
+                    <li><p>CKD Survey.</p></li>
+                    <li><p>Education visit to Indonesia Kemurnian II High School.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--13 WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading13">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse13">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse13">
+              <h3 class="bold-font-600">Week 13 (8/25 - 8/31)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse13" class="collapse" aria-labelledby="heading13">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Spot on Lawn assay for pSB1C3-K880005-<i>yebF</i>-GS-CBMBs.</p></li>
+                    <li><p>Mutation found on pSB1C3-K880005-<i>yebF</i>-GS-CBMBs, and pSB1C3-K880005-<i>yebF</i>-TB-CBMBs.</p></li>
+                    <li><p>Use M9 Medium for Second TAL and <i>tyrP</i> assay.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p class="align-font">Proceed acrylic disk fabrication.</p></li>
+                  </ol>  
+                  <div class="center-padding">
+                    <img class="block-size" src="https://static.igem.org/mediawiki/2019/thumb/6/6b/T--NCKU_Tainan--Notebook_blood_separation.jpeg/800px-T--NCKU_Tainan--Notebook_blood_separation.jpeg" alt="blood">
+                  </div>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Write news script for NCKU News Agency.</p></li>
+                    <li><p>Review Tainan First Senior High School’s feedback.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--14 WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading14">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse14">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse14">
+              <h3 class="bold-font-600">Week 14 (9/1 - 9/7)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse14" class="collapse" aria-labelledby="heading14">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Construction of pBBR1 MCS4-<i>pchR</i>-native RBS-GFP and transformation to <i>E. coli</i> top10.</p></li>
+                    <li><p>Construction of pSB1C3-J23100-NRBS-TAL and pSB1C3-J23100-B0034-TAL to remove Fnr promoter.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>Acrylic disk fabrication and test its functionality.</p></li>
+                    <li><p>Test dectector’s sensitivity.</p></li>
+                    <li><p>Ver3. PDMS chip fabrication.</p></li>
+                    <li><p>Model co-culture of <i>p</i>-cresol and <i>clostridium</i></p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Participate in NCKU Undergraduate Research.</p></li>
+                    <li><p>Visit Intellectual Property Office.</p></li>
+                    <li><p>Escape room preparation</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--15 WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading15">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse15">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse15">
+              <h3 class="bold-font-600">Week 15 (9/8 - 9/14)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse15" class="collapse" aria-labelledby="heading15">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Construction of pBBR1 MCS4-<i>pchR</i>-native RBS-GFP and transformation into <i>E. coli</i> top10.</p></li>
+                    <li><p>Second attempt to construct <i>E. coli</i> Nissle Δ<i>can</i>::FRT.</p></li>
+                    <li><p>Construction of pSB1C3-J23100-NRBS-TAL, pSB1C3-J23100-B0034-TAL and transformation into <i>E. coli</i> Nissle.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>Design and manufacture hardware base.</p></li>
+                    <li><p>Wiki content submission.</p></li>
+                    <li><p>Visit Senior of Business Administration to have a business plan and business model review.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Synbiotech entreprise visit.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--16 WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading16">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse16">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse16">
+              <h3 class="bold-font-600">Week 16 (9/15 - 9/21)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse16" class="collapse" aria-labelledby="heading16">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Construction of pBBR1 MCS4-<i>pchR</i>-native RBS-GFP and transformation into <i>E. coli</i> top10.</p></li>
+                    <li><p>Preparation of Pseudomonas fluorescens for transformation.</p></li>
+                    <li><p>Test phenotype of <i>E. coli</i> Nissle Δ<i>can</i>::FRT by streaking on plates.</p></li>
+                    <li><p>Construction of pSB1C3-J23100-NRBS-TAL and transformation into <i>E. coli</i> Nissle.</p></li>
+                    <li><p>Digestion to check constructs of pSB1C3-J23100-NRBS-TAL and pSB1C3-J23100-B0034-TAL.</p></li>
+                    <li><p>SDS-PAGE and Western Blot to confirm TAL and <i>tyrP</i> protein expression.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>HP wiki page design.</p></li>
+                    <li><p>Casing of device design.</p></li>
+                    <li><p>Working on DFBAlab.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Visit NCKU Technology Transfer &amp; Business Incubation Center.</p></li>
+                    <li><p>Visit Professor Jimmy from Business Administration to discuss about entrepreneurship.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--17 WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading17">
+          <div class="mb-0"data-toggle="collapse" data-target="#collapse17">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse17">
+              <h3 class="bold-font-600">Week 17 (9/22 - 9/28)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse17" class="collapse" aria-labelledby="heading17">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Construction of pBBR1 MCS4-<i>pchR</i>-native RBS-GFP is completed and are successful.</p></li>
+                    <li><p>Preparation of Pseudomonas fluorescens for transformation.</p></li>
+                    <li><p>Transformation of pBBR1 MCS-4 plasmid into P.fluorescens.</p></li>
+                    <li><p>Test phenotype of <i>E. coli</i> Nissle Δ<i>can</i>::FRT by streaking on plates.</p></li>
+                    <li><p>First functional test for new TAL and <i>tyrP</i> construct in LB Medium.</p></li>
+                    <li><p>Second functional test for new TAL and <i>tyrP</i> construct in LB Medium with different tyrosine concentration.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>Modeling <i>E. coli</i> Nissle pathway.</p></li>
+                    <li><p>Public and Engagement wiki page design.</p></li>
+                    <li><p>Finish device enclosure.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Escape room.</p></li>
+                    <li><p>Review business plan.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+      <!--18 WEEK-->
+      <div class="card">
+        <div class="card-header align-font" id="heading18">
+          <div style="border-bottom: 2px solid #A6A7A7;" class="mb-0"data-toggle="collapse" data-target="#collapse18">
+            <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapse18">
+              <h3 class="bold-font-600">Week 18 (9/29 - 10/5)</h3>
+            </div>
+          </div>
+        </div>
+        <div id="collapse18" class="collapse" aria-labelledby="heading18">
+          <!--start of card-body-->
+          <div class="card-body">
+            <div class="container margin-top-small">
+              <div class="row">
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Wet</h2>
+                  <hr class="half-hr wet-hr">
+                  <ol>
+                    <li><p>Test phenotype of <i>E. coli</i> Nissle Δ<i>can</i>::FRT by streaking on plates.</p></li>
+                    <li><p>Preparation of Pseudomonas aeruginosa for transformation.</p></li>
+                    <li><p>Test antibiotic resistance of Pseudomonas fluorescens 55.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">Dry</h2>
+                  <hr class="half-hr dry-hr">
+                  <ol>
+                    <li><p>Finish all wiki page design.</p></li>
+                    <li><p>Finish SolidWorks illustration.</p></li>
+                    <li><p>Finish <i>E. coli</i> Nissle &amp; <i>Clostridium difficile</i> metabolic network.</p></li>
+                    <li><p>Filming demonstration video.</p></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <h2 class="bold-font-500 align-font">HP</h2>
+                  <hr class="half-hr hp-hr">
+                  <ol>
+                    <li><p>Collaboration with Washington iGEM.</p></li>
+                    <li><p>Visit Winston Medical Corporation.</p></li>
+                    <li><p>Finalized business plan.</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of card-body-->
+      </div>
+    </div> 
+  </main>
+  <div class="color-block margin-up-bottom-m">
+  </div>
+  <!--NOTEBOOK ended here-->
 <script>
-$(document).ready(function() {
-    //scroll spy
-    $("a[href^='#']").click(function(e) {
-        e.preventDefault();
-        
-        var position = $($(this).attr("href")).offset().top - 100;
-        console.log(position);
-        $("body, html").animate({
-            scrollTop: position
-        }, 200);
-    });
-});
   $( document ).ready(function() {
-    $("#breadtext").html('<a href="https://2019.igem.org/Team:NCKU_Tainan">Home</a> > <a>Parts</a>')
+    $("#breadtext").html('<a href="https://2019.igem.org/Team:NCKU_Tainan">Home</a> > <a>Notebook</a>')
+// set the position of carousel
+    $('.carousel').css('margin-top', $('nav').height());
+    $(window).resize(function () {
+        $('.carousel').css('margin-top', $('nav').height());
+   });
   });
 </script>
+<script src="https://2019.igem.org/Team:NCKU_Tainan/js/jquery-3_4_1_min_js?action=raw&amp;ctype=text/javascript"></script>
+<script src="https://2019.igem.org/Team:NCKU_Tainan/js/4.3.1/bootstrap_min_js?action=raw&amp;ctype=text/javascript"></script>
 </body>
 
 
+<style>
+#gotop {
+        position:fixed;
+        z-index:90;
+        right:30px;
+        bottom:31px;
+        display:none;
+        width:50px;
+        height:50px;
+        line-height:50px;
+        border-radius:50%;
+        transition:all 0.5s;
+        text-align: center;
+        box-shadow: 0 0.9px 1px 0 rgba(0,0,0,0.16), 0 1px 3px 0 rgba(0,0,0,0.12);
+    }
+    #gotop :hover{
+           border-radius:50%;
+           box-shadow: 0 3px 7px 0 rgba(0,0,0,0.16), 0 4px 8px 0 rgba(0,0,0,0.12);
+    }
+</style>
+<a href="" id="gotop">
+        <img style="width:100%;" src="https://static.igem.org/mediawiki/2019/thumb/7/7f/T--NCKU_Tainan--Up.png/240px-T--NCKU_Tainan--Up.png">
+    </a>
+<script>
+$(function() {
+            $('#gotop').click(function(e){ 
+                e.preventDefault();
+                console.log("in");
+		        $('html,body').animate({scrollTop:0}, 333);
+	        });
+            /* 偵測卷軸滑動時，往下滑超過400px就讓GoTop按鈕出現 */
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 400){
+                    $('#gotop').fadeIn();
+                } else {
+                    $('#gotop').fadeOut();
+                }
+            });
+        });
+</script>
+
+
+<style>
+#bodyContent a[href ^="mailto:"], .link-mailto{
+    padding-right:0;
+}
+/*footer start*/    
+footer{
+    background: #4F545F;
+    width: 100%;
+    height:100%;
+    margin-top: 2%;
+}
+.footer-container{
+    padding: 1rem 0 2rem 0;
+}
+.footer-row{
+    margin:1rem 2rem;
+}
+footer .colOne{
+    display: flex;
+    justify-content: space-between;
+    padding:0;
+}
+footer .colTwo{
+    display: flex;
+    flex-direction: column;
+    padding:0;
+    margin:1rem 0;
+    height:50px;
+}
+footer .col-12{
+    padding-right: 0;
+    padding-left: 0;
+}
+.col-two-icon{
+    display: flex;
+    justify-content: space-evenly;
+    align-self: top;
+    padding:0;
+}
+.colOne img{
+    height:70px;
+    width: 60px;
+    margin:0;
+    padding:0;
+    margin:0 0 10px 0;
+}
+.colTwo img{
+    height:30px;
+    width: 30px;
+    margin:0;
+}
+.footer-text{
+    align-self: baseline;
+    color: white;
+    font-family: sans-serif;
+}
+footer a:link{
+    text-decoration: none;
+}
+/*large device like computer*/
+@media (min-width: 992px) { 
+    .colOne img{
+        height:100px;
+        width: 80px;
+        margin:0;
+        padding:0;
+        margin:0;
+    }
+    .col-two-icon{
+        justify-content:space-between;
+    }
+}
+/*footer end*/
+</style>
+     <!--htmlfooter start-->
+<footer>
+  <div class="container footer-container">
+    <div class="row footer-row">
+      <div class="col-12 col-md-6 colOne">
+        <!--icon of logo-->
+        <div id="gutImage">
+          <a href="https://2019.igem.org/Team:NCKU_Tainan"><img src="https://static.igem.org/mediawiki/2019/thumb/f/fe/T--NCKU_Tainan--Logotext_icon.png/499px-T--NCKU_Tainan--Logotext_icon.png"></a>
+        </div>
+        <!--icon of NCKUigem-->
+        <div>
+          <a href="https://www.facebook.com/igem.ncku"><img src="https://static.igem.org/mediawiki/2019/thumb/d/da/T--NCKU_Tainan--Footer_iGEM_NCKU.png/428px-T--NCKU_Tainan--Footer_iGEM_NCKU.png"></a>
+        </div>
+        <!--icon of NCKU-->
+        <div>
+          <a href="http://www.ncku.edu.tw/"><img src="https://static.igem.org/mediawiki/2019/thumb/f/f3/T--NCKU_Tainan--NCKUtext_icon.png/499px-T--NCKU_Tainan--NCKUtext_icon.png"></a>
+        </div>
+        <!--icon of Diamond-->
+        <div>
+          <a href="http://www.diamondcapital.com.tw/"><img src="https://static.igem.org/mediawiki/2019/thumb/f/f1/T--NCKU_Tainan--Diamodtext_icon.png/499px-T--NCKU_Tainan--Diamodtext_icon.png"></a>
+        </div>
+      </div>
+      <div class="col-md-1 footer-col1" style='border-right:3px solid #ffffff;'></div>
+      <div class="col-md-1 footer-col1"></div>
+      <div class="col-12 col-md-4 colTwo">
+        <div class="col-12 col-md-12 col-two-icon">
+          <!--icon of phone-->
+          <div>
+            <a href="tel:+88662757575"><img src="https://static.igem.org/mediawiki/2019/thumb/b/b4/T--NCKU_Tainan--Phone_icon.png/600px-T--NCKU_Tainan--Phone_icon.png"></a>
+          </div>
+          <!--icon of mail-->
+          <div>
+            <a href="mailto:igem.ncku.tainan@gmail.com"><img src="https://static.igem.org/mediawiki/2019/thumb/f/fe/T--NCKU_Tainan--Mail_icon.png/600px-T--NCKU_Tainan--Mail_icon.png"></a>
+          </div>
+          <!--icon of instagram-->
+          <div>
+            <a href="https://www.instagram.com/igemncku/" target="_blank"><img src="https://static.igem.org/mediawiki/2019/thumb/4/44/T--NCKU_Tainan--Instagram_icon.png/600px-T--NCKU_Tainan--Instagram_icon.png"></a>
+          </div>
+          <!--icon of facebook-->
+          <div>
+            <a href="https://www.facebook.com/igem.ncku" target="_blank"><img src="https://static.igem.org/mediawiki/2019/thumb/e/ec/T--NCKU_Tainan--Facebook_icon.png/600px-T--NCKU_Tainan--Facebook_icon.png"></a>
+          </div>
+        </div>
+        <p class="col-12 footer-text" style="font-size:1.1rem;">
+          e-mail : igem.ncku.tainan@gmail.com 
+          <br>
+          phone : 06-2757575
+        </p>
+      </div>
+      <!--end of col-4-->
+    </div>
+  </div>
+</footer>
+
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.036 seconds
+Real time usage: 0.322 seconds
+Preprocessor visited node count: 39/1000000
+Preprocessor generated node count: 164/1000000
+Post‐expand include size: 287/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key 2019_igem_org:pcache:idhash:4125-0!*!*!*!*!*!* and timestamp 20220910144215 and revision id 444976
+ -->
+</div>        <div class="visualClear"></div>
+      </div>
+    </div>
+  </div>
+</html>
 
 {% endblock %}
