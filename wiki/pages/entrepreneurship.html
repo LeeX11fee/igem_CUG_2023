@@ -5,37 +5,1444 @@
 
 {% block page_content %}
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Best Supporting Entrepreneurship Special Prize</h4>
-      <p>The Best Supporting Entrepreneurship award recognizes exceptional effort to build a business case and commercialize an iGEM project. This award is open to all teams to show that entrepreneurship is something all teams can aspire to do with their project. This award can go to an new project, or to a previous project that a team aimed to commercialize. Have you filed a provisional patent on your project/device/process? Have you raised money to build and ship products? Have you pitched your idea to investors and received money? As always in iGEM, the aim is to impress the judges!</p>
-      <p>To compete for the Best Supporting Entrepreneurship prize, please describe your work on this page and also fill out the description on the <a href="https://competition.igem.org/deliverables/judging-form">judging form</a>.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/awards">2022 Awards Page</a> for more information.</p>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i,800,800i,900,900i|Sansita:400,400i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
+</head>
+<style>
+/*before get rid of #HQ_page*/
+#HQ_page p {
+    font-size: 1.1rem;
+}
+/* Compete with HQ */
+#mw-content-text {
+    background-color: #f0f0f0;
+    color: #2C2C2C;
+}
+#mw-content-text p{
+    font-family: 'Nunito',"微軟正黑體",sans-serif;
+}
+#mw-content-text .p{
+    font-family: 'Nunito',"微軟正黑體",sans-serif;
+}
+#mw-content-text h1, h2, h3, h4, h5 {
+    font-family: 'Sansita',"微軟正黑體",MS Serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    color: #2C2C2C;
+}
+body {
+    position: relative;
+    width:100%;
+    height: auto;
+    background-color: #f0f0f0;
+    font-family: 'Nunito',"微軟正黑體",sans-serif;
+    overflow-y: scroll;
+}
+/*Be selected*/
+::selection {
+    background-color: rgb(139, 190, 213);
+  }
+/* Page Name */
+.h1, h1 {
+    font-family: 'Sansita',"微軟正黑體",sans-serif;
+    font-size:4rem;
+    font-weight: 800;
+}
+/* Subtitle */
+.h2, h2 {
+    font-family: 'Sansita',"微軟正黑體",sans-serif;
+    font-size: 2.3rem;
+    font-weight: 700;
+    padding-bottom: .5em;
+}
+/* Sub-Subtitle */
+.h3, h3 {
+    font-family: 'Sansita',"微軟正黑體",sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.h4, h4 {
+    font-family: 'Sansita',"微軟正黑體",sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+.main p ,main p, main .p{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: left;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+.main figcaption, main figcaption {
+    font-size: 0.9rem;
+}
+main a {
+    color: #2C2C2C;
+    text-decoration:underline;
+}
+main a:hover {
+    color: #8BBED5;
+    text-decoration:underline;
+}
+
+</style>
+
+
+<style>
+/* Navagation Bar */
+/* Works only in media wiki */
+#bodyContent nav a[href ^="https://"]:hover, .link-https:hover{
+    background:#afcee2;
+    padding-right:none;
+}
+/*fix public engagement oversize*/
+#bodyContent nav a[href ^="https://"], .link-https {
+    padding-right:1.5rem;
+}
+/* compansate the background above */
+#bodyContent .navbar .navbar-brand:hover{
+    background:none;
+}
+a:visited {
+    color:black;
+}
+.fixed-top {
+    top: 16px;
+}
+nav {
+    background-color: #172544;
+    opacity:0.96;
+    font-size:1.3rem;
+}
+.navbar {
+    padding: 0rem 1rem;
+}
+nav .fake {
+    width:56px;
+    height:40px;
+}
+.navbar-brand {
+    width: 30vw;
+    height:auto;
+    margin-right: 0;
+}
+
+.navbar-brand img {
+    width: 100%;
+    height: auto;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color:white;
+}
+.dropdown-menu {
+    background-color: #fffdf6;
+    border-radius: 0 0 .25rem .25rem;
+    margin-top:0;
+    border-style: none;
+    display:none;
+    z-index:5;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu::before {
+    /*在menu跟dropdown中間加一塊透明的block*/
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100px;
+    width:160px;
+    top: -30px;
+    left: 0;
+    background-color:transparent;
+    cursor: pointer;
+    z-index:-2;
+}
+
+.dropdown > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    /*target active才不會讓滑鼠滑上去的時候沒改變*/
+    pointer-events: none;
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+    .navbar-expand-lg .navbar-nav.navbar-nav {
+        flex-grow: 1;
+        padding: 0 10% 0 15%;
+    }
+    .navbar-brand {
+        width: 13vw;
+        height:auto;
+    }
+}
+.bread {
+    height: 2.5rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    opacity:0.96;
+    z-index:-5;
+}
+.bread .shape {
+    width: calc(20% - 2.5rem);
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: #172544;
+}
+.bread::after {
+    content: ""; 
+    position: absolute;
+    left: calc(20% - 2.5rem);
+    width: 0;
+    height: 0;
+    border-top: 2.5rem solid #172544;
+    border-right: 2.5rem solid transparent;
+}
+#breadtext{
+  font-style:none;
+  color:white;
+  margin: 0;
+  font-size: 0.9rem;
+}
+#breadtext a{
+  color: #A6A7A7;
+}
+#breadtext a:link, #breadtext a:visited{
+  color: white;
+}
+#navbarDropdownMenuLink span{
+    font-size: 1.3rem;
+}
+</style>
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="d-inline-block d-lg-none " width="56" height="40" ></div>
+            <a class="navbar-brand d-flex align-items-center" href="https://2019.igem.org/Team:NCKU_Tainan">
+                <img class="d-none d-lg-inline-block" src="https://static.igem.org/mediawiki/2019/thumb/d/da/T--NCKU_Tainan--Logo.png/800px-T--NCKU_Tainan--Logo.png" alt="Logo">
+                <img class="d-inline-block d-lg-none" src="https://static.igem.org/mediawiki/2019/thumb/0/08/T--NCKU_Tainan--Logo_mobile.png/320px-T--NCKU_Tainan--Logo_mobile.png" alt="logo-mobile">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav justify-content-around align-items-stretch">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Project</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Description">Description</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Design">Design</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Measurement">Measurement</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Model">Model</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Hardware">Hardware</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Entrepreneurship">Entrepreneurship</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Safety">Safety</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Results</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Results">Results</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Demonstrate">Demonstrate</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Future">Future</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>HP</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Human_Practices">Human Practice</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Public_Engagement">Public Engagement</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Collaborations">Collaboration</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Software">OMG Game Room</a>
+                        </div>
+                    </li>
+<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Parts</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Parts">Parts</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Improve">Improvement</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Team</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Team">Team</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Attributions">Attributions</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Notebook</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Notebook">Notebook</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Protocols">Protocols</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Awards</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Awards">Awards</a>
+                            <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Criteria">Criteria</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="bread d-none d-lg-block">
+            <div class="shape">
+                <p id="breadtext"><a href="#"></a> > <a href="#"></a>
+                </p>
+            </div>  
+        </div>
+    </header>
+<script>
+
+</script>
+
+
+<style>
+/*carousel start here*/
+.carousel .pageName  {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+}
+.carousel .carousel-item {
+    height: auto;
+}
+#carousel-team .carousel-item img {
+    min-height: 55vh;
+    max-height: 55vh;
+    object-fit: cover;
+    filter: opacity(50%);
+}
+.carousel-inner .carousel-item img {
+    min-height: 55vh;
+    max-height: 100vh;
+}
+/*carousel end here*/
+/*entrepreneurship start here*/
+/*----------Joe's preset---------*/
+/*page name*/
+.carousel h1 {
+    font-size: 5rem;
+    color:#172544;
+    padding: 0;
+    text-align: center;
+    font-weight: 700;
+}
+/*half hr setting*/
+.content-hr-half{
+    /*border-color:#620E15;*/
+    position: relative;
+    left: 25%;
+    width: 50%;
+    border-width: 5px;
+}
+/*layout settings*/
+.margin-up-bottom-m{
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.margin-top-10{
+    margin-top: 10%;
+}
+.margin-top-5{
+    margin-top: 5%;
+}
+.margin-bottom-5{
+    margin-bottom: 5%;
+}
+.margin-bottom-10{
+    margin-bottom: 10%;
+}
+.center-flex{
+    display: flex;
+    justify-content: center;
+}
+.margin-auto{
+    margin:auto;
+}
+/*figure default settings*/
+.figure-default{
+    margin:1rem;
+}
+.figure-default a{
+    width: 100%;
+}
+.figure-default a img{
+    width: 60%;
+}
+.figure-default-80{
+    margin:1rem;
+}
+.figure-default-80 a{
+    width: 100%;
+}
+.figure-default-80 a img{
+    width: 80%;
+}
+/*font settings*/
+figcaption{
+    font-weight: 700;
+}
+.center-font{
+    text-align: center;
+}
+.left-font{
+    text-align: left;
+}
+.bold-font{
+    font-weight: bold;
+}
+.h5-font{
+    font-size: 1.2rem;
+}
+.text-color-deepBlue{
+    color: #172544;
+}
+.text-color-lightBlue{
+    color:#3490B9;
+}
+/*overall media setting*/
+@media (max-width:576px){
+    .pageName h1{
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+}
+/*----------Joe's preset END---------*/
+main li{
+    font-size: 1.1rem;
+    color: #2c2c2c;
+}
+p{
+    font-size: 1.1rem;
+}
+hr{
+    border-width: 5px;
+    border-color:#F4BF8F;
+}
+.description-font-color{
+    color:#D18284;
+    opacity: 50%;
+}
+.content-hr{
+    border-color:#620E15;
+    position: relative;
+    left: 25%;
+}
+.content-layout{
+    padding:0 6%;
+}
+a:hover{
+    text-decoration: none;
+}
+.font-bold{
+    font-weight: bold;
+}
+.font-large{
+    font-size: 22px;
+}
+.font-bold-extra{
+    font-weight: 800;
+}
+.special-title{
+    letter-spacing: 10px;
+    font-size: 36px;
+}
+.img-center-position{
+    display:flex;
+    justify-content: center;
+}
+.list-font{
+    font-size: 18px;
+}
+.list-font p{
+    padding:10px;
+}
+.list-font p:hover{
+    font-size:19px;
+}
+.margin-top-normal{
+    margin-top:2rem;
+}
+.margin-top-large{
+    margin-top:5%;
+}
+.margin-top-extra{
+    margin-top:10%;
+}
+.margin-top-bottom-large{
+    margin:5% 0;
+}
+.margin-top-bottom-extra{
+    margin:10% 0;
+}
+.margin-bottom-extra{
+    margin-bottom: 10%;
+}
+.overallGrid{
+    padding:0 8%;
+}
+.paddie-response{
+    display:block;
+}
+.paddie h4{
+    color: #172544;
+}
+/*for the five icon*/
+.textBlock{
+    text-align: center;
+    padding:1.5rem;
+    width: 100%;
+    height: 100%;
+}
+.textBlock p{
+    font-size: 14px;
+}
+.textBlock:hover{
+    box-shadow:4px 4px 12px 4px rgba(20%,20%,40%,0.5);
+    transition: .5s;
+}
+.mainText img{
+    padding:1rem;
+}
+/*layout for computer*/
+.inline-position{
+    display: inline-block;
+}
+/*device under 992px happen*/
+@media (max-width:992px){
+    .figure-default a img{
+        width: 100%;
+    }
+    .figure-default a img{
+        width: 100%;
+    }
+    .figure-default-80 a img{
+        width: 100%;
+    }
+    .figure-default-80 {
+        margin: 0;
+    }
+    .figure-default {
+        margin: 0;
+    }
+}
+/*large device like computer， 992px up happen*/
+@media (min-width: 992px) { 
+    .textBlock{
+        width: 300px;
+        height: 250px;
+    }
+    .paddie-lg{
+        display:flex;
+        justify-content: space-evenly;
+    }
+    .overallGrid{
+        padding:0 15%;
+    }
+    .paddie-response{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .figure{
+        margin:0;
+    }
+}
+.table-content-style p{
+    box-shadow:2px 2px 2px 2px rgba(20%,20%,40%,0.1);
+}
+.no-deco{
+    text-decoration: none;
+}
+/*for pdf file*/
+.forpdf{
+    display: flex;
+    justify-content: center;
+    padding:1rem 1rem;
+}
+.pdfbutton{
+    background: #3490B9 !important;
+    border:none;
+    width: 70%;
+    padding: .5rem .5rem;
+}
+.forpdf a:hover{
+    background: #4C5873;
+}
+.forpdf a{
+    text-decoration: none;
+}
+.table{
+    background-color: #f0f0f0;
+}
+.paddie-response a{
+    text-decoration: none;
+}
+.paddie-response a:hover{
+    text-decoration: none;
+}
+/*entrepreneurship end*/
+</style>
+
+
+<style>
+#gotop {
+        position:fixed;
+        z-index:90;
+        right:30px;
+        bottom:31px;
+        display:none;
+        width:50px;
+        height:50px;
+        line-height:50px;
+        border-radius:50%;
+        transition:all 0.5s;
+        text-align: center;
+        box-shadow: 0 0.9px 1px 0 rgba(0,0,0,0.16), 0 1px 3px 0 rgba(0,0,0,0.12);
+    }
+    #gotop :hover{
+           border-radius:50%;
+           box-shadow: 0 3px 7px 0 rgba(0,0,0,0.16), 0 4px 8px 0 rgba(0,0,0,0.12);
+    }
+</style>
+<a href="" id="gotop">
+        <img style="width:100%;" src="https://static.igem.org/mediawiki/2019/thumb/7/7f/T--NCKU_Tainan--Up.png/240px-T--NCKU_Tainan--Up.png">
+    </a>
+<script>
+$(function() {
+            $('#gotop').click(function(e){ 
+                e.preventDefault();
+                console.log("in");
+		        $('html,body').animate({scrollTop:0}, 333);
+	        });
+            /* 偵測卷軸滑動時，往下滑超過400px就讓GoTop按鈕出現 */
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 400){
+                    $('#gotop').fadeIn();
+                } else {
+                    $('#gotop').fadeOut();
+                }
+            });
+        });
+</script>
+
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Collab</title>  
+</head>
+<body data-spy="scroll" data-target=".sidenav">
+<!--entre start from here-->
+    <!--carousol-->
+    <div id="carousel-team" class="carousel slide" data-ride="carousel">
+        <div class="pageName"><h1>Entrepreneurship</h1></div>
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-team" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-team" data-slide-to="1"></li>
+            <li data-target="#carousel-team" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://static.igem.org/mediawiki/2019/thumb/0/0e/T--NCKU_Tainan--dialysis_Center.jpeg/800px-T--NCKU_Tainan--dialysis_Center.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://static.igem.org/mediawiki/2019/thumb/5/5b/T--NCKU_Tainan--HP_synbio.jpeg/799px-T--NCKU_Tainan--HP_synbio.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://static.igem.org/mediawiki/2019/thumb/3/3f/T--NCKU_Tainan--HP_genemont.jpeg/800px-T--NCKU_Tainan--HP_genemont.jpeg" class="d-block w-75 margin-auto" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel-team" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-team" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!--end of carousel-->
+<!--Description paragraph-->
+    <main class="overallGrid" style="margin-top:2rem;">
+        <section style="margin-bottom:4rem;">
+            <section class="color-block justify-content-center">
+                <h2 align="left" style="margin-bottom: 1rem; color:#172544">Overview</h2>
+                <p align="left"">    This year, iGEM NCKU Tainan is focusing on therapeutics. Our Oh My Gut project aims to tackle a problem which is still unknown to many people. We are using synthetic biology to create a comprehensive solution to solve the problem of <i>p</i>-Cresol accumulation in CKD patients, to reduce the risks of getting cardiovascular diseases or other serious complications and help them achieve a better quality of life. We wanted to realize our project from the laboratory and apply it in the real market. Oh My Gut provides solutions to improve the quality of lives of people by setting up an affordable healthcare platform to increase the accessibility to anyone who requires medical advice, attention and products.</p>
+                <p>    To bring our vision and mission into reality, engaging with our customers and stakeholders is crucial. We started with mapping out our target users, which are CKD patients and stakeholders. At first, we proposed that our engineered <i>E. coli</i> Nissle 1917 that possesses the ability to reduce <i>p</i>-Cresol accumulation can be marketed as a probiotic. However, after discussing with Taiwan Food and Drug Administration, we realized that because our product contains pharmacological effects, we need to market it as a drug. Therefore, we decided on marketing our product as a living therapeutic drug called CreSolve. Aside from a living therapeutic drug, we also designed CreSense, a medical device to help measure blood <i>p</i>-Cresol level using our engineered <i>p</i>-Cresol sensing bacteria.</p>
+                <P>    We are very proud that our Oh My Gut project is able to evolve into CreSolve and CreSense which despite being two different products with different business models, all fall under one same goal. CreSolve living therapeutic drug will be directly sold to our distributors, while CreSense will be leased out to healthcare platforms and apply a recurring revenue business model to the suppliance of bacteria refills and microfluidic disc.</P>
+                <p>    In order to understand how therapeutic drugs and medical devices can enter the real market, we started at the bottom, discussing the value proposition of the products and understanding customer’s needs. We subsequently conducted market and competitor research, thoughtfully devise our business model, and wrote our business plan. We aim to interpret the value of our products into a commercial business.
+                </p>
+            </section>
+        </section>
+        <!--Description end-->
+        <div class="center-font special-title">
+            <h3 class="center-font">WHAT WE HAVE?</h3>
+        </div>
+        <section class="margin-top-bottom-large">
+            <section class="paddie-response">
+                <a href="#consideration"><div class="textBlock">
+                    <img src="https://static.igem.org/mediawiki/2019/thumb/2/2c/T--NCKU_Tainan--Entre_icon_consideration.jpeg/600px-T--NCKU_Tainan--Entre_icon_consideration.jpeg.png" alt="consideration" width="80px;" height="80px;">
+                    <h4 class="text-color-lightBlue">Consideration</h4>
+                    <p class="no-deco">&#8195;Assesment and evaluations of the things needed in order to potentially develop CreSense and CreSolve into a mature product.                       
+                    </p>
+                </div></a>
+                <a href="#visual"><div class="textBlock">
+                    <img src="https://static.igem.org/mediawiki/2019/thumb/9/96/T--NCKU_Tainan--Entre_icon_design.jpeg/600px-T--NCKU_Tainan--Entre_icon_design.jpeg.png" alt="design" width="80px;" height="80px;">
+                    <h4 class="text-color-lightBlue">Visualize-Design-Test</h4>
+                    <p class="no-deco">&#8195;Identification and analysis of the values of CreSense and CreSolve through the help of a business model to support the viability of our products.
+                    </p>
+                </div></a>
+                <a href="#business"><div class="textBlock">
+                    <img src="https://static.igem.org/mediawiki/2019/thumb/6/6e/T--NCKU_Tainan--Entre_icon_business.jpeg/600px-T--NCKU_Tainan--Entre_icon_business.jpeg.png" alt="business" width="80px;" height="80px;">
+                    <h4 class="text-color-lightBlue">Business Plan</h4>
+                    <p class="no-deco">&#8195;A detailed plan of the strategies and processes of realizing CreSolve and CreSense’s vision and objectives.
+                    </p>
+                </div></a>
+            </section>
+            <section class="paddie-response">
+                <a href="#value"><div class="textBlock">
+                  <img src="https://static.igem.org/mediawiki/2019/thumb/a/a0/T--NCKU_Tainan--Entre_icon_value.jpeg/600px-T--NCKU_Tainan--Entre_icon_value.jpeg.png" alt="value" width="80px;" height="80px;">
+                    <h4 class="text-color-lightBlue">Value</h4>
+                    <p class="no-deco">&#8195;Assessment of the values of CreSense and CreSolve for product development, and our plans to deliver these values to our customers.
+                    </p>
+                </div></a>
+                <a href="#future"><div class="textBlock">
+                  <img src="https://static.igem.org/mediawiki/2019/thumb/7/79/T--NCKU_Tainan--Entre_icon_future.jpeg/600px-T--NCKU_Tainan--Entre_icon_future.jpeg.png" alt="future" width="80px;" height="80px;"></br>
+                    <h4 class="text-color-lightBlue">Future</h4>
+                    <p class="no-deco">&#8195;Evaluating and developing CreSolve and CreSense’s potential to be more than just a pharmaceutical drug or medical device.
+                    </p>
+                </div></a>
+            </section>
+        </section>
+        <section class="mainText">
+           <br> <br> <br> <br> <br> <section id="consideration" class="text-first-block">
+                <h2 class="center-font  font-bold-extra">Consideration</h2>
+                <hr>
+                <p class=" ">&#8195;We started by considering what value we want to have in our products and came up with values that we always embedded in mind and to be our value in making the products.</p>
+                <div class="margin-top-large font-bold list-font center-font table-content-style paddie-lg">
+                    <a class="center-font" href="#clinical-Trial"><p>Clinical Trial Phase</p></a>
+                    <a class="center-font" href="#patent-Regulation"><p>Patent Regulation</p></a>
+                    <a class="center-font" href="#method-Deliver"><p>Method To Deliver</p></a>
+                    <a class="center-font" href="#Customer"><p>Customer Discovery</p></a>
+                    <a class="center-font" href="#Needs"><p>Customer's Needs</p></a>
+                </div>
+                <div id="clinical-Trial" class="margin-top-extra margin-bottom-extra">
+                    <h3 class="font-bold center-font" style="font-size: 36px;">Clinical Trial Phase</h3>
+                    <hr class="content-hr" style="width: 50%">
+                    <p>    After our talks with CEO Yu-Cheng Wang of Winston Medical Supply Co., we will able to finalize our business plan with the estimated prices given. The research development usually takes 4-6 years after you can prove your product in in-vivo experiments (including toxin tests), then in-vitro tests through animal testing. Based on Taiwan Food and Drugs Administration, to do animal testing, it requires more than 1 animal, and after animal testing proved it does not contain toxins, the clinical trial phases can be applied and begun.
+                    </p>
+                    <figure class="figure-default center-font">
+                        <a target="blank" href="https://static.igem.org/mediawiki/2019/b/b8/T--NCKU_Tainan--Entre_clinical_trial.png" style="width: 100%;">
+                            <img src="https://static.igem.org/mediawiki/2019/b/b8/T--NCKU_Tainan--Entre_clinical_trial.png" alt="clinical" title="clinical graph" style="width: 100%;">
+                        </a>
+                        <figcaption class="center-font">Fig. 1.  Clinical Trial Phase</figcaption>
+                    </figure>
+                </div>
+                <div id="patent-Regulation" class="margin-top-large">
+                    <h3 class="font-bold center-font" style="font-size: 36px;">Patent Regulation</h3>
+                    <hr class="content-hr" style="width: 50%">
+                                        <div style="text-align:left;" class=" content-layout">
+                        <p>    After our discussion with Mr Chen-Ching Chen, head of Tainan Intellectual Property Office, Ministry of Economics to apply Intellectual property for our products, it has two options which are invention patent or utility model patent. For medical device, he suggested us to apply utility model patent regulations as it is a novel add-on device in medical device world, while for the drug, registering it to invention regulation might be a better option. 
+                        </p>
+                        <div style="border: 3px solid #3490B9;margin:5%;">
+                            <p style="margin-top:1rem" class="center-font">&#8195;Based on Taiwan Intellectual Property Office, Prices for patent per 2019:
+                            </p>
+                            <p class="center-font">1. <b>Invention patent application: </b>3,500 NTD (112.2 USD)
+                                <br>&#8195;(a) Request for the application converted into invention patent: 3,500 NTD
+                                <br>&#8195;(b) Granted Invention Patent fee: 
+                                <br>&#8195;&#8195;i. 1<sup>st</sup>-3<sup>rd</sup> year, 2,500 NTD annually.
+                                <br>&#8195;&#8195;ii. 4<sup>th</sup>-6<sup>th</sup> year, 5,000 NTD annually.
+                                <br>&#8195;&#8195;iii. 7<sup>th</sup>-9<sup>th</sup> year, 8,000 NTD annually.
+                                <br>&#8195;&#8195;iv. 10<sup>th</sup> year and beyond, 16,000 NTD annually.
+                                <br><br>2. <b>Utility model patent application:</b> 3000 NTD (96 USD)
+                                <br>&#8195;(a) Request for the application converted to utility model patent: 3,000 NTD
+                                <br>&#8195;(b) Granted Utility model patent fee:
+                                <br>&#8195;&#8195;i. 1<sup>th</sup>-3<sup>th</sup> year, 2,500 NTD annually.
+                                <br>&#8195;&#8195;ii. 4<sup>th</sup>-6<sup>th</sup> year, 4,000 NTD annually.
+                                <br>&#8195;&#8195;iii. 7<sup>th</sup> year and beyond, 8,000 NTD annually
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="method-Deliver" class="margin-top-large">
+                    <h3 class="font-bold center-font" style="font-size: 36px;">Method To Deliver</h3>
+                    <hr class="content-hr" style="width: 50%">
+                    <div class=" content-layout">
+                        <p>    To decide what kind of method to deliver CreSolve, we conducted a survey with the public in NCKU Hospital, discussed with experts and will do a clinical trial in the future to determine what form the drug should be in.
+                        </p>
+                        <section>
+                            <p class="font-large font-bold">&#10140;  Public Opinion Survey
+                            </p>                                                                         
+                            <p>    We asked what form of drug would they think would be easier to consumed. We gave them four options which are capsule, powder, jelly and injection. From the 44 people that we interviewed, it can be concluded that:</p>  
+                            <ul style="padding-left:1em;">                                                
+                            <li style="line-height: 1.5; padding-left:1em;">From the results, 68% of people chose capsule because it is more convenient</li>
+                            <li style="line-height: 1.5; padding-left:1em;">Some said they have not tried jelly form of drug</li>
+                            <li style="line-height: 1.5; padding-left:1em;">Injection from public views are more related to serious cases and older people don’t choose injection because they are afraid</li>
+                            <li style="line-height: 1.5; padding-left:1em;">Only 7% of interviewees chose powder since powder usually make them feel like choking and could not bear with the bitter taste of it</li>
+                            </ul>         
+                            <figure class="figure-default-80 center-font">
+                                <a target="blank" href="https://static.igem.org/mediawiki/2019/5/55/T--NCKU_Tainan--Entre_survey_1.png">
+                                    <img src="https://static.igem.org/mediawiki/2019/5/55/T--NCKU_Tainan--Entre_survey_1.png" alt="clinical" title="clinical graph">
+                                </a>
+                                <figcaption class="center-font">Fig. 2. National Cheng Kung University Public Opinion of CreSolve's Delivery Method on August 27<sup>th</sup>, 2019<br> (total participants = 44)</figcaption>
+                            </figure>
+                        </section>
+                        <section>
+                            <p class="font-large font-bold margin-top-5">&#10140;  Expert's opinion
+                            </p>
+                            <p>&#8195;&#9830;&#8195;Li-Hui Huang, Nurse of dialysis center in <a href="https://2019.igem.org/Team:NCKU_Tainan/Human_Practices#huang" target="_blank">Chia Yi Chang Gung Memorial Hospital.</a></p>
+                                <p>    She said CKD patients she took care of usually are older people and they normally avoid injection and better choose to consume drugs either it is a powder or capsule hence they enjoy to consume jelly form more rather than the solid form.</p>
+                                <p><p>&#8195;&#9830;&#8195;I-Ju Chang, Marketing Manager of Synbiotech</p>
+                                <p>    The forms of the drug are usually made in powder, liquid or tablet but to determine what form of the drug should we use, we need to do a survey for prices and forms first.</p>
+                                <p>    From the suggestion of Synbio Tech, we started to contact pharmaceutical manufacturing companies to learn about drug forms and possible partnership in the future.</p>
+                                <p><p>&#8195;&#9830;&#8195;Yi-Ching Chen, Marketing Director of Winston Medical Supply Co.</p>
+                                <p>    The forms of the drugs are usually customized by the company and to determine what type of form suitable is from the API (Active Pharmaceutical Ingredients) of the drug itself, then determine what form will be suitable to be fermented and processed with our ingredients.</p>
+                                <p>    Partnering in manufacture is also one of the possibilities between CreSolution Biotechnology and Winston Medical Supply Co. as long as we have the permission for government and research data with the prototype of the drug.
+                            </p>
+                        </section>
+                        <!--product competitor-->
+                        <section>
+                            <p class="font-large font-bold margin-top-5">&#10140;  Product Competitor
+                            </p>
+                            <p>    CreSolve Living Therapeutic have several products competitors which are Kremezin<sup><a href="#ref6">[6]</a></sup>, a drug focused on absorbing uremic toxins in CKD patients, produced by KUREHA Corporation in Japan and Ketosteril, an amino acid capsule for low protein diet CKD patients, owned by Fresenius Kabi in Germany and available in multiple markets of different countries with efficient manufacturers.
+                            </p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="text-align: center;">Name</th>
+                                            <th scope="col" style="text-align: center;">Year Founded</th>
+                                            <th scope="col" style="text-align: center;">Project Description</th>
+                                            <th scope="col" style="text-align: center;">Areas served</th>
+                                            <th scope="col" style="text-align: center;">Product Price</th>
+                                            <th scope="col" style="text-align: center;">Strength</th>
+                                            <th scope="col" style="text-align: center;">Weakness</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Kremezin</th>
+                                            <td style="text-align: center;">1991</td>
+                                            <td>Absorb uremic toxins and their precursors within the gastrointestinal tract, allowing them to be excreted in the feces.</td>
+                                            <td>Japan, Korea, Taiwan and Philippines </td>
+                                            <td>$7.2 / 2 gram sachet of powder</td>
+                                            <td>Its effectiveness has been proven through several clinical trials.</td>
+                                            <td>Expensive and is not included in the coverage of the National Health Insurance.</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Ketosteril</th>
+                                            <td style="text-align: center;">2009</td>
+                                            <td>Prevention and treatment of damages due to faulty or deficient protein metabolism in chronic kidney disease</td>
+                                            <td>Europe Asia, USA ,Australia</td>
+                                            <td>$1.05/ tablet</td>
+                                            <td>Proven to give nutritional effects for CKD Patients (doing low protein-diet ) and is cost-effective.</td>
+                                            <td>Only for low-protein diet CKD patients.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <figcaption class="center-font">Table 1. List of potential competitors for CreSolve.</figcaption>
+                            <br><p class="center-font">&#8195;&#10140;  A comparison between the products can be seen in our <a href="#business">Business Plan</a></p>
+                            <p class="margin-up-bottom-m">    While CreSense is a novel bio-sensing device, currently there are no devices available in healthcare center, though in clinical laboratory, uremic toxins can be measured using HPLC-MS (High Performance Liquid Chromatography-Mass Spectrometry), which costs more than $48 per test and it is not included in the National Health Insurance of Taiwan, therefore Oh My Gut team has estimated the cost of CreSense device parts excluded the patents or licensing costs.
+                            </p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="text-align: center;">Component</th>
+                                            <th scope="col" style="text-align: center;">Quantity</th>
+                                            <th scope="col" style="text-align: center;">Cost per unit</th>
+                                            <th scope="col" style="text-align: center;">Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Arduino Uno</th>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;"> $5.23</td>
+                                            <td style="text-align: center;">$5.23</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">NodeMCU ESP8266</th>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">$11.00</td>
+                                            <td style="text-align: center;">$11.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Electric speed controller</th>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">$17.96</td>
+                                            <td style="text-align: center;">$17.96</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Brushless motor</th>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">$14.70</td>
+                                            <td style="text-align: center;">$14.70</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Light sensor (tsl-235R)</th>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">$4.41</td>
+                                            <td style="text-align: center;">$4.41</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Filter</th>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">$16.98</td>
+                                            <td style="text-align: center;">$16.98</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Casing</th>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">$16.33</td>
+                                            <td style="text-align: center;">$16.33</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Screws</th>
+                                            <td style="text-align: center;">8</td>
+                                            <td style="text-align: center;">$0.24</td>
+                                            <td style="text-align: center;">$1.92</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Sensor holder</th>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">$6.53</td>
+                                            <td style="text-align: center;">$6.53</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Lithium-ion battery</th>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">$9.80</td>
+                                            <td style="text-align: center;">$9.80</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="center-font" scope="row" colspan="3">Total</th>
+                                            <td style="text-align: center;">$104.86</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <figcaption class="center-font">Table 2. Total Costs of Research and Development of CreSense</figcaption>
+                        </section>
+                    </div>
+                </div>
+                <div id="Customer" class="margin-top-large">
+                    <h3 class="font-bold center-font" style="font-size: 36px;">Customer Discovery</h3>
+                    <hr class="content-hr" style="width: 50%">
+                    <div class=" content-layout">
+                        <h4><a target="blank" href="https://2019.igem.org/Team:NCKU_Tainan/Human_Practices#dialysis-tab">Feng Dian United Dialysis Center</h4>
+                        </a>
+                        <h5>Attending Physician, Shun-Chieh Hsu and Dean of Internal Medicine, Kuan-Wen Chen</h5>
+                        <p>    Our potential customers for the <i>p</i>-Cresol bio-sensing device will be healthcare providers (i.e. hospitals, diagnosis centers, clinics, etc.). During our visit to the Feng Dian United Dialysis Center, we pitched our device that we were designing to Dr. Hsu, the doctor there. The feedback he gave was that our device has to be precise and consistently accurate. Moreover, for a clinic of their size, he pointed out that they usually do not use a centrifuge machine because it is inefficient and uneconomical due to the patient traffic, therefore for the device to be applicable even in a small clinic, it needs to be portable and have no complicated procedures to adhere to before using the device. Besides, the cost of the device is also a major concern for him since most dialysis centers cannot afford the expensive price tag of the devices that are on the market currently. Apart from the quality, practicality and cost-friendly would be one of the considerations for the many small- to medium-sized healthcare providers to adopt our device into their daily operations and services.
+                        </p>
+                        <h4><a target="blank" href="https://2019.igem.org/Team:NCKU_Tainan/Human_Practices#kuo">National Cheng Kung University Hospital</h4>
+                        </a>
+                        <h5>Attending Physician, Te-Hui Kuo</h5>
+                        <p>    While in the process of figuring out our business plan, we have identified physicians to be one of the key mediators to promote CreSolve and CreSense. Therefore, during our visit with Dr.Kuo, we proposed our idea of using a living therapeutic solution to reduce <i>p</i>-Cresol accumulation in CKD patients. As expected from Dr. Kuo’s expertise and experience, the feedback he gave us was that probiotics would typically be considered as a health supplementary product but not a drug which contains a strain of bacteria within it. Apart from the price of the probiotic or drug, he also noted that physicians will consider the exit pathway of the medication as well as the effectiveness of the product. Besides that, he pointed out that CreSense will not be available in the clinic if they are not covered by the National Health Insurance of Taiwan. In addition, he reasoned that often, diagnosis services are not available or provided in clinics are mainly due to it being expensive and are unaffordable for the masses, which in turn become uneconomical for clinics to buy and operate such expensive equipment.
+                        </p>
+                    </div>
+                </div>
+                <div id="Needs" class="margin-top-large">
+                    <h3 class="font-bold center-font" style="font-size: 36px;">Customer Needs</h3>
+                    <hr class="content-hr" style="width: 50%">
+                    <div class=" content-layout">
+                        <p>    Based on what we found from customer interviews and considerations through a mediator that connects us with customer’s needs, here is our final design of CreSense and CreSolve. After improvements and finalization of the products:
+                        </p>
+                            <ol>
+                            <li style="padding-left:1em; line-height: 1.5;">Oh My Gut team intended to get coverage from major healthcare insurance providers, albeit it national or private, around the world for the consumption of CreSolve and the use of our CreSense to promote the use of both of the products.  We aim to improve and enhance the patient’s life by setting up an affordable healthcare platform to increase the accessibility to anyone who requires medical advice, attention and products.</li>
+                            <br>
+                            <li style="padding-left:1em; line-height: 1.5;">Taking into consideration the survey thst we have done, CreSolve will be in a capsule form, with freeze-dried bacteria and have a safety reassurance which is our kill switch. As CreSolve is a living therapeutic drug (which is a GMO), building consumer trust is crucial which is why education about the safety of consuming GMO products is important.</li>
+                            <br>
+                            <li style="padding-left:1em; line-height: 1.5;">CreSense bio-sensing device needed to be practical and portable in order to be available in healthcare providers especially small clinics. Moreover, the effectiveness of device needs to be optimized, and affordable. Therefore, we designed CreSense bio-sensing device to have a minimum screening price of about $1.6.</li>
+                    </div>
+                </div>
+            </section>
+            <section id="visual" class="text-second-block margin-top-bottom-extra">
+                <h2 class="center-font  font-bold-extra">Visualize-Design-Test</h2>
+                <hr>
+                <p>    To start CreSolution Biotechnologies, we need a solid base foundation and have strategic plans to begin realizing our visions. Through SWOT analysis, we are able to identify and analyze the values of CreSolve and CreSense, which we will then use to create a detailed plan to realize CreSolve and CreSense’s vision and objectives.
+                </p>
+                <!--cresolve part-->
+                <section class="margin-top-5">
+                    <h5 class="center-font bold-font" style="font-size: 36px;">Business Model Canvas:</h5>
+                    <h5 class="center-font bold-font" style="font-size: 36px;">Market Analysis</h5>
+                    <hr class="content-hr" style="width: 50%">
+                    <p class="center-font">1 in 10 people worldwide have CKD<sup><a href="ref4">[4]</a></sup></p>
+                    <p class="center-font">850,000,000 people suffer from CKD<sup><a href="ref5">[5]</a></sup></p>
+                    <figure class="figure-default-80 center-font">
+                        <a target="blank" href="https://static.igem.org/mediawiki/2019/3/39/T--NCKU_Tainan--Entre_11.png">
+                            <img src="https://static.igem.org/mediawiki/2019/3/39/T--NCKU_Tainan--Entre_11.png" alt="business" title="cresolve">
+                        </a>
+                    </figure>
+                    <figure class="figure-default-80 center-font">
+                        <a target="blank" href="https://static.igem.org/mediawiki/2019/1/1c/T--NCKU_Tainan--Entre-222.png">
+                            <img src="https://static.igem.org/mediawiki/2019/1/1c/T--NCKU_Tainan--Entre-222.png" alt="business" title="target">
+                        </a>
+                    </figure>
+                </section>
+                <section class="margin-top-5">
+                    <h5 class="center-font bold-font" style="font-size: 36px;">CreSolve Living Therapeutics</h5>
+                    <hr class="content-hr" style="width: 50%">
+                    <figure class="figure-default-80 center-font">
+                        <a target="blank" href="https://static.igem.org/mediawiki/2019/5/5c/T--NCKU_Tainan--Entre_cresolve_model.png"  style="width: 100%;">
+                            <img src="https://static.igem.org/mediawiki/2019/5/5c/T--NCKU_Tainan--Entre_cresolve_model.png" alt="business" title="cresolve_model"  style="width: 100%;">
+                        </a>
+                        <figcaption class="center-font">Fig. 3.  Business model : CreSolve living therapeutic</figcaption> 
+                    </figure>
+                    <!--text part-->
+                    <section class="margin-bottom-5">
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Problems:</h5></p>
+                        <p>    Currently, no method that is able to tackle <i>p</i>-Cresol accumulation.</p>
+                       <p><h5 class="center-font bold-font" style="font-size: 30px;">Solutions:</h5></p>
+                        <p>    CreSolve is able to slow down <i>p</i>-Cresol accumulation by converting tyrosine, the precursor to <i>p</i>-Cresol, into a beneficial byproduct by diverting the original fermentation pathway.</p>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Value Proposition:</h5></p>
+                            <p style="padding-left:1em;">1. Innovative life-saving therapy for CKD patients to achieve a better quality of life.</p>
+                            <p style="padding-left:1em;">2. Specifically targeted to slow down <i>p</i>-Cresol accumulation by reducing <i>p</i>-Cresol accumulation.</p>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Customer Segments:</h5></p>
+                        <p>    End users of CreSolve Living Therapeutics will be CKD patients, hence CreSolve is marketed to conventional hospitals, healthcare providers and pharmacies as our distributors where it can be purchased only by the doctor’s prescription.</p>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Channels:</h5></p>
+                        <p>    We discussed with Miss I-Ju Chang, Marketing Manager of <a href="https://2019.igem.org/Team:NCKU_Tainan/Human_Practices#synbio-tab">Synbiotech</a> about how to market a pharmaceutical drug. After our discussion, we will be applying B2B, where we will participate in related exhibitions or conferences starting from Taiwan and then expanding to worldwide conferences. We can then reach multiple markets of different countries, create a connection with global partners through our website and partnering with multiple trustworthy and marketing professionals in the distributor companies.</p>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Customer Relationships:</h5></p>
+                        <p>    Building customer relationships in partnerships with our distributing companies for a long-term goal and grow from their feedback.</p>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Revenue Streams:</h5></p>
+                        <p>    Revenues of CreSolve Living Therapeutics will be gained from the sales by distributing companies.</p>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Key Resources:</h5></p>
+                        <p>    Important assets we need in order to make our business model work are:
+                            <ol>
+                                <li style="line-height: 1.5;">Internal players especially CreSolve drug division.</li>
+                                <li style="line-height: 1.5;">Investors to provide funds to help carry out CreSolution’s vision.</li>
+                                <li style="line-height: 1.5;">Pharmaceutical manufacturers in the efficient manufacturing of CreSolve.</li>
+                                <li style="line-height: 1.5;">Regulation approval through clinical trials and patent application afterward.</li>
+                            </ol>
+                        </p>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Key Partnerships:</h5></p>
+                        <ol>
+                            <li  style="line-height: 1.5;">Investors as an ally to build CreSolution Biotechnologies and funding CreSolve in accomplishing goals. The bulk of the funding will be used for pre-clinical and clinical trials.</li>
+                            <li  style="line-height: 1.5;">Manufacturers as the assemblers of CreSolve living therapeutics.</li>
+                            <li  style="line-height: 1.5;">Government associations like TFDA as a crucial role in analyzing if our product meets the regulations or Intellectual Property Office to help with patent applications.</li>
+                        </ol>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Key Activities:</h5></p>
+                        <ol>
+                            <li  style="line-height: 1.5;">Researching and developing other versions of CreSolve.</li>
+                            <li  style="line-height: 1.5;">Production of CreSolve.</li>
+                            <ol>
+                                <li  style="line-height: 1.5;">Ingredients -> Drug Manufacturing Process -> Drug Packaging Process -> Marketed to consumers</li>
+                                <li  style="line-height: 1.5;">Maintenance of drug’s quality will be our priority</li>
+                            </ol>
+                            <li>Education toward Genetic Modified Organisms and synthetic biology as a novel solution in therapeutics.</li>
+                        </p>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Cost Structures:</h5></p>
+                        <p>    First, CreSolve’s funds will be used for the cost of research and development and bulk funding for continuing to preclinical and clinical trials and process development will be our next funding. </p>
+       
+                    </section>
+                </section>
+                <!--cresense part-->
+                <section class="margin-bottom-5">
+                    <h5 class="center-font bold-font" style="font-size: 36px;">Business Model Canvas:</h5>
+                    <h5 class="center-font" style="font-size: 36px;">CreSense Bio-sensing device</h5>
+                    <hr class="content-hr" style="width: 50%">
+                    <figure class="figure-default-80 center-font">
+                        <a target="blank" https://static.igem.org/mediawiki/2019/3/3f/T--NCKU_Tainan--Entre_cresense_model.png" style="width: 100%;">
+                            <img src="https://static.igem.org/mediawiki/2019/3/3f/T--NCKU_Tainan--Entre_cresense_model.png" alt="business" title="cresense_model" style="width: 100%;">
+                        </a>
+                        <figcaption class="center-font">Fig. 4. Business model : CreSense sensing bacteria</figcaption>
+                    </figure>
+                    <!--device text part-->
+                    <section>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Problems:</h5></p>
+                        <p>    Currently, <i>p</i>-Cresol has no measurement device available in healthcare providers and the inspection fee for <i>p</i>-Cresol using HPLC-MS costs more than 1500 NTD and can only be applied in the laboratory.</p>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Solutions: </h5></p>
+                        <p>    CreSense bio-sensing device enables early pre-sceening of CKD by providing low-cost <i>p</i>-Cresol inspection in every healthcare service.</p>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Value Proposition: </h5></p>
+                        <ol>
+                            <li  style="line-height: 1.5;">Affordable: When placed next to HPLC-MS, a single CreSense test costs at $1.6, which is approximately 30 times cheaper.</li>
+                            <li  style="line-height: 1.5;">User-friendly: CreSense is designed to be used by everyone with a simple instruction to operate, no special training required, just requiring the press of a single button.</li>
+                            <li  style="line-height: 1.5;">Customizable: The device can be used for other purposes, since the bacteria is refilled and not bound to the device. CreSense be inserted with other biosensing bacteria.</li>
+                        </ol>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Customer Segments:</h5></p>
+                        <p>    CreSense’s customers are healthcare providers such as dialysis centers which will provide this service to all stages of CKD patients and the operation of our device must be controlled and done by the clinicians.</p>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Channels:</h5></p>
+                        <ol>
+                            <li  style="line-height: 1.5;">For CreSense, we will be connected to all of the healthcare providers in Taiwan through the leasing system for 5 years.</li>
+                            <li  style="line-height: 1.5;">The future of expansion CreSense will be exclusive to CreSolution clinic.</li>
+                            <li  style="line-height: 1.5;">Attending conferences on diagnosis technologies and demonstrating the device.</li>
+                        </ol>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Customer Relationships:</h5></p>
+                        <p>    There will be a monthly fee for bacteria refills and microfluidic discs. We plan to do a maintenance check every 3 months and have a cloud services data to store data and medical records of the device.</p>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Revenue Streams:</h5></p>
+                        <ol>
+                            <li  style="line-height: 1.5;">Monthly fee of bacteria refills and microfluidic discs.</li>
+                            <li  style="line-height: 1.5;">Expansion of cloud services in integrating the data and provides universal medical record accessibility for any collaborating healthcare providers.</li>
+                        </ol>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Key Resources:</h5></p>
+                        <ol>
+                            <li  style="line-height: 1.5;">Medical device is registered as TFDA (Taiwan Food and Drugs Administration) level 3, it requires clinical trial to get approval from TFDA and how our products can be sold in the market legally after clinical trial approval, patent regulation is necessary to protect our innovation in order to avoid the risk of plagiarism or product replacement</li>
+                            <li style="line-height: 1.5;">We plan to partner with manufacturers for our device part, helping us to assemble our device and suppliers of our designed microfluidic discs.</li>
+                            <li style="line-height: 1.5;">Our internal players especially CreSense device division.</li>
+                            <li style="line-height: 1.5;">Investors will provide funds for product development as well as the expansion to CreSolution clinic as our next service.</li>
+                        </ol>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Key Activities:</h5></p>
+                        <ol>
+                            <li style="line-height: 1.5;">Research and development to optimize the device’s parts and bacteria used in the device including how the bacteria will be freeze-dried and packed as a refill package.</li>
+                            <li style="line-height: 1.5;">Cost Structures.</li>
+                            <li style="line-height: 1.5;">Funding will be used to advance research and development of the device to have a more eco-friendly CreSense and assembly process of the CreSense.</li>
+                            <li style="line-height: 1.5;">Clinical trials and patent.</li>
+                        </ol>
+                        <p><h5 class="center-font bold-font" style="font-size: 30px;">Key Partnerships:</h5></p>
+                        <ol>
+                            <li style="line-height: 1.5;">Manufacturers and microfluidic disc supplier.</li>
+                            <li style="line-height: 1.5;">Investors.</li>
+                            <li style="line-height: 1.5;">TFDA &amp; Intellectual Property Office.</li>
+                            <li style="line-height: 1.5;">Healthcare providers.</li>
+                        </ol>
+                       <p><h5 class="center-font bold-font" style="font-size: 30px;">Cost Structures:</h5></p>
+                        <p>     CreSense's funds will be used for the cost of research and development and bulk funding for continuing to preclinical and clinical trials and device procurement will be our next funding.</p>
+
+                    </section>
+                </section>
+                <!--value proposition-->
+                <section>
+                    <h5 class="center-font bold-font" style="font-size: 36px;">Value Proposition of CreSolution Biotechnologies:</h5>
+                    <hr class="content-hr" style="width: 50%">
+                    <figure class="figure-default center-font">
+                        <a target="blank" href="https://static.igem.org/mediawiki/2019/a/a7/T--NCKU_Tainan--PE_business_overall.png" style="width: 100%;"><img src="https://static.igem.org/mediawiki/2019/a/a7/T--NCKU_Tainan--PE_business_overall.png" alt="business" title="vale proposition" style="width: 100%;"></a>  
+                        <figcaption class="center-font">Fig. 5. Value proposition of CreSolution Biotechnologies</figcaption>
+                    </figure>
+                    <p><h5 class="center-font bold-font" style="font-size: 30px;">CreSolution Biotechnology’s Products and Services:</h5></p>
+                    <ol>
+                        <li style="line-height: 1.5;">CreSolve Living Therapeutics</li>
+                        <li style="line-height: 1.5;">CreSense Bio-sensing Device</li>
+                        <li style="line-height: 1.5;">Cloud Services</li>
+                        <li style="line-height: 1.5;">CreSolution clinic (future expansion)</li>
+                    </ol>
+                    <p><h5 class="center-font bold-font" style="font-size: 30px;">CreSolution Gain Creators:</h5></p>
+                    <ol>
+                        <li style="line-height: 1.5;">CreSolve is a living therapeutic drug which can be consumed in the form of a capsule and dosage of which will be based on doctor’s prescription.</li>
+                        <li style="line-height: 1.5;">CreSense bio-sensing device operates by loading sensing bacteria to a microfluidic disc to measure the <i>p</i>-Cresol and other biomarkers levels in the blood.</li>
+                        <li style="line-height: 1.5;">CreSolution Cloud Services will be an encrypted cloud-based patient profile and records storage and processing platform for collaborating healthcare providers. It includes universal medical record accessibility for any collaborating healthcare providers, global demographics and statistics, epidemic detection and alerting system, common knowledge exchange, online surveys functionality and AI-powered data processes.</li>
+                    </ol>
+                    <p><h5 class="center-font bold-font" style="font-size: 30px;">CreSolution Pain Relievers:</h5></p>
+                    <ol>
+                        <li style="line-height: 1.5;">CreSolve aims to reduce the chance of CKD patients getting cardiovascular disease, deterioration of CKD patients as well as increasing the quality of life.</li>
+                        <li style="line-height: 1.5;">CreSense will provide a cheap and effective alternative for <i>p</i>-Cresol levels quantification in the blood to anyone where it will relate to the consumption of CreSolve.</li>
+                        <li style="line-height: 1.5;">Cloud services will allow healthcare providers easier access to medical records as well as other functionalities to ease medical-related information exchange.</li>
+                    </ol>
+                    <p>&#10140;  More information can be seen in our <a href="https://2019.igem.org/Team:NCKU_Tainan/Entrepreneurship">business plan</a></p>
+                </section>
+                <section>
+                    <h5 class="center-font bold-font" style="font-size: 36px;">SWOT Analysis:</h5>
+                    <hr class="content-hr" style="width: 50%">
+                    <figure class="figure-default center-font">
+                        <a target="blank" href="https://static.igem.org/mediawiki/2019/3/3e/T--NCKU_Tainan--Entre_swot_cresolve.png" style="width: 100%;">
+                            <img src="https://static.igem.org/mediawiki/2019/3/3e/T--NCKU_Tainan--Entre_swot_cresolve.png" alt="business" title="cresol_swot" style="width: 100%;">
+                       </a>
+                       <figcaption class="center-font">Fig. 6.  SWOT Analysis: CreSolve living therapeutic</figcaption>
+                    </figure>
+                    <figcaption class="center-font bold-font margin-bottom-5">&#10140;Oh My Gut: CreSolve Living Therapeutic</figcaption>
+                    <figure class="figure-default center-font">
+                        <a target="blank" href="https://static.igem.org/mediawiki/2019/3/36/T--NCKU_Tainan--Entre_swot_cresense.png" style="width: 100%;">
+                            <img src="https://static.igem.org/mediawiki/2019/3/36/T--NCKU_Tainan--Entre_swot_cresense.png" alt="business" title="cresense_swot" style="width: 100%;">
+                        </a>
+                        <figcaption class="center-font">Fig. 7.  SWOT Analysis: CreSense bio-sensing device</figcaption>
+                    </figure>
+                    <figcaption class="center-font bold-font">&#10140;Oh My Gut: CreSense Bio-sensing Device</figcaption>
+                </section>
+            </section>
+            <section id="business" class="text-third-block margin-top-bottom-extra">
+                <h3 class="center-font  font-bold-extra">Business Plan</h3>
+                <hr>
+                <p >    Oh My Gut project is developed by iGEM NCKU Tainan, and we plan to build our own company after the competition called CreSolution Biotechnologies. CreSolution Biotechnologies have created a business plan on how we define our visions and what steps we are going to take to successfully achieve our targets.
+                </p>
+                <section class="margin-top-5">
+                    <div class="forpdf">
+                        <a href="https://static.igem.org/mediawiki/2019/c/c8/T--NCKU_Tainan--Entre_pdf.pdf" class="pdfbutton btn btn-primary" target="blank">
+                            <span>Have a look at our Business Plan!</span>
+                        </a>
+                    </div>
+                </section>
+            </section>
+            <section id="value" class="text-four-block margin-top-bottom-extra">
+                <h2 class="center-font  font-bold-extra">Value</h2>
+                <hr>
+                <div id="clinical-Trial" class="margin-top-extra margin-bottom-extra">
+                    <h3 class="font-bold center-font" style="font-size: 36px;">Product Value</h3>
+                    <hr class="content-hr" style="width: 50%">
+                    <p>    We started by considering the value of CreSolve and CreSense and came up with values that we will always embed in our minds when making the products.</p>
+                    <h5>(a.) CreSolve Living Therapeutics:</5>
+                                        <!--change icon-->
+                    <section>
+                        <div class="container">
+                            <div class="row" style="padding:2rem;">
+                                <div class="col-12 col-md-2">
+                                    <img width="150px" height="150px" src="https://static.igem.org/mediawiki/2019/f/f9/T--NCKU_Tainan--Entre_icon6.png" alt="specificity" title="specificity">
+                                </div>
+                                <div class="col-12 col-md-10">
+                                    <h5>Specificity</h5>
+                                    <p>CreSolve is able to reduce <i>p</i>-Cresol production by specifically targeting <i>Clostridium</i>, which are major <i>p</i>-Cresol producers using TAL,which is <i>p</i>-Cresol precursor by diverting the production pathway.</p>
+                                </div>
+                            </div>
+                            <div class="row" style="padding:2rem;">
+                                <div class="col-12 col-md-2">
+                                    <img width="150px" height="150px" src="https://static.igem.org/mediawiki/2019/1/1d/T--NCKU_Tainan--Entre_icon5.png" alt="innovative" title="innovative">
+                                </div>
+                                <div class="col-12 col-md-10">
+                                    <h5>Innovative</h5>
+                                    <p>We offer an alternative pathway to tackle <i>p</i>-Cresol accumulations using synthetic biology, which can help the ESRD patients reduce the risks of getting cardiovascular diseases and achieve a better quality of life.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <h5>(b.) CreSense Sensing Device:</h5>
+                    <!--change icon-->
+                    <section>
+                        <div class="container">
+                            <div class="row" style="padding:2rem;">
+                                <div class="col-12 col-md-2">
+                                    <img width="150px" height="150px" src="https://static.igem.org/mediawiki/2019/e/e1/T--NCKU_Tainan--EN_icon3.png" alt="user-friendly" title="user-friendly">
+                                </div>
+                                <div class="col-12 col-md-10">
+                                    <h5>User-friendly</h5>
+                                    <p>We designed CreSense to be user-friendly as CreSense is aimed to be used in all healthcare platforms without any special training required and can begin quantifying <i>p</i>-Cresol amounts with the press of a single button.</p>
+                                </div>
+                            </div>
+                            <div class="row" style="padding:2rem;">
+                                <div class="col-12 col-md-2">
+                                    <img width="150px" height="150px" src="https://static.igem.org/mediawiki/2019/1/10/T--NCKU_Tainan--EN_icon2.png" alt="custimize" title="custimizable">
+                                </div>
+                                <div class="col-12 col-md-10">
+                                    <h5>Customizable</h5>
+                                    <p>CreSense bio-sensing device can be customized into measuring a variety of compounds, enabling a wide range of medical applications. To be precise, the biosensing bacteria can be replaced to measure a different compounds.</p>
+                                </div>
+                            </div>
+                            <div class="row" style="padding:2rem;">
+                                <div class="col-12 col-md-2">
+                                    <img width="150px" height="150px" src="https://static.igem.org/mediawiki/2019/9/92/T--NCKU_Tainan--EN_icon1.png" alt="affordable" title="affordable">
+                                </div>
+                                <div class="col-12 col-md-10">
+                                    <h5>Affordable</h5>
+                                    <p>A single test of CreSense sensing device only costs about $1.6.</p>
+                                </div>
+                            </div>
+                            <div class="row" style="padding:2rem;">
+                                    <div class="col-12 col-md-2">
+                                        <img width="150px" height="150px" src="https://static.igem.org/mediawiki/2019/c/c9/T--NCKU_Tainan--Entre_456789.png" alt="Real-time Analysis" title="Real-time Analysis">
+                                    </div>
+                                    <div class="col-12 col-md-10">
+                                        <h5>Real-time Analysis</h5>
+                                        <p>CreSense bio-sensing device allows up to three tests to be run concurrently, reducing the time needed for measurement.</p>
+                                    </div>
+                                </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <section id="future" class="text-five-block margin-top-bottom-extra">
+                <h2 class="center-font  font-bold-extra">Future</h2>
+                <hr>
+                <div>
+                    <p>    Future development will be made to our products to reduce other kinds of uremic toxins which can harm CKD patients and also provide detection for other uremic toxins and other biomarkers. We will also provide an encrypted cloud-based patient profile and records storage. We will employ a leasing system for the device which can be renewed every five years. We will also partner with several healthcare professionals and companies to build our very own OMG clinic and make our device exclusive to our clinics and partners.</p>
+                </div>
+            </section>
+        </section>
+        <section style="margin-bottom: 5%;">
+            <h3>Reference</h3>
+            <ol>
+                <li style="font-size: .9rem;">Tsai, Ming-Hsien, et al, “Incidence, Prevalence, and Duration of Chronic Kidney Disease in Taiwan: Results from a Community-Based Screening Program of 106,094 Individuals.” Nephron, vol. 140, no. 3, 2018, pp. 175–184, www.ncbi.nlm.nih.gov/pubmed/30138926, 10.1159/000491708.</li>
+                <li style="font-size: .9rem;">Michishita, Ryoma, et al. “The Association between Changes in Lifestyle Behaviors and the Incidence of Chronic Kidney Disease (CKD) in Middle-Aged and Older Men.” Journal of Epidemiology, vol. 27, no. 8, Aug. 2017, pp. 389–397, 10.1016/j.je.2016.08.013.</li>
+                <li style="font-size: .9rem;">Jha, V, and G Garcia-Garcia. “Chronic Kidney Disease in Disadvantaged Populations.” Indian Journal of Nephrology, vol. 25, no. 2, 2015, p. 65, www.ncbi.nlm.nih.gov/pmc/articles/PMC4379627/, 10.4103/0971-4065.150078
+                <li id="ref4" style="font-size: .9rem;">“1 in 10 People Worldwide Have CKD, but Many Governments Don’t Make Kidney Disease a Priority.” Healio.Com, 2018, www.healio.com/nephrology/chronic-kidney-disease/news/online/%7B7e9674fe-121f-4ec3-a62a-089b73108ffe%7D/1-in-10-people-worldwide-have-ckd-but-many-governments-dont-make-kidney-disease-a-priority.</li>
+                <li id="ref5" style="font-size: .9rem;">THE HIDDEN EPIDEMIC: WORLDWIDE, OVER 850 MILLION PEOPLE SUFFER FROM KIDNEY DISEASES. 2018.</li>
+                <li id="ref6" style="font-size: .9rem;"><a href="https://www.kureha.co.jp/en/business/chemical/medicine.html">“KREMEZIN / COVALZIN | KUREHA CORPORATION.” ​Kureha.Co.Jp,​ 2014,</a></li>
+            </ol>
+        </section>
+    </main>
+<script src="https://2019.igem.org/Team:NCKU_Tainan/js/jquery-3_4_1_min_js?action=raw&amp;ctype=text/javascript"></script>
+    <script src="https://2019.igem.org/Team:NCKU_Tainan/js/4.3.1/bootstrap_min_js?action=raw&amp;ctype=text/javascript"></script>
+<script>
+  $( document ).ready(function() {
+    $("#breadtext").html('<a href="https://2019.igem.org/Team:NCKU_Tainan/Description">Project</a> > <a>Entrepreneurship</a>')
+  });
+</script>
+<script>
+    $( document ).ready(function() {
+        // set the position of carousel
+        $('.carousel').css('margin-top', $('nav').height());
+        $(window).resize(function () {
+            $('.carousel').css('margin-top', $('nav').height());
+        });
+        // set for scroll bar move position
+        $("a[href^='#']").click(function(e) {
+            e.preventDefault();
+            var position = $($(this).attr("href")).offset().top-100;
+            $("body, html").animate({
+                scrollTop: position
+            }, 200);
+        });
+    });
+</script>
+</body>
+
+
+<style>
+#bodyContent a[href ^="mailto:"], .link-mailto{
+    padding-right:0;
+}
+/*footer start*/    
+footer{
+    background: #4F545F;
+    width: 100%;
+    height:100%;
+    margin-top: 2%;
+}
+.footer-container{
+    padding: 1rem 0 2rem 0;
+}
+.footer-row{
+    margin:1rem 2rem;
+}
+footer .colOne{
+    display: flex;
+    justify-content: space-between;
+    padding:0;
+}
+footer .colTwo{
+    display: flex;
+    flex-direction: column;
+    padding:0;
+    margin:1rem 0;
+    height:50px;
+}
+footer .col-12{
+    padding-right: 0;
+    padding-left: 0;
+}
+.col-two-icon{
+    display: flex;
+    justify-content: space-evenly;
+    align-self: top;
+    padding:0;
+}
+.colOne img{
+    height:70px;
+    width: 60px;
+    margin:0;
+    padding:0;
+    margin:0 0 10px 0;
+}
+.colTwo img{
+    height:30px;
+    width: 30px;
+    margin:0;
+}
+.footer-text{
+    align-self: baseline;
+    color: white;
+    font-family: sans-serif;
+}
+footer a:link{
+    text-decoration: none;
+}
+/*large device like computer*/
+@media (min-width: 992px) { 
+    .colOne img{
+        height:100px;
+        width: 80px;
+        margin:0;
+        padding:0;
+        margin:0;
+    }
+    .col-two-icon{
+        justify-content:space-between;
+    }
+}
+/*footer end*/
+</style>
+     <!--htmlfooter start-->
+<footer>
+  <div class="container footer-container">
+    <div class="row footer-row">
+      <div class="col-12 col-md-6 colOne">
+        <!--icon of logo-->
+        <div id="gutImage">
+          <a href="https://2019.igem.org/Team:NCKU_Tainan"><img src="https://static.igem.org/mediawiki/2019/thumb/f/fe/T--NCKU_Tainan--Logotext_icon.png/499px-T--NCKU_Tainan--Logotext_icon.png"></a>
+        </div>
+        <!--icon of NCKUigem-->
+        <div>
+          <a href="https://www.facebook.com/igem.ncku"><img src="https://static.igem.org/mediawiki/2019/thumb/d/da/T--NCKU_Tainan--Footer_iGEM_NCKU.png/428px-T--NCKU_Tainan--Footer_iGEM_NCKU.png"></a>
+        </div>
+        <!--icon of NCKU-->
+        <div>
+          <a href="http://www.ncku.edu.tw/"><img src="https://static.igem.org/mediawiki/2019/thumb/f/f3/T--NCKU_Tainan--NCKUtext_icon.png/499px-T--NCKU_Tainan--NCKUtext_icon.png"></a>
+        </div>
+        <!--icon of Diamond-->
+        <div>
+          <a href="http://www.diamondcapital.com.tw/"><img src="https://static.igem.org/mediawiki/2019/thumb/f/f1/T--NCKU_Tainan--Diamodtext_icon.png/499px-T--NCKU_Tainan--Diamodtext_icon.png"></a>
+        </div>
+      </div>
+      <div class="col-md-1 footer-col1" style='border-right:3px solid #ffffff;'></div>
+      <div class="col-md-1 footer-col1"></div>
+      <div class="col-12 col-md-4 colTwo">
+        <div class="col-12 col-md-12 col-two-icon">
+          <!--icon of phone-->
+          <div>
+            <a href="tel:+88662757575"><img src="https://static.igem.org/mediawiki/2019/thumb/b/b4/T--NCKU_Tainan--Phone_icon.png/600px-T--NCKU_Tainan--Phone_icon.png"></a>
+          </div>
+          <!--icon of mail-->
+          <div>
+            <a href="mailto:igem.ncku.tainan@gmail.com"><img src="https://static.igem.org/mediawiki/2019/thumb/f/fe/T--NCKU_Tainan--Mail_icon.png/600px-T--NCKU_Tainan--Mail_icon.png"></a>
+          </div>
+          <!--icon of instagram-->
+          <div>
+            <a href="https://www.instagram.com/igemncku/" target="_blank"><img src="https://static.igem.org/mediawiki/2019/thumb/4/44/T--NCKU_Tainan--Instagram_icon.png/600px-T--NCKU_Tainan--Instagram_icon.png"></a>
+          </div>
+          <!--icon of facebook-->
+          <div>
+            <a href="https://www.facebook.com/igem.ncku" target="_blank"><img src="https://static.igem.org/mediawiki/2019/thumb/e/ec/T--NCKU_Tainan--Facebook_icon.png/600px-T--NCKU_Tainan--Facebook_icon.png"></a>
+          </div>
+        </div>
+        <p class="col-12 footer-text" style="font-size:1.1rem;">
+          e-mail : igem.ncku.tainan@gmail.com 
+          <br>
+          phone : 06-2757575
+        </p>
+      </div>
+      <!--end of col-4-->
     </div>
   </div>
-</div>
+</footer>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Patents and intellectual property</h2>
-    <hr>
-    <p>If your team is seriously considering commercializing and looking into building a company after the competition, you may want to look at how you are going to protect your work and secure investment. Investors will usually require some form of intellectual protection, so you may want to investigate how to apply for a patent or provisional patent in your country and region before disclosing your project at iGEM. Remember that you can only be evaluated in iGEM based on what you share on your wiki and at the Jamboree, so any work you don't present can't count towards your project.</p>
-    <p>This is an area where we are different as we care about sharing, openness and contributing to the community and investors don't always agree with these values. It is up to you and your team to decide what to do. Remember that most universities have a commercialization department and that you can talk to them before coming to a decision.</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="https://2019.igem.org/Team:UCopenhagen/Entrepreneurship">2019 UCopenhagen</a></li>
-      <li><a href="https://2019.igem.org/Team:Thessaly/Entrepreneurship">2019 Thessaly</a></li>
-      <li><a href="https://2019.igem.org/Team:NCKU_Tainan/Entrepreneurship">2019 NCKU Tainan</a></li>
-      <li><a href="https://2020.igem.org/Team:TAS_Taipei/Entrepreneurship">2020 TAS Taipei</a></li>
-      <li><a href="https://2020.igem.org/Team:KCL_UK/Entrepreneurship">2020 KCL UK</a></li>
-      <li><a href="https://2020.igem.org/Team:Calgary/Entrepreneurship">2020 Calgary</a></li>
-    </ul>
-  </div>
-</div>
+</p>
 
+</div>        <div class="visualClear"></div>
+      </div>
+    </div>
+  </div>
+</html>
 {% endblock %}
