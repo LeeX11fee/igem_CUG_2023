@@ -143,7 +143,7 @@
                     <ul class="navbar-nav justify-content-around align-items-stretch">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                            <a class="nav-link" href="{{ url_for('pages', page='index') }}">Home</a>
                         </li>
 
                         <li class="nav-item dropdown">
@@ -202,8 +202,8 @@
                                 <span>Notebook</span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Notebook">Notebook</a>
-                                <a class="dropdown-item" href="https://2019.igem.org/Team:NCKU_Tainan/Protocols">Protocols</a>
+                                <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a>
+                                <a class="dropdown-item" href="{{ url_for('pages', page='protocols') }}">Protocols</a>
                             </div>
                         </li>
 
