@@ -6,8 +6,9 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Raleway|Sansita&amp;display=swap" rel="stylesheet">
-        </head>
+    </head>
         <body>
+          <link href="{{ url_for('static', filename = 'dimmer.css') }}">
           <div id="carousel-team" class="carousel slide" data-ride="carousel">
             <div class="pageName"><h1>Team</h1></div>
             <ol class="carousel-indicators">
@@ -564,7 +565,6 @@
             <script src="{{ url_for('static', filename = 'jquery-3_4_1_min.js') }}"></script>
             <script src="{{ url_for('static', filename = 'bootstrap_min.js') }}"></script>
             <script src="{{ url_for('static', filename = 'Team.js') }}"></script>
-            <script src="{{ url_for('static', filename = 'dimmer.css') }}"></script>
             <script>
               $( document ).ready(function() {
                   $("#breadtext").html('<a href="https://2022.igem.org/Team:NCKU_Tainan">Home</a> > <a>Team</a>')
