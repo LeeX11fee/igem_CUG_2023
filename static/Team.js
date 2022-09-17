@@ -20,12 +20,7 @@ $( document ).ready(function() {
         closeDimmer();
     });
     /*
-    $("button.dimmer-close").click(function(e){
-        console.log("close")
-        e.preventDefault();
-        closeDimmer();
-    });
-    */
+
     $(".card").click(function(){
         event.stopPropagation();
     });
