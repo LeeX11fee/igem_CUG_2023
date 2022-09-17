@@ -12,9 +12,6 @@
 
     <!-- Custom CSS -->
     <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet"/>
-
-    <!-- AOS -->
-    <link href="{{ url_for('static', filename = 'aos.css') }}" rel="stylesheet"/>
     
     <title>{% block title %}{% endblock %} |  CUG-China - iGEM 2022</title>
 </head>
@@ -77,7 +74,8 @@
   <!-- Wiki Tools: Teams are allowed to remove it -->
   {% include 'wiki-tools.html' %}
 
-  <!-- Bootstrap Bundle with Popper -->
+<!-- Bootstrap Bundle with Popper -->
+  <script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>
   <script>
     var loader = document.getElementById("loader-wrapper");
     window.addEventListener("load", function(){
