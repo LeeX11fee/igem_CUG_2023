@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
   
-{% block title %}Parts{% endblock %}
+{% block title %}Safety{% endblock %}
 {% block lead %}This page contains information about the parts created by the team.{% endblock %}
 
 {% block page_content %}
@@ -298,10 +298,21 @@ table.table-bordered tbody tr td{
       <aside class="sidenav d-none d-lg-flex flex-column justify-content-start align-items-center col-2"> 
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="#Subtitle1">Basic Parts</a>
+            <a class="nav-link" href="#Subtitle1">Classification of the microorganism</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#Subtitle2">Composite Parts</a>
+            <a class="nav-link" href="#Subtitle2">Lab Safety</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#Subtitle3">The operational safety</a>
+          </li>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#Subtitle4">Safety by design</a>
+          </li>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#Subtitle5">Comply with COVID-19 restrictions</a>
           </li>
         </ul>
       </aside>
@@ -311,7 +322,7 @@ table.table-bordered tbody tr td{
       <main class="block-property margin-top-5">
         <!--The Page Name-->
         <div class="pageName">
-          <h1>Parts</h1>
+          <h1>Safety</h1>
           <div class="divider"></div>
         </div>
         <!--overview part-->
@@ -319,188 +330,46 @@ table.table-bordered tbody tr td{
           <h2>Overview</h2>
           <p style="padding-right: 10%;text-align: justify;"> 工作简介</p>
         </div>
-        <!--parts-->
+
         <section>
-          <h2 id ="Subtitle1">Basic parts</h2>
+          <h2 id ="Subtitle1">Classification of the microorganism</h2>
           <!--If you want to divide it into two block use below part-->
           <div class="table-responsive" style="overflow-x:auto;">
-            <table class="table table-bordered table-hover">
-              <thead>
-                <tr>
-                  <th scope="col" style="text-align: center;">Name</th>
-                  <th scope="col" style="text-align: center;">Description</th>
-                  <th scope="col" style="text-align: center;">Type</th>
-                  <th scope="col" style="text-align: center;">Length</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_J23100">BBa_J23100</a></th>
-                  <td>Constitutive promoter (<i>P<sub>J23100</sub></i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Promotor</td>
-                  <td style="text-align: center; vertical-align:middle;">35bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K1123000">BBa_K1123000</a></th>
-                  <td>FNR promoter (<i>P<sub>fnr</sub></i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Promoter</td>
-                  <td style="text-align: center; vertical-align:middle;">120bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_I742146">BBa_ I742146</a></th>
-                  <td>Tyrosine ammonia-lyase native RBS (<i>N<sub>RBS</sub></i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">RBS</td>
-                  <td style="text-align: center; vertical-align:middle;">14bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_B0017">BBa_B0017</a></th>
-                  <td>Double terminator (B0010-B0010)</td>
-                  <td style="text-align: center; vertical-align:middle;">Terminator</td>
-                  <td style="text-align: center; vertical-align:middle;">160bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997000">BBa_K2997000</a></th>
-                  <td>Tyrosine transporter (<i>tyrP</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">1297bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_I742142">BBa_I742142</a></th>
-                  <td>Tyrosine ammonia-lyase (<i>sam8</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">1536bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997001">BBa_K2997001</a></th>
-                  <td>Bacteriocin Full length (CBM-B)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">867bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997002">BBa_K2997002</a></th>
-                  <td>Bacteriocin short length (sCBM-B)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">252bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997003">BBa_K2997003</a></th>
-                  <td>Sigma 54-dependent transcriptional regulator (<i>pchR</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">1854bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997004">BBa_K2997004</a></th>
-                  <td><i>pchR</i> binding range</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">567bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_J18921">BBa_J18921</a></th>
-                  <td>6aa [GS]x linker</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">18bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K1610300">BBa_K1610300</a></th>
-                  <td>Secretion tag (<i>yebF</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">354bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_E0040">BBa_E0040</a></th>
-                  <td>Wild type green fluorescence protein (<i>wtgfp</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">720bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2762017">BBa_K2762017</a></th>
-                  <td>Superfolder green fluorescence protein (<i>sfgfp</i>)</td>
-                  <td style="text-align: center; vertical-align:middle;">Coding</td>
-                  <td style="text-align: center; vertical-align:middle;">720bp</td>
-                </tr>
-              </tbody>
-            </table>
+
           </div>
         </section>
-        <!--comsposite parts-->
         <section style="margin-bottom:5%;">
           
-        <h2 id ="Subtitle2">Composite Parts</h2>
+        <h2 id ="Subtitle2">Lab Safety</h2>
           <div class="table-responsive" style="overflow-x:auto;">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col" style="text-align: center;">Name</th>
-                  <th scope="col" style="text-align: center;">Description</th>
-                  <th scope="col" style="text-align: center;">Type</th>
-                  <th scope="col" style="text-align: center;">Length</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997005">BBa_K2997005</a></th>
-                  <td>K880005 - <i>yebF</i> - GS linker - sCBM-B</td>
-                  <td style="vertical-align:middle;text-align:center;" rowspan="9">Composite</td>
-                  <td style="text-align: center; vertical-align:middle;">685bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997006">BBa_K2997006</a></th>
-                  <td>K880005 - <i>yebF</i>- TB linker - sCBM-B</td>
-                  <td style="text-align: center; vertical-align:middle;">120bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997007">BBa_K2997007</a></th>
-                  <td>K880005 - <i>yebF</i> - CBM-B</td>
-                  <td style="text-align: center; vertical-align:middle;">1282bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997008">BBa_K2997008</a></th>
-                  <td>Native promoter - <i>pchR</i> - sfgfp</td>
-                  <td style="text-align: center; vertical-align:middle;">3137bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997009">BBa_K2997009</a></th>
-                  <td>J23100 - <i>N<sub>RBS</sub></i> - <i>sam8</i></td>
-                  <td style="text-align: center; vertical-align:middle;">1606bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997010">BBa_K2997010</a></th>
-                  <td>K880005 - <i>sam8</i></td>
-                  <td style="text-align: center; vertical-align:middle;">1613bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997011">BBa_K2997011</a></th>
-                  <td>B0034 - <i>sam8</i></td>
-                  <td style="text-align: center; vertical-align:middle;">1572bp</td>
-                </tr>
-                <tr>
-                  <th scope="row"><a target="blank" href="http://parts.igem.org/Part:BBa_K2997012">BBa_K2997012</a></th>
-                  <td><i>P<sub>fnr</sub></i>-B0034-GFP</td>
-                  <td>866bp</td>
-                </tr>
-                <tr>
-                  <th scope="row" style="vertical-align:middle;"><a target="blank" href="http://parts.igem.org/Part:BBa_I742106">BBa_I742106</a></th>
-                  <td><i>sam8</i> with ribosome binding site</td>
-                  <td style="text-align: center; vertical-align:middle;">1550bp</td>
-                </tr>
-                <tr>
-                  <th scope="row"><a target="blank" href="http://parts.igem.org/Part:BBa_K880005">BBa_K880005</a></th>
-                  <td>Strong promoter J23100 and strong RBS B0034</td>
-                  <td>Promoter+RBS</td>
-                  <td>55bp</td>
-                </tr>
-              </tbody>
-            </table>
+
+          </div>
+        </section>
+
+        <section style="margin-bottom:5%;">
+        <h2 id ="Subtitle3">The operational safety</h2>
+          <div class="table-responsive" style="overflow-x:auto;">
+          </div>
+        </section>
+        <section style="margin-bottom:5%;">
+        <h2 id ="Subtitle4">Safety by design</h2>
+          <div class="table-responsive" style="overflow-x:auto;">
+          </div>
+        </section>
+
+        <section style="margin-bottom:5%;">
+        <h2 id ="Subtitle5">Comply with COVID-19 restrictions</h2>
+          <div class="table-responsive" style="overflow-x:auto;">
           </div>
         </section>
       </main>
     </div>
   </div>
   
-<script src="https://2019.igem.org/Team:NCKU_Tainan/js/jquery-3_4_1_min_js?action=raw&amp;ctype=text/javascript"></script>
-    <script src="https://2019.igem.org/Team:NCKU_Tainan/js/4.3.1/bootstrap_min_js?action=raw&amp;ctype=text/javascript"></script>
+<script src="{{ url_for('static', filename = 'jquery-3_4_1_min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'bootstrap_min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'Team.js') }}"></script>
 
-<script>
 $(document).ready(function() {
     //scroll spy
     $("a[href^='#']").click(function(e) {
@@ -514,7 +383,7 @@ $(document).ready(function() {
     });
 });
   $( document ).ready(function() {
-    $("#breadtext").html('<a href="https://2019.igem.org/Team:NCKU_Tainan">Home</a> > <a>Parts</a>')
+    $("#breadtext").html('<a href="https://2022.igem.org/Team:cug-china">Home</a> > <a>Safety</a>')
   });
 </script>
 </body>
