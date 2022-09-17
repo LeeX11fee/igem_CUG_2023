@@ -1,0 +1,62 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>Team:XMU-China/Notebook - 2021.igem.org</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'headama.css') }}">
+    <script src="{{ url_for('static', filename = 'notebook amazing/nb.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'notebook amazing/nb.css') }}">
+    <script src="{{ url_for('static', filename = 'notebook amazing/notebook.js') }}"></script>
+
+</head>
+
+<body >
+    <section class="section main-banner" id="top" data-section="Intro">
+        <img src="https://static.igem.wiki/teams/4242/wiki/background/b-notebook.png" alt="">
+    
+        <div class="header-text">
+            <div class="caption">
+                <div class="wave-text">
+                    <span>Notebook</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<div class="main">
+    <div class="event_box">
+        <div class="space_div">
+            <p class="left_space"></p>
+            <p class="right_space"></p>
+        </div>
+        <div class="parHd clearfix notebook" >
+            <div class="limited_framework">
+                <ul>
+                    <li class="act"><span></span>February</li>
+                    <li><span></span>Mars-May</li>
+                </ul>
+                <a class="sPrev"><img src="https://static.igem.org/mediawiki/2021/7/7e/T--XMU-China--blueleftArrow.png"></a>
+                <a class="sNext"><img src="https://static.igem.org/mediawiki/2021/d/d7/T--XMU-China--bluerightArrow.png"></a>
+            </div>
+        </div>
+      <div class="parBd clearfix notebook">
+            <div class="slideBox" style="display: none;">
+                <h1>February</h1>
+                <p> - Our team was formally founded.<br>
+                    - All student members learned the fundamental knowledge of molecular cloning and iGEM.<br>
+                    - All student members looked through the previous excellent projects and learned the basic notion of synthetic biology and iGEM.<br>
+                </p>
+            </div>
+            <div class="slideBox" style="display: none;">
+                <h1>Mars-May</h1>
+                <p>- We decided our project theme.</br>
+                   - We were divided into three groups and polish our project separately (and we reported each's progress every weekend).</br>
+                   - We optimized and constructed the sequences of the desired genes.</br>
+                   - Our team was officially accepted by iGEM.</br>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+</body>
