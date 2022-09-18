@@ -1,0 +1,57 @@
+<style>
+  .aside {
+    width: 16%;
+    position: sticky;
+    top: 20%;
+    padding-right: 2%;
+    float: left;
+  }
+  
+  @media screen and (max-width: 992px) {
+    .aside {
+      display: none;
+    }
+  }
+
+  .pointer {
+    transition: all .2s ease-in-out;
+    background-color: #eeeeee;
+    text-indent: 0;
+    display: inline-block;
+    font-size: 1em;
+    font-style: normal;
+    height: fit-content;
+    line-height: 40px;
+    width: 100%;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 5px;
+    border-left: #5a7e8f 10px solid;
+    z-index: 98;
+  }
+
+  .pointer:hover {
+    border-left: #93b7be 15px solid;
+    color: #40757d;
+    font-weight: bold;
+  }
+
+  .pointer:active {
+    color:#404c7d ;
+    border-left: #404c7d 15px solid;
+    font-weight: bold;
+  }
+
+  .pointer.act {
+    border-left: #404c7d 10px solid !important;
+  }
+
+  .target-fix {
+    position: relative;
+    top: -150px;
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+</style>
