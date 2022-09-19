@@ -23,9 +23,21 @@
 
   .pointer 
   {
-    font-family: 'Sansita',"微軟正黑體",sans-serif;
-    list-style-type: none;
-    position:fixed;
+    transition: all .2s ease-in-out;
+    background-color: #eeeeee;
+    text-indent: 0;
+    display: inline-block;
+    font-size: 1em;
+    font-style: normal;
+    height: fit-content;
+    line-height: 40px;
+    width: 100%;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 5px;
+    border-left: #5a7e8f 10px solid;
+    z-index: 98;
   }
 
   .pointer:hover 
@@ -37,9 +49,9 @@
 
   .pointer:active 
   {
-    color: white;
-    background-color: #8BBED5;
-    border-radius: 1rem;
+    color:#404c7d ;
+    border-left: #404c7d 15px solid;
+    font-weight: bold;
   }
 
   .pointer.act 
