@@ -1,5 +1,6 @@
 <style>
-  .aside {
+  .aside 
+  {
     width: 16%;
     position: sticky;
     top: 20%;
@@ -7,13 +8,21 @@
     float: left;
   }
   
-  @media screen and (max-width: 992px) {
-    .aside {
-      display: none;
+  @media screen and (max-width: 992px) 
+  {
+    .aside 
+    {
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
+        height: 100vh;
+        margin: 0;
+        padding-top: 25vh;
     }
   }
 
-  .pointer {
+  .pointer 
+  {
     transition: all .2s ease-in-out;
     background-color: #eeeeee;
     text-indent: 0;
@@ -27,27 +36,24 @@
     text-decoration: none;
     text-align: center;
     margin-bottom: 5px;
-    border-left: #5a7e8f 10px solid;
     z-index: 98;
   }
 
-  .pointer:hover {
-    border-left: #93b7be 15px solid;
-    color: #40757d;
-    font-weight: bold;
+  .pointer:hover 
+  {
+    color: #8BBED5;
+    font-family: 'Sansita',"微軟正黑體",sans-serif;
   }
 
-  .pointer:active {
+  .pointer:active 
+  {
     color:#404c7d ;
     border-left: #404c7d 15px solid;
     font-weight: bold;
   }
 
-  .pointer.act {
-    border-left: #404c7d 10px solid !important;
-  }
-
-  .target-fix {
+  .target-fix 
+  {
     position: relative;
     top: -150px;
     display: block;
