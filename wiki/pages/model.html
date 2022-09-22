@@ -1,48 +1,200 @@
 {% extends "layout.html" %}
-  
-{% block title %}Model{% endblock %}
-{% block lead %}Explain your model's assumptions, data, parameters, and results in a way that anyone could understand.{% endblock %}
 
 {% block page_content %}
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Gold Medal Criterion #3</h4>
-      <p>Use modeling to gain insight into how your project works or should be implemented. Explain your model's assumptions, data, parameters, and results in a way that anyone could understand.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/medals">2022 Medals Page</a> for more information.</p>
-    </div>
-    <div class="bd-callout bd-callout-info">
-      <h4>Best Model Special Prize</h4>
-      <p>Models and computer simulations provide a great way to describe the functioning and operation of BioBrick Parts and Devices. Synthetic biology is an engineering discipline and part of engineering is simulation and modeling to determine system behavior before building your design. Designing and simulating can be iterated many times in a computer before moving to the lab. This award is for teams who build a model of their system and use it to inform system design or simulate expected behavior before or in conjunction with experiments in the wetlab.</p>
-      <p>To compete for the Best Model prize, please describe your work on this page and also fill out the description on the <a href="https://competition.igem.org/deliverables/judging-form">judging form</a>.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/awards">2022 Awards Page</a> for more information.</p>
-    </div>
-  </div>
-</div>
+<style>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Overview</h2>
-    <hr>
-    <p>Mathematical models and computer simulations provide a great way to describe the function and operation of Parts and Devices. Synthetic Biology is an engineering discipline, and part of engineering is simulation and modeling to determine the behavior of your design before you build it. Designing and simulating can be iterated many times in a computer before moving to the lab.</p>
-    <p>Please note you can compete for both the Gold Medal criterion #3 and the Best Model prize with this page.</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="http://2018.igem.org/Team:GreatBay_China/Model">2018 GreatBay China</a></li>
-      <li><a href="http://2018.igem.org/Team:Leiden/Model">2018 Leiden</a></li>
-      <li><a href="https://2019.igem.org/Team:IISER_Kolkata/Model">2019 IISER Kolkata</a></li>
-      <li><a href="https://2019.igem.org/Team:Exeter/Model">2019 Exeter</a></li>
-      <li><a href="https://2019.igem.org/Team:Mingdao/Model">2019 Mingdao</a></li>
-      <li><a href="https://2020.igem.org/Team:Harvard/Model">2020 Harvard</a></li>
-      <li><a href="https://2020.igem.org/Team:Leiden/Model">2020 Leiden</a></li>
-    </ul>
-  </div>
-</div>
+    @font-face
+    {
+        font-family:'font_one';
+        src:url(https://static.igem.wiki/teams/4242/wiki/acme-regular.ttf)
+    }
+    .p1
+    {
+        font-family:'font_one';
+        font-size:1.5rem;
+    }
+    
+    @font-face
+    {
+        font-family:'font_two';
+        src:url(https://uploads.igem.org/teams/4242/wiki/Overlock-Regular.ttf)
+    }
+    .o
+    {
+        font-family:'font_two';
+        font-size:1rem;
+    }
+    body
+   {
+        width:100%;
+        height: auto;
+        background-color: #F8F5D6;
+        overflow-y: scroll;
+    }
+</style>
+
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Team:CUG-China/Notebook - 2022.igem.org</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'headama.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'notebook amazing/nb.css') }}">
+</head>
+
+<body >
+    <section class="section main-banner" id="top" data-section="Intro">
+        <img src="https://static.igem.wiki/teams/4242/wiki/background/pk-2.png" alt="">
+        <div class="header-text">
+            <div class="caption">
+                <div class="wave-text">
+                    <span>Model</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+          {% include "sider.html" %}
+          <aside class="aside">
+            <br>
+            <div>
+              <a class="pointer" href="#introduction">Introduction</a>
+              <a class="pointer" href="#modeling">Modeling</a>
+              <a class="pointer" href="#model solution">Model Solution</a>
+              <a class="pointer" href="#sensitivity analysis">Sensitivity Analysis</a>
+              <a class="pointer" href="#references">References</a>
+            </div>
+          </br>
+          </aside>
+      
+        <div class="row" id="move20">     
+          <div class="col" id="Content">
+            <!---Introduction--->
+             <p class="target-fix" id="introduction"></p>
+             <p style="margin-top: 50px;"></p>
+             <div class="p1">
+            <h1 id="Introduction;" style="color: #243136;"><b>Introduction</b></h1> 
+            </div> 
+            <div class="o">
+            <hr style="border-top:5px solid gray;">
+            <ul>
+                <p><b>C-di-GMP</b> is the main substance regulating the formation of the microbial membranes, and lowconcentration of <b>c-di-GMP</b> results in the dissociation of biofilm. Better description of the tran-scription and translation processes will play an significant role in he development of a biosenorthat can be widely used for different bacterial <b>c-di-GMP</b> concentrations within bacteria.</p>       
+                <p>To solvethis problem, we adopted the repressor-based biosensor model to better describe the transcriptionand translation processes by the set of ordinary differential equations and solve our model by theRunge-Kutta method. All in all, we anticipate that this section of our work could be conducive tothe development of biofilm dissociators, so as to address biofilm triggered and refractory infections.</p>         
+            </ul>
+            </hr>
+            </div>
+          <!---Modeling--->
+          <p class="target-fix" id="modeling"></p>
+          <p style="margin-top: 50px;"></p>
+          <div class="p1">
+         <h1 id="Modeling;" style="color: #243136;"><b>Modeling</b></h1> 
+         </div> 
+         <div class="o">
+         <hr style="border-top:5px solid gray;">
+         <ul>
+            <p><b>FleQ</b> controls gene expression by a novel mechanism that involves binding to two sites in thepromoter of the operon it controls. At one site (box 2), <b>FleQ</b> functions to repress gene expression,and at the other site (box 1), <b>FleQ</b> functions to activate gene expression in response to <b>c-di-GMP</b>.A revised model for pel regulation by <b>FleQ</b> can be proposed based on the data presented here.In the absence of <b>c-di-GMP</b>, <b>FleQ</b> binds to its two <b>FleQ</b> binding sites on the pel promoter.</p>       
+            <p><b>FleN</b> is found bound to <b>FleQ</b>. In the presence of ATP, we propose that FleN forms dimers inducing abending of the pelA promoter by bridging the bound <b>FleQ proteins</b> . We think that this conformationcould either impair the binding of the RNA polymerase or prevent RNA polymerase bound to the pelA promoter from forming an open complex, leading to pel repression.</p>
+            <p>In the presence of c-di-GMP, FleQ undergoes a conformational change that probably induces a cascade of conformationalchanges in the FleQ/FleN/DNA complex such that the bending is relaxed. FleQ is switched to anactivator. The relief of the bending may either induce RNA polymerase binding or remodel RNApolymerase binding and the FleQ bound to FleQ box 1 favors transcription initiation.</p>
+            <p>This modelis speculative and still incomplete, but it is consistent with the ability of FleQ to mediate bothrepression and activation in response to c-di-GMP while bound at the same sites on DNA[4].	In our whole model, we have taken the assumptions as follows.</p>
+            <b><p>In our whole model, we have taken the assumptions as follows.</p></b>
+            <p>1.The consumption of ATP and translation resources takes the Michaelis-Menten kinetics, so the kinetics should satisfy Eq.2.7-2.8.</p>
+            <p>2.The value of the concentration of c-di-GMP keeps constant.</p>
+            <p>3.No inhibitory effects of any species.</p>
+            <p>4.The concentration of all genes remain constant.</p>
+            <p>5.Michaelis-Menten kinetics occurs under quasi steady-state.</p>
+            <p>6.No diffusion limitations and evaporation.</p>
+            <p>Firstly, we gave the set of differential equations. transcription of FleQ</p>
+            <p style="text-align: center">
+                <img src="https://static.igem.wiki/teams/4242/wiki/model/model1.png" alt="Pulpit rock" width="960" height="120"> 
+            </p>
+            <p>translation of FleQ</p>  
+            <p style="text-align: center">
+                <img src="https://static.igem.wiki/teams/4242/wiki/model/model2.png" alt="Pulpit rock" width="960" height="120"> 
+            </p>
+            <p style="text-align: center">
+                <img src="https://static.igem.wiki/teams/4242/wiki/model/model3.png" alt="Pulpit rock" width="551" height="425"> 
+            </p>
+            <p>Figure 1: Model of pel regulation. This figure is from reference [4].</p>
+            <p>transcription of FleN</p>
+            <p style="text-align: center">
+                <img src="https://static.igem.wiki/teams/4242/wiki/model/model4.png" alt="Pulpit rock" width="1000" height="120"> 
+            </p>
+            <p>translation of FleN</p>
+            <p style="text-align: center">
+                <img src="https://static.igem.wiki/teams/4242/wiki/model/model5.png" alt="Pulpit rock" width="1100" height="120"> 
+            </p>
+            <p>transcription of gfp</p>
+            <p style="text-align: center">
+                <img src="https://static.igem.wiki/teams/4242/wiki/model/model6.png" alt="Pulpit rock" width="960" height="120"> 
+            </p>
+            <p>translation of gfp</p>
+            <p style="text-align: center">
+                <img src="https://static.igem.wiki/teams/4242/wiki/model/model7.png" alt="Pulpit rock" width="1200" height="120"> 
+            </p>
+            <p>consumption of TLR</p>
+            <p style="text-align: center">
+                <img src="https://static.igem.wiki/teams/4242/wiki/model/model8.png" alt="Pulpit rock" width="890" height="120"> 
+            </p>
+            <p>consumption of ATP</p>
+            <p style="text-align: center">
+                <img src="https://static.igem.wiki/teams/4242/wiki/model/model9.png" alt="Pulpit rock" width="900" height="120"> 
+            </p>
+            <p>consumption of c-di-GMP</p>
+            <p style="text-align: center">
+                <img src="https://static.igem.wiki/teams/4242/wiki/model/model10.png" alt="Pulpit rock" width="800" height="120"> 
+            </p>
+            <p>FleN forms dimers</p>
+            <p style="text-align: center">
+                <img src="https://static.igem.wiki/teams/4242/wiki/model/model11.png" alt="Pulpit rock" width="1200" height="120"> 
+            </p>
+            <p>We adopt the repressor-based biosensor model in [3] and extend it to the FleQ-FleN-DNA combined system to analyze the expression and these genes by calculating the concentration of fluorescence protein. The set of ordinary differential equations in Eq.2.1-2.10 have described our model.</p>
+            <p>Eq.2.1,2.3,2.5 describe the transcription process of FleQ, FleN and gfp respectively, where
+                νf leQ, νf leN and νg f p stand for the transcription rate constants of FleQ, FleN and gfp whileλf leQ2, λf leN2 and λg f p are FleQ,fleN and gfp mRNA degradation rate constants. Furthermore, KT X2 is the
+                Michaelis-Menten constant for transcription. Gf leQ, Gf leN and Gg f p are genes.</p>
+        
+        </ul>
+      </hr>
+        </div>
+          <!---Principal Investigators--->
+          <p class="target-fix" id="pi"></p>
+          <p style="margin-top: 50px;"></p>
+          <div class="p1">
+         <h1 id="P.I.;" style="color: #243136;"><b>P.I.</b></h1> 
+         </div> 
+         <div class="o">
+         <hr style="border-top:5px solid gray;">
+         <ul>
+          <p class="p1">Yidan Hu</p1>
+            <li><p>Guided the operation of relevant molecular experiments and put forward suggestions on molecular experiments.</p></li>
+            <li><p>Ensure experimental safety and preparation of experimental instruments.</p></li>
+            <li><p>Gave us lab safety training and lessons, taught us how to protect ourselves in an experiment.</p></li>
+          <p class="p1">Liang Shi</p1>
+            <li><p>He provided part of the site and equipment support for our experiment, and provided us with a lot of advice and help when we were designing experiments and building models. When our team was constructing biobrick, he helped us selection of promoter and the selection of resistance genes. He is one of the key players in our team.</p></li>
+          <p class="p1">Yiran Dong</p1>
+            <li><p>She paid close attention to our experiments, helped us analyze the data, analyzed the experimental results we got and gave professional comments and guidance. Many times when our experiments were in trouble, she put forward new ideas for us and guided us to continue in a new direction. With her professional knowledge and rigorous scientific thinking, she helped us solve many problems concerning part construction, engineering bacteria treatment and so on.</p></li>
+          <p class="p1">Yongguang Jiang</p1>
+            <li><p>He taught us a lot about biology and genetic engineering, including how to grow microorganisms and how to improve the efficiency of plasmids delivered into them. In the process of the experiment, it helped us solve the problems of the culture of engineering bacteria, the introduction of plasmids into microorganisms and the acquisition of gene expression products. When the preliminary construction of our biosensor was completed, it helped us to carry out the verification experiment of whether the biosensor could work normally in algae.</p></li>
+        </ul>
+      </hr>
+      </div>
+
+         <!---Attributions Table--->
+         <p class="target-fix" id="form"></p>
+         <p style="margin-top: 50px;"></p>
+         <div class="p1">
+        <h1 id="Form;" style="color: #243136;"><b>Form</b></h1> </div> 
+        <hr style="border-top:5px solid gray;">
+          <br/><br/>
+        <p style="text-align: center">
+          <img src="https://static.igem.wiki/teams/4242/wiki/background/attributions-table.png" alt="Pulpit rock" width="990" height="372"> 
+        </p>
+        
+        
+      </hr>
+      </div> 
+<body>
 
 {% endblock %}
