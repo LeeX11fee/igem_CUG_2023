@@ -169,7 +169,23 @@
          <div class="o">
          <hr style="border-top:5px solid gray;">
          <ul>
+           <p>We solved our model using the Runge-Kutta method, which is one of the most frequently usedhigh-precision methods to solve ordinary differential equations, and this kind of method has arelated relationship with Taylor series.
+           </p>
+           <p>Eq. will have a theoretical solution y = y(x) and it is the only solution.
+	Assume the solution y = y(x), and according to the Taylor expansion
+           </p>
+           <p>where h is the step length, and then we can draw the Taylor equation
+           </p>
+           <p>It is obvious that the first-order Taylor equation is
+           </p>
+           <p>which is used commonly in some rough estimations.
+The essence of Runge-Kutta method is to employ the Taylor series technique and investigate
+the difference quotient y(xn+1)−y(xn)an appropriate 0 < θ < 1 to make	, and according to the differential mean value theorem, there is</p>
+          <p>After solving this set of equations, we got the gfp fluorescence over time shown in Fig.3. Itis clear from this figure that for low-concentration c-di-GMP, the concentration of fluorescenceprotein decreases steadily, and for high-concentration c-di-GMP, the concentration of fluorescenceprotein decreases first and then increases. If the concentration of c-di-GMP is high enough, theultimate concentration of fluorescence may be higher than the initial value.
+	And how about the influence of the concentration of FleN on the concentration of fluores-cence? According to our experiments and mechanism analysis, the FleN is one kind of repressorprotein, so the concentration of fluorescence will be decreased. Fig.4 shows the final concentrationof fluorescence with respect to the concentration of FleN. It is clear from this figure that the FleNhas a repression effect on the expression of fluorescence protein gfp. It should be noticed that inour experimental setup, FleN is not necessary to repress the expression of gfp, when the concentra-tion of c-di-GMP is appropriate, the concentration of fluorescence could also be increased withoutFleN.
+	Similarly, the concentration of fluorescence will decrease with higher concentration of FleQ.Fig.5 shows the change of the concentration of gfp over time for different concentrations of FleN.
 
+          </p>
         </ul>
       </hr>
         </div>
@@ -225,14 +241,26 @@
       </hr>
       </div> 
       <!---References--->
-          <p class="target-fix" id="sensitivity analysis"></p>
+          <p class="target-fix" id="references"></p>
           <p style="margin-top: 50px;"></p>
         <div class="p1">
-         <h1 id="sensitivity analysis;" style="color: #243136;"><b>Sensitivity Analysis</b></h1> 
+         <h1 id="references;" style="color: #243136;"><b>References</b></h1> 
          </div> 
          <div class="o">
          <hr style="border-top:5px solid gray;">
          <ul>
+        <p>
+[1] Stögbauer T, Windhager L, Zimmer R, et al. Experiment and mathematical modeling of gene	expression dynamics in a cell-free system[J]. Integrative Biology, 2012, 4(5): 494-501.
+[2] Stamatakis M, Mantzaris N V. Comparison of deterministic and stochastic models of the lac operon	genetic network[J]. Biophysical journal, 2009, 96(3): 887-906.
+[3] Gräwe A, Dreyer A, Vornholt T, et al. A paper-based, cell-free biosensor system for the detection of	heavy metals and date rape drugs[J]. PloS one, 2019, 14(3): e0210940.
+[4] Baraquet C, Murakami K, Parsek M R, et al. The FleQ protein from Pseudomonas aeruginosafunctions as both a repressor and an activator to control gene expression from the pel operonpromoter in response to c-di-GMP[J]. Nucleic acids research, 2012, 40(15): 7207-7218.
+[5] Baraquet C, Harwood C S. Cyclic diguanosine monophosphate represses bacterial flagella synthesisby interacting with the Walker A motif of the enhancer-binding protein FleQ[J]. Proceedings of theNational Academy of Sciences, 2013, 110(46): 18478-18483.
+[6] Gentner M, Allan M G, Zaehringer F, et al. Oligomer formation of the bacterial second messengerc-di-GMP: reaction rates and equilibrium constants indicate a monomeric state at physiologicalconcentrations[J]. Journal of the American Chemical Society, 2012, 134(2): 1019-1029.
+[7] Stamatakis M, Mantzaris N V. Comparison of deterministic and stochastic models of the lac operon	genetic network[J]. Biophysical journal, 2009, 96(3): 887-906.
+[8] Saltelli A, Ratto M, Andres T, et al. Global sensitivity analysis: the primer[M]. John Wiley and Sons,	2008.
+[9] Karzbrun E, Shin J, Bar-Ziv R H, et al. Coarse-grained dynamics of protein synthesis in a cell-free	system[J]. Physical review letters, 2011, 106(4): 048104.
+
+        </p>
            
         </ul>
       </hr>
