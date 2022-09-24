@@ -171,20 +171,42 @@
          <ul>
            <p>We solved our model using the Runge-Kutta method, which is one of the most frequently usedhigh-precision methods to solve ordinary differential equations, and this kind of method has arelated relationship with Taylor series.
            </p>
-           <p>Eq. will have a theoretical solution y = y(x) and it is the only solution.
-	Assume the solution y = y(x), and according to the Taylor expansion
+           <p>
+            Table 1: Overview of all species used in our deterministic model. All species’ concentration units
+are all [nM], and we gave a brief description.
+           </p>
+           <p>Table 2: Overview of all parameter values in the deterministic kinetic model. The parameter constants, their values and units, and a description is shown.
+            </p>
+           <p>Eq. will have a theoretical solution y = y(x) and it is the only solution.</p>
+           <p>Assume the solution y = y(x), and according to the Taylor expansion
            </p>
            <p>where h is the step length, and then we can draw the Taylor equation
            </p>
            <p>It is obvious that the first-order Taylor equation is
            </p>
            <p>which is used commonly in some rough estimations.
-The essence of Runge-Kutta method is to employ the Taylor series technique and investigate
-the difference quotient y(xn+1)−y(xn)an appropriate 0 < θ < 1 to make	, and according to the differential mean value theorem, there is</p>
-          <p>After solving this set of equations, we got the gfp fluorescence over time shown in Fig.3. Itis clear from this figure that for low-concentration c-di-GMP, the concentration of fluorescenceprotein decreases steadily, and for high-concentration c-di-GMP, the concentration of fluorescenceprotein decreases first and then increases. If the concentration of c-di-GMP is high enough, theultimate concentration of fluorescence may be higher than the initial value.
-	And how about the influence of the concentration of FleN on the concentration of fluores-cence? According to our experiments and mechanism analysis, the FleN is one kind of repressorprotein, so the concentration of fluorescence will be decreased. Fig.4 shows the final concentrationof fluorescence with respect to the concentration of FleN. It is clear from this figure that the FleNhas a repression effect on the expression of fluorescence protein gfp. It should be noticed that inour experimental setup, FleN is not necessary to repress the expression of gfp, when the concentra-tion of c-di-GMP is appropriate, the concentration of fluorescence could also be increased withoutFleN.
-	Similarly, the concentration of fluorescence will decrease with higher concentration of FleQ.Fig.5 shows the change of the concentration of gfp over time for different concentrations of FleN.
-
+           </p>
+           <p>The essence of Runge-Kutta method is to employ the Taylor series technique and investigate the difference quotient y(xn+1)−y(xn)an appropriate 0 < θ < 1 to make	, and according to the differential mean value theorem, there is
+          </p>
+          <p>The simplest one is the slope given by Euler’s formula, which approximately takes the slope atpoint xn as K1 = f(xn,yn), but this slope has low level of precision. The improved Euler’s formula is
+          </p>
+          <p>
+            where we have taken the mean value of the slopes at two points [xn,xn+1], so we have a more preciseresult. In the same way, after calculating more points and get their slopes, we can get a formulawith higher precision. Taking this thought, we can get the fourth-order Runge-Kutta formula
+          </p>
+          <p>
+            The fourth-order Runge-Kutta method needs to calculate the function f for four times, and it hasan error of O(h5). If we take the step length h to be small enough, we could get a result with veryhigh level of precision.
+          </p>The Eq.3.8 is the formula we take in our model, and it can be easily used in our ordinarydifferential equations Eq.2.1-2.10.
+          <p>
+            Figure 3: A plot of the concentration of fluorescence with respect to time. Blue, red and yellowlines stand for the different concentrations of initial c-di-GMP which are 3 nM, 30 nM and 300 nM,respectively.
+          </p>
+          <p>
+            After solving this set of equations, we got the gfp fluorescence over time shown in Fig.3. Itis clear from this figure that for low-concentration c-di-GMP, the concentration of fluorescenceprotein decreases steadily, and for high-concentration c-di-GMP, the concentration of fluorescenceprotein decreases first and then increases. If the concentration of c-di-GMP is high enough, theultimate concentration of fluorescence may be higher than the initial value.
+          </p>
+          <p>
+            And how about the influence of the concentration of FleN on the concentration of fluores-cence? According to our experiments and mechanism analysis, the FleN is one kind of repressorprotein, so the concentration of fluorescence will be decreased. Fig.4 shows the final concentrationof fluorescence with respect to the concentration of FleN. It is clear from this figure that the FleNhas a repression effect on the expression of fluorescence protein gfp. It should be noticed that inour experimental setup, FleN is not necessary to repress the expression of gfp, when the concentra-tion of c-di-GMP is appropriate, the concentration of fluorescence could also be increased withoutFleN.
+          </p>
+          <p>
+            Similarly, the concentration of fluorescence will decrease with higher concentration of FleQ.Fig.5 shows the change of the concentration of gfp over time for different concentrations of FleN.
           </p>
         </ul>
       </hr>
@@ -192,15 +214,53 @@ the difference quotient y(xn+1)−y(xn)an appropriate 0 < θ < 1 to make	, and a
 <!---sensitivity analysis--->
           <p class="target-fix" id="sensitivity analysis"></p>
           <p style="margin-top: 50px;"></p>
+
         <div class="p1">
          <h1 id="sensitivity analysis;" style="color: #243136;"><b>Sensitivity Analysis</b></h1> 
          </div> 
-         <div class="o">
+        <div class="o">
          <hr style="border-top:5px solid gray;">
          <ul>
-           
-        </ul>
-      </hr>
+          <p>
+            Our goal here is to get the concentration curve of fluorescence over time to understand the under-lying mechanism of the biofilm dissociation process, but under actual experimental conditions, the parameters in our model may be some different, so it is necessary to investigate the sensitivity ofour model with respect to all parameters.
+          </p>
+          <p>
+            There are a total of 22 parameters in our model, and it would be time-consuming and tediousto analyze these all parameters one by one. We took the celebrated Morris method which is a globalsensitivity analysis method in statistical subjects. This method could be divided into three steps:	1. Set up definite ranges for all input parameters, and give all parameters definite valuesrandomly in these ranges. Calculate the result of model.
+          </p>
+          <p>
+            2. Change the value for one input parameter and calculate the resulting change in modeloutcome compared to its first run.
+          </p>
+          <p>
+            3. Change all input parameters one by one and calculate the result changes compared to thelast run after every change.
+          </p>
+          <p>
+            4. Repeat step 1-3 for r times.
+          </p>
+          <p>
+            Assume there are k parameters in total, then there should be r(k+1) runs in total. if Ei is theresult change for changing parameter i, and there will be r Ei j in total. The mean value and standarddeviation for every parameter can be calculated
+          </p>
+          <p>
+            Actually, the mean value for the absolute value of every result change can describe the sensi-
+tivity better, so we define
+          </p>
+         <p>
+          In our analysis, the starting values for all parameters should between 0.8 times and 1.2 timesof their original values in table 2, and their ranges are shown in table.3. In every step, we increasedor decreased the value of one parameter by 1%.
+         </p>
+         <p>
+          After calculation, we chose the absolute value of µi when time = 10 min, and our parameterscan be divided into four categories, which is shown in table.4.
+         </p>
+         <p>
+          The mean values µ of all parameters are shown in Fig.6. For parameters in sensitivity level 1,a 1% change of the value of one parameter only leads to a decrease or increase in the value of theconcentration of gfp by no more than 0.001% for most time points, and for parameters in sensitivitylevel 4, a 1% change of the value of one parameter leads to a change of no more than 0.5%.	Fig.7 shows the values of µ⋆ for all parameters. The quantity µ⋆ is actually more meaningfulcause it reflects the real change for all parameters. The values of µ⋆ are larger than correspondingµ because we calculated the absolute values in every step of change. It is clear that the outcomemay be sensitive to some parameters like kTL2, KTL2 and kdimer−g f p because a 1% change of thevalue of these parameters lead to a change of the outcome of over 1%.
+         </p>
+         <p>
+          How to quantify the sensitivity of our model? We choose the value of the concentration of gfpwhen time = 10 min, which is denoted by cf because the concentration has been stabilized on thispoint. Varying the value of every parameter by 1%, and calculate the change of cf to show the levelof sensitivity.
+         </p>
+         <p>
+          It is clear from table.5 that our model are not sensitive to most parameters since an increase ordecrease of 1% of these parameters just lead to a quite small change of cf . Among all parameters,kTL2, KTL2 and kGMP−dimer are relatively sensitive. We plotted the curves after changing kTL2 and kGMP−dimer compare it with the original one in Fig.9.
+         </p>
+
+         </ul>
+        </hr>
         </div>
 
           <!---Principal Investigators--->
@@ -250,18 +310,26 @@ the difference quotient y(xn+1)−y(xn)an appropriate 0 < θ < 1 to make	, and a
          <hr style="border-top:5px solid gray;">
          <ul>
         <p>
-[1] Stögbauer T, Windhager L, Zimmer R, et al. Experiment and mathematical modeling of gene	expression dynamics in a cell-free system[J]. Integrative Biology, 2012, 4(5): 494-501.
-[2] Stamatakis M, Mantzaris N V. Comparison of deterministic and stochastic models of the lac operon	genetic network[J]. Biophysical journal, 2009, 96(3): 887-906.
-[3] Gräwe A, Dreyer A, Vornholt T, et al. A paper-based, cell-free biosensor system for the detection of	heavy metals and date rape drugs[J]. PloS one, 2019, 14(3): e0210940.
-[4] Baraquet C, Murakami K, Parsek M R, et al. The FleQ protein from Pseudomonas aeruginosafunctions as both a repressor and an activator to control gene expression from the pel operonpromoter in response to c-di-GMP[J]. Nucleic acids research, 2012, 40(15): 7207-7218.
-[5] Baraquet C, Harwood C S. Cyclic diguanosine monophosphate represses bacterial flagella synthesisby interacting with the Walker A motif of the enhancer-binding protein FleQ[J]. Proceedings of theNational Academy of Sciences, 2013, 110(46): 18478-18483.
-[6] Gentner M, Allan M G, Zaehringer F, et al. Oligomer formation of the bacterial second messengerc-di-GMP: reaction rates and equilibrium constants indicate a monomeric state at physiologicalconcentrations[J]. Journal of the American Chemical Society, 2012, 134(2): 1019-1029.
-[7] Stamatakis M, Mantzaris N V. Comparison of deterministic and stochastic models of the lac operon	genetic network[J]. Biophysical journal, 2009, 96(3): 887-906.
-[8] Saltelli A, Ratto M, Andres T, et al. Global sensitivity analysis: the primer[M]. John Wiley and Sons,	2008.
-[9] Karzbrun E, Shin J, Bar-Ziv R H, et al. Coarse-grained dynamics of protein synthesis in a cell-free	system[J]. Physical review letters, 2011, 106(4): 048104.
+          [1] Stögbauer T, Windhager L, Zimmer R, et al. Experiment and mathematical modeling of gene	expression dynamics in a cell-free system[J]. Integrative Biology, 2012, 4(5): 494-501.</p>
+          <p>[2] Stamatakis M, Mantzaris N V. Comparison of deterministic and stochastic models of the lac operon	genetic network[J]. Biophysical journal, 2009, 96(3): 887-906.
+          </p>
+          <p>[3] Gräwe A, Dreyer A, Vornholt T, et al. A paper-based, cell-free biosensor system for the detection of	heavy metals and date rape drugs[J]. PloS one, 2019, 14(3): e0210940.</p>
+          <p>[4] Baraquet C, Murakami K, Parsek M R, et al. The FleQ protein from Pseudomonas aeruginosafunctions as both a repressor and an activator to control gene expression from the pel operonpromoter in response to c-di-GMP[J]. Nucleic acids research, 2012, 40(15): 7207-7218.</p>
+          <p>[5] Baraquet C, Harwood C S. Cyclic diguanosine monophosphate represses bacterial flagella synthesisby interacting with the Walker A motif of the enhancer-binding protein FleQ[J]. Proceedings of theNational Academy of Sciences, 2013, 110(46): 18478-18483.
+          </p>
+          <p>
+            [6] Gentner M, Allan M G, Zaehringer F, et al. Oligomer formation of the bacterial second messengerc-di-GMP: reaction rates and equilibrium constants indicate a monomeric state at physiologicalconcentrations[J]. Journal of the American Chemical Society, 2012, 134(2): 1019-1029.
+          </p>
+          <p>
+            [7] Stamatakis M, Mantzaris N V. Comparison of deterministic and stochastic models of the lac operon	genetic network[J]. Biophysical journal, 2009, 96(3): 887-906.
+          </p>
+          <p>
+            [8] Saltelli A, Ratto M, Andres T, et al. Global sensitivity analysis: the primer[M]. John Wiley and Sons,	2008.
+          </p>
+         <p>
+          [9] Karzbrun E, Shin J, Bar-Ziv R H, et al. Coarse-grained dynamics of protein synthesis in a cell-free	system[J]. Physical review letters, 2011, 106(4): 048104.
 
-        </p>
-           
+         </p>           
         </ul>
       </hr>
         </div>
