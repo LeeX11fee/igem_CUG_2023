@@ -92,5 +92,13 @@
 
   <!-- Bootstrap Bundle with Popper -->
   <script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>
+
+  <script>
+    var loader = document.getElementById("loader-wrapper");
+    window.addEventListener("load", function(){
+      loader.style.display = "none"
+    })
+  </script>
+
 </body>
 </html>
