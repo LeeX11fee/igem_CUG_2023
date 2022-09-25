@@ -1,126 +1,73 @@
-<style>
-  @media screen and (max-width: 992px) {
-    #logoborder {
-      border-left: none !important;
-    }
+<footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-dark">
 
-    #footerlogo {
-      width:30% !important;
-    }
-  }
+   <img src="https://static.igem.wiki/teams/4433/wiki/footer-divider.png" width="100%">
+   <!-- <p></p> -->
+   <img src="https://static.igem.wiki/teams/4433/wiki/footer-divider.png" width="100%">
+   <p></p>
+
+  <!-- Sponsors -->
+  <div class="container" style="text-align:center;">
+   <a href="https://www.bioarctic.se/en/" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/bioarctic-no-background.png" style="margin-right:10px; margin-left:10px; width:15%;">
+    
+    <a href="https://www.bionordika.se/" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/bionordika-logo.png" style="margin-right:10px; margin-left:10px; width:20%;">
+
+    <a href="https://www.unionen.se/" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/unionen-student.png"  style="margin-right:10px; margin-left:10px; width:20%;">
+    
+    <a href="https://se.promega.com/" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/promega-logo.png"  style="margin-right:10px; margin-left:10px; width:20%;">
+    
+    <a href="https://ungaforskare.se/" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/ungaforskarewhite-logo.png"  style="width:10%;">
+
+    <a href="https://eu.idtdna.com/pages" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/idt-logo.png"  style="width:20%;">
+
+    <a href="https://ehandel.kontorab.se/" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/kontorab-logo.png"  style="width:20%;">
+    
+    <a href="https://liu.se/en" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/liu-logo.png"  style="width:15%;">
+    
+    
   
-  @media screen and (max-width: 600px) {
-    #footerlogo {
-      width:50% !important;
-    }
-  }
+      <p></p>
+      <img src="https://static.igem.wiki/teams/4433/wiki/divider.png" width="70%">
+ 
 
-  footer .link-icon img {
-    width: 35px;
-    height: 100%;
-    filter: brightness(100);
-    transition: all 0.1s ease-in-out;
-  }
 
-  footer .link-icon img:hover {
-    transform: scale(1.1);
-    filter: brightness(1);
-  }
+      <!-- Social media -->
+      <section>
 
-  footer .link-icon img:active {
-    transform: scale(0.95);
-  }
+        <!-- Facebook -->
+        <a class="hover-fx" href="https://www.facebook.com/LiUiGEM/" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/facebook-logo-transp.png" width="60px" height="60px"></a>
+ 
+        <!-- Instagram -->
+        <a class="hover-fx" href="https://www.instagram.com/liu_igem/?hl=en" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/insta-logo-transp.png" width="60px" height="60px"></a>
 
-  footer a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-  }
 
-  footer a:hover {
-    color: #cc5803;
-    text-decoration: none;
-    font-weight: bolder;
-    transition: all 0.2s ease-in;
-  }
+        <!-- Mail -->
+        <a class="hover-fx" href="mailto:igem.linkoping@gmail.com" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/mail-logo-transp.png" width="60px" height="60px"></a>
 
-  .spobig:hover{
-    transform:scale(1.2);
-    transition: all 0.3s ease-in-out;
-  }
-</style>
+        <!-- LiUiGEM Logo   class="hover-fx"-->
+        <a  href="{{ url_for('index') }}" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/logo-transparant.png" width="80px" height="80px"></a>
 
-<footer class="footer text-white"> 
-  <div class="container-fluid" style="background-color: #5a7e8f;">
-    <div class="row pt-4 pb-3 my-0 align-items-center">
+        <!-- Linkedin -->
+        <a class="hover-fx" href="https://se.linkedin.com/company/liu-igem" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/linkedin-logo-transp.png" width="60px" height="60px"></a>
 
-      <div class="col-lg-2 py-2 text-center">
-        <img id="footerlogo" src='https://static.igem.wiki/teams/4151/wiki/logo-white.png' width='100%'>
-      </div>
+        <!-- Podcast -->
+        <a class="hover-fx" href="https://open.spotify.com/show/6p0zpxvmfp30kCN3KKdHTf?si=c3c5403ed88d4408" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/podcast-logo-transp.png" width="60px" height="60px"></a>
 
-      <div id="logoborder" class="col-lg-3 pt-3 pb-2 text-center border-start">
-				<h3>CONTACT US</h3>
-        <h3>FOLLOW US</h3>
-				<p></p>
-				<span class="link-icon">
-          <a href="https://www.facebook.com/igemcsmutaiwan" class="p-3" target="_blank">
-            <img src="https://static.igem.wiki/teams/4151/wiki/facebookdyellow.png" alt="facebook">
-          </a>
-        </span>
-        <span class="link-icon">
-          <a href="https://instagram.com/igem_csmu?igshid=YmMyMTA2M2Y=" class="p-3" target="_blank">
-            <img src="https://static.igem.wiki/teams/4151/wiki/igdyellow.png" alt="instagram">
-          </a>
-        </span>
-        <span class="link-icon">
-          <a href="mailto:twcsmu.igem2022@gmail.com" class="p-3" target="_blank">
-            <img src="https://static.igem.wiki/teams/4151/wiki/emaildyellow.png" alt="mail" style="border-radius: 20%;">
-          </a>
-        </span>
-			</div>
-      
-      <div class='col-lg-7 text-center py-2'>
-        <h4>SPONSORS</h4>
-        <div class="p-0 m-0" id="ellipse" style="background-color: #F5F5F5; border-radius: 50px;">
-          <a href="https://www.leadgenebio.com/index.php?lang=en">
-          <img src='https://static.igem.wiki/teams/4151/wiki/sponsors/leadgene.png' class="spobig" height='55' class='px-2 pb-1' alt="leadgene">
-          </a>
-          <a href="http://www.ylpeltd.com">
-          <img src='https://static.igem.wiki/teams/4151/wiki/sponsors/yuan.png' class="spobig" height='55' class='px-2 py-0' alt="Yuan">
-          </a>
-          <a href="https://www.genetex.com/">
-          <img src='https://static.igem.wiki/teams/4151/wiki/sponsors/genetex-logo.png' class="spobig" height='55' class='px-2 pb-1' alt="GeneTex">
-          </a>
-          <a href="https://www.syfmf.org/">
-          <img src='https://static.igem.wiki/teams/4151/wiki/sponsors/sunyafu.png' class="spobig" height='55' class='px-2 pb-1' alt="Sun Ya-Fu">
-          </a>
-          <br>
-          <a href="http://www.tsmh.org.tw/sites/web_dg/show_web_page.php?edsno=537" >
-          <img src="https://static.igem.wiki/teams/4151/wiki/sponsors/su.png" class="spobig" height='55' class='px-2 pb-1' alt="Su Tiansheng">
-          </a>
-          <a href="https://drgabio.com/">
-          <img src="https://static.igem.wiki/teams/4151/wiki/sponsors/great.png" class="spobig" height='55' class='px-2 py-0' alt="GreAT">
-          </a>
-          <a href="https://www.tanbead.com/en/">
-          <img src="https://static.igem.wiki/teams/4151/wiki/sponsors/naotech.png" class="spobig" height='55' class='px-2 pb-1' alt="Naotech">
-          </a>
-          <a href="https://www.foxconnfoundation.org/">
-          <img src="https://static.igem.wiki/teams/4151/wiki/sponsors/red-sea.png" class="spobig" height='55' class='px-2 pb-1' alt="Foxconn Education Foundation">
-          </a>
-          <a href="https://www.pbf.com.tw/">
-          <img src="https://static.igem.wiki/teams/4151/wiki/sponsors/pbf.png" class="spobig" height='55' class='px-2 pb-1' alt="Panion& BF biotech Inc.">
-          </a>
-        </div>
-		  </div>
-    </div>
-    <hr>
+        <!-- Tiktok -->
+        <a class="hover-fx" href="https://vm.tiktok.com/ZMNa7Sqyd/" role="button"><img src="https://static.igem.wiki/teams/4433/wiki/tiktok-logo-transp.png" width="60px" height="60px"></a>
+
+        </section>
+  
+ 
+
+    
+    <hr style="color:white;">
     <!-- The following MUST be on every page: license information and link to the repository on gitlab.igem.org -->
     <div class="row mt-4">
       <div class="col">
-        <p class="mb-0"><small>© 2022 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
-	      <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/templates/wiki-frozen-flask">gitlab.igem.org/templates/wiki-frozen-flask</a>.</small></p>
+        <p class="mb-0 text-center"><small>© 2022 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+	      <p class="mb-0 text-center"><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2022/linkoping-sweden">gitlab.igem.org/2022/linkoping-sweden</a>.</small></p>
       </div>
     </div>
   </div>
-</footer>
 
+</footer>
