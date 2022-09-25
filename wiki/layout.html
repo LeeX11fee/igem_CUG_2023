@@ -4,8 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="https://static.igem.wiki/teams/4151/wiki/476302.png">
-    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
+    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
 
     <!-- Bootstrap CSS -->
     <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet">
@@ -13,76 +13,31 @@
     <!-- Custom CSS -->
     <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">
 
-    <!-- AOS -->
-    <link href="{{ url_for('static', filename = 'aos.css') }}" rel="stylesheet">
-    
-    <title>{% block title %}{% endblock %} | CUG-China - iGEM 2022</title>
+    <title>{% block title %}{% endblock %} | IIT_Roorkee - iGEM 2022</title>
+
 </head>
-
-<!-- loading start -->
 <body>
-  <div id="loader-wrapper">
-      <span class="loader">
-            <img src="https://static.igem.wiki/teams/4242/wiki/change-page.gif">
-      </span>
-  </div>
-
-  <style>
-
-    @media screen and (max-width: 720px) 
-    {
-      .loader {
-        width: 100% !important;
-      }
-    }
-
-    #loader-wrapper 
-    {
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 100000;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-    }
-
-    .loader 
-    {
-      width: 100%;
-    }
-
-    .loader img 
-    {
-      width: 100%;
-    }
-
-  </style>
-  <!-- loading end -->
-
-
   <!-- Navigation -->
   {% include 'menu.html' %}
 
+  <!-- Header -->
+  <header class="bg-hero py-5 mb-5">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-12">
+          <h1 class="display-4 text-white mt-5 mb-2">{{ self.title() }}</h1>
+	        <p class="lead mb-5 text-white-50">{% block lead %}{% endblock %}</p>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <!-- AOS -->
-  <script src="{{ url_for('static', filename = 'aos.js') }}"></script>
-  <script>
-    AOS.init();
-  </script>
-  
   <!-- Page Content -->
+  <div class="container">
     {% block page_content %}{% endblock %}
+  </div>
 
-
+  <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
   {% include 'footer.html' %}
 
   <!-- Wiki Tools: Teams are allowed to remove it -->
@@ -90,13 +45,5 @@
 
   <!-- Bootstrap Bundle with Popper -->
   <script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>
-
-  <script>
-    var loader = document.getElementById("loader-wrapper");
-    window.addEventListener("load", function(){
-      loader.style.display = "none"
-    })
-  </script>
-
 </body>
 </html>
