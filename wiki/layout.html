@@ -13,8 +13,7 @@
     <!-- Custom CSS -->
     <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">
 
-
-</head>
+  </head>
 
 <body>
     <div id="loader-wrapper">
@@ -24,13 +23,16 @@
     </div>
   
     <style>
-      @media screen and (max-width: 720px) {
-        .loader {
+      @media screen and (max-width: 720px) 
+      {
+        .loader 
+        {
           width: 100% !important;
         }
       }
   
-      #loader-wrapper {
+      #loader-wrapper 
+      {
         width: 100%;
         height: 100%;
         position: fixed;
@@ -80,9 +82,7 @@
   </header>
  -->
   <!-- Page Content -->
-  <div class="container">
-    {% block page_content %}{% endblock %}
-  </div>
+  {% block page_content %}{% endblock %}
 
   <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
   {% include 'footer.html' %}
