@@ -1,1 +1,212 @@
+{% extends "layout.html" %}
 
+{% block page_content %}
+
+<style>
+
+    @font-face
+    {
+        font-family:'font_one';
+        src:url(https://static.igem.wiki/teams/4242/wiki/acme-regular.ttf)
+    }
+    .p1
+    {
+        font-family:'font_one';
+        font-size:1.5rem;
+    }
+    
+    @font-face
+    {
+        font-family:'font_two';
+        src:url(https://uploads.igem.org/teams/4242/wiki/Overlock-Regular.ttf)
+    }
+    .o
+    {
+        font-family:'font_two';
+        font-size:1rem;
+    }
+    body
+   {
+        width:100%;
+        height: auto;
+        background-color: #F8F5D6;
+        overflow-y: scroll;
+    }
+</style>
+
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Team:CUG-China/Notebook - 2022.igem.org</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'headama.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'notebook amazing/nb.css') }}">
+</head>
+
+<body >
+    <section class="section main-banner" id="top" data-section="Intro">
+        <img src="https://static.igem.wiki/teams/4242/wiki/background/pk-2.png" alt="">
+        <div class="header-text">
+            <div class="caption">
+                <div class="wave-text">
+                    <span>Attributions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!--側欄-->
+          {% include "sider.html" %}
+          <aside class="aside">
+            <br>
+            <div>
+              <a class="pointer" href="#members">Members</a>
+              <a class="pointer" href="#advisors">Advisors</a>
+              <a class="pointer" href="#pi">P.I.</a>
+              <a class="pointer" href="#"></a>
+              <a class="pointer" href="#form">Form</a>
+            </div>
+          </br>
+          </aside>
+      
+        <div class="row" id="move20">     
+          <div class="col" id="Content">
+            <!---Members--->
+             <p class="target-fix" id="members"></p>
+             <p style="margin-top: 50px;"></p>
+             <div class="p1">
+            <h1 id="Members;" style="color: #243136;"><b>Members</b></h1> 
+            </div> 
+            <div class="o">
+            <hr style="border-top:5px solid gray;">
+            <ul>
+              <li>
+                  <p><b>Jian Liu</b>, Team Leader , Experiments , Collaboration , Videos , HP Member . Recruited team members , lead the design and the construction of the biobircks , tested characterization including florescence intensity, c-di-GMP concentration, biofilm formation, etc . Organized the collaborations .</p>
+              </li>
+              <li>
+                  <p><b>Hongwei Chen</b>, Experiments . Participated in the construction of relevant plasmids and functional transformation of relevant plasmids , participated in the proof of concept of our engineered strains .</p>
+              </li>
+              <li>
+                  <p><b>Shuaiyu Chen</b>, HP member , Experiments , Collaboration . In charge of educational practice , attending the Central China iGEM Communication meeting , participate in experiment of molecular biology .</p>
+              </li>
+              <li>
+                  <p><b>Zhelin Jiang</b>, Experiments , Collaboration , Information Garthering . Participated in the fluorescence detection and other experimental contents .</p>
+              </li>
+              <li>
+                  <p><b>Xu Li</b>, Wiki Team , Art Design , Videos . Shooting igem videos , Wiki webpage construction , charge of the art team .</p>
+              </li>
+              <li>
+                  <p><b>Zifan Li</b>, Experiments , Information Garthering.  Translation work , searching for materials , get inspiration from other iGEMers .</p>
+              </li>
+              <li>
+                  <p><b>Jiayi Liu</b>, Videos , Art Design . Responsible for team art , animate the presentation , assist with web design.</p>
+              </li>
+              <li>
+                  <p><b>Yuandong Liu</b>, Experiments , Collaboration . Participate in experiments , participated in HP .</p>
+              </li>
+              <li>
+                  <p><b>Yangjun Ma</b>, Experiments ,  Collaboration . Team representative for ARS2022 , participate in experiments .</p>
+              </li>
+              <li>
+                  <p><b>Qianqian Ren</b>, HP member , Experiments , Collaboration . Responsible for Human Practice , led the team to communicate with the Hydrobiology Institute . </p>
+              </li>
+              <li>
+                  <p><b>Yinghui Shao</b>, Wiki Team. Responsible for the construction of wiki webpage . </p>
+              </li>
+              <li>
+                  <p><b>Zhifei Tian</b>, Experiments , Information Garthering . Participate in experiments , participated in completing the team wiki .</p>
+              </li>
+              <li>
+                  <p><b>Zongheng Wei</b>, Experiments , Collaboration , Information Garthering . Participated in completing the team wiki , participated in the team's external learning exchange activities . participated in collaborations like ARS 2022, CCiC, etc .</p>
+              </li>
+              <li>
+                  <p><b>Linhai Xiao</b>, Experiments , Collaboration. Build biosensor to convert c-di-GMP into fluorescence signal , solve the problem that biosensor cannot monitor fluorescence intensity , participate in human practice .</p>
+              </li>
+              <li>
+                  <p><b>Jiatong Yan</b>, Modeling Team . Particimodel part of the project , achieve gene expression prediction .</p>
+              </li>
+              <li>
+                  <p><b>Yao yao</b>, Modeling Team. Particimodel part of the project , achieve gene expression prediction .</p>
+              </li> 
+              <li>
+                  <p><b>Ziwei Zhang</b>, Experiments , HP Member. Responsible for the team's Human Practice section , participated in completing the team wiki , participate in experiments</p>
+              </li> 
+              <li>
+                  <p><b>Yi Zhong</b>, Art Design , Wiki Team . Participated in wiki page building and took charge of art work . responsible for making team logo and team clothing design.</p>
+              </li> 
+              <li>
+                  <p><b>Shunhua Zhu</b>, Experiments , Collaboration . Test the concentration of c-di-GMP , detect the effect of dissociation agent on biofilm , participated in completing the team wiki , participate in human practice .</p>
+              </li>
+          </ul>
+          </hr>
+          </div>
+          <!---Advisors--->
+          <p class="target-fix" id="advisors"></p>
+          <p style="margin-top: 50px;"></p>
+          <div class="p1">
+         <h1 id="Advisors;" style="color: #243136;"><b>Advisors</b></h1> 
+         </div> 
+         <div class="o">
+         <hr style="border-top:5px solid gray;">
+         <ul>
+          <p class="p1">Zhihao Luo</p1>
+            <li><p>Guided the operation of relevant molecular experiments and put forward suggestions on molecular experiments.</p></li>
+            <li><p>Ensure experimental safety and preparation of experimental instruments.</p></li>
+            <li><p>Gave us lab safety training and lessons, taught us how to protect ourselves in an experiment.</p></li>
+          <p class="p1">Yawei Shan</p1>
+            <li><p>Responsible for the daily maintenance and safe use of the instrument.</p></li>
+            <li><p>Instruct team members to use the instrument correctly.</p></li>
+            <li><p>Analyze experimental results and make further experimental plan.</p></li>
+          <p class="p1">Xi Han</p1>
+            <li><p>Do the preliminary work of the experiment.</p></li>
+            <li><p>Give us a serious of safety education since the beginning, taught us basic skills required for an experiment, and guide us to use many instrument like HPLC, micro-plate reader and so on.</p></li>
+            <li><p>Standardize the experimental operation of team members and guide the experimental contents of team members.</p></li>
+            <li><p>Guide and participate in solving problems encountered during the experiment.</p></li>
+          <p class="p1">Jiacheng Xu</p1>
+            <li><p>Taught team members how to use instruments and experimental operation skills.</p></li>
+            <li><p>Responsible for experimental safety work and the cleaning and arrangement of experimental instruments.</p></li>
+            <li><p>Help with the western blot experiment which comes from our partnership team, XMU_China.</p></li>
+         </ul>
+         </hr>
+         </div>
+          <!---Principal Investigators--->
+          <p class="target-fix" id="pi"></p>
+          <p style="margin-top: 50px;"></p>
+          <div class="p1">
+         <h1 id="P.I.;" style="color: #243136;"><b>P.I.</b></h1> 
+         </div> 
+         <div class="o">
+         <hr style="border-top:5px solid gray;">
+         <ul>
+          <p class="p1">Yidan Hu</p1>
+            <li><p>Guided the operation of relevant molecular experiments and put forward suggestions on molecular experiments.</p></li>
+            <li><p>Ensure experimental safety and preparation of experimental instruments.</p></li>
+            <li><p>Gave us lab safety training and lessons, taught us how to protect ourselves in an experiment.</p></li>
+          <p class="p1">Liang Shi</p1>
+            <li><p>He provided part of the site and equipment support for our experiment, and provided us with a lot of advice and help when we were designing experiments and building models. When our team was constructing biobrick, he helped us selection of promoter and the selection of resistance genes. He is one of the key players in our team.</p></li>
+          <p class="p1">Yiran Dong</p1>
+            <li><p>She paid close attention to our experiments, helped us analyze the data, analyzed the experimental results we got and gave professional comments and guidance. Many times when our experiments were in trouble, she put forward new ideas for us and guided us to continue in a new direction. With her professional knowledge and rigorous scientific thinking, she helped us solve many problems concerning part construction, engineering bacteria treatment and so on.</p></li>
+          <p class="p1">Yongguang Jiang</p1>
+            <li><p>He taught us a lot about biology and genetic engineering, including how to grow microorganisms and how to improve the efficiency of plasmids delivered into them. In the process of the experiment, it helped us solve the problems of the culture of engineering bacteria, the introduction of plasmids into microorganisms and the acquisition of gene expression products. When the preliminary construction of our biosensor was completed, it helped us to carry out the verification experiment of whether the biosensor could work normally in algae.</p></li>
+        </ul>
+        </hr>
+        </div>
+
+         <!---Attributions Table--->
+         <p class="target-fix" id="form"></p>
+         <p style="margin-top: 50px;"></p>
+         <div class="p1">
+        <h1 id="Form;" style="color: #243136;"><b>Form</b></h1> </div> 
+        <hr style="border-top:5px solid gray;">
+          <br/><br/>
+        <p style="text-align: center">
+          <img src="https://static.igem.wiki/teams/4242/wiki/background/attributions-table.png" alt="Pulpit rock" width="990" height="372"> 
+        </p>
+        
+        
+      </hr>
+      </div> 
+<body>
+
+{% endblock %}
