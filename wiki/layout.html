@@ -4,24 +4,15 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
     <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
-
     <!-- Bootstrap CSS -->
     <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">
-
-    <!-- <title>{% block title %}{% endblock %} | CUG-China - iGEM 2022</title>-->
-
 </head>
 
 <body>
     <div id="loader-wrapper">
         <span class="loader">
-              <img src="https://static.igem.wiki/teams/4151/wiki/loading.gif" alt="Our animated logo is keeping you company until the page has loaded.">
-              <p><img src="" alt="Our animated logo is keeping you company until the page has loaded." width="70%" id="gotcha-mark"></p>
+              <img src="https://static.igem.wiki/teams/4242/wiki/change-page.gif">
         </span>
     </div>
   
@@ -38,7 +29,6 @@
         position: fixed;
         top: 0;
         left: 0;
-        background-color: #ffffff;
         z-index: 100000;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -49,22 +39,18 @@
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
-        background-color: #FFFFFF;
       }
   
-      .loader {
-        color: #FE9901;
-        width: 70%;
-      }
-  
-      .loader img {
+      .loader 
+      {
         width: 100%;
       }
   
-      .gotcha-mark {
-        position: relative;
-        top: -2em;
+      .loader img 
+      {
+        width: 100%;
       }
+  
     </style>
     <!-- loading end -->
   
