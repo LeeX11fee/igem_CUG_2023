@@ -1,123 +1,126 @@
 <style>
-    #bodyContent a[href ^="mailto:"], .link-mailto{
-        padding-right:0;
+  @media screen and (max-width: 992px) {
+    #logoborder {
+      border-left: none !important;
     }
-    /*footer start*/    
-    footer{
-        background: #EADDE8;
-        width: 100% !important;
-        height:100%;
-        margin-top: 2%;
-    }
-    .footer-container{
-        padding: 1rem 0 2rem 0;
-    }
-    .footer-row{
-        margin:1rem 2rem;
-    }
-    footer .colOne{
-        display: flex;
-        justify-content: space-between;
-        padding:0;
-    }
-    footer .colTwo{
-        display: flex;
-        flex-direction: column;
-        padding:0;
-        margin:1rem 0;
-        height:50px;
-    }
-    footer .col-12{
-        padding-right: 0;
-        padding-left: 0;
-    }
-    .col-two-icon{
-        display: flex;
-        justify-content: space-evenly;
-        align-self: top;
-        padding:0;
-    }
-    .colOne img{
-        height:70px;
-        width: 60px;
-        margin:0;
-        padding:0;
-        margin:0 0 10px 0;
-    }
-    .colTwo img{
-        height:30px;
-        width: 30px;
-        margin:0;
-    }
-    .footer-text{
-        align-self: baseline;
-        color: rgb(255, 255, 255);
-        font-family: sans-serif;
-    }
-    footer a:link{
-        text-decoration: none;
-    }
-    /*large device like computer*/
-    @media (min-width: 992px) { 
-        .colOne img{
-            height:100px;
-            width: 80px;
-            margin:0;
-            padding:0;
-            margin:0;
-        }
-        .col-two-icon{
-            justify-content:space-between;
-        }
-    }
-    /*footer end*/
-    </style>
 
-<footer>
-    <div class="container footer-container">
-      <div class="row footer-row">
-        <div class="col-12 col-md-6 colOne">
-          <!--cug-china logo-->
-          <div id="sfrImage">
-            <a href="https://2022.igem.org/Team:CUG-China"><img src="https://static.igem.wiki/teams/4242/wiki/cug-l.png"></a>
-          </div>
-          <!--cell-free logo-->
-          <div>
-            <a href="https://2022.igem.wiki/cug-china/"><img src="https://static.igem.wiki/teams/4242/wiki/cug-l-cell-free.png"></a>
-          </div>
-          <!--biosensor logo-->
-          <div>
-            <a href="https://2022.igem.wiki/cug-china/"><img src="https://static.igem.wiki/teams/4242/wiki/cug-l-bosenor.png"></a>
-          </div>
+    #footerlogo {
+      width:30% !important;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    #footerlogo {
+      width:50% !important;
+    }
+  }
+
+  footer .link-icon img {
+    width: 35px;
+    height: 100%;
+    filter: brightness(100);
+    transition: all 0.1s ease-in-out;
+  }
+
+  footer .link-icon img:hover {
+    transform: scale(1.1);
+    filter: brightness(1);
+  }
+
+  footer .link-icon img:active {
+    transform: scale(0.95);
+  }
+
+  footer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    color: #cc5803;
+    text-decoration: none;
+    font-weight: bolder;
+    transition: all 0.2s ease-in;
+  }
+
+  .spobig:hover{
+    transform:scale(1.2);
+    transition: all 0.3s ease-in-out;
+  }
+</style>
+
+<footer class="footer text-white"> 
+  <div class="container-fluid" style="background-color: #5a7e8f;">
+    <div class="row pt-4 pb-3 my-0 align-items-center">
+
+      <div class="col-lg-2 py-2 text-center">
+        <img id="footerlogo" src='https://static.igem.wiki/teams/4151/wiki/logo-white.png' width='100%'>
+      </div>
+
+      <div id="logoborder" class="col-lg-3 pt-3 pb-2 text-center border-start">
+				<h3>CONTACT US</h3>
+        <h3>FOLLOW US</h3>
+				<p></p>
+				<span class="link-icon">
+          <a href="https://www.facebook.com/igemcsmutaiwan" class="p-3" target="_blank">
+            <img src="https://static.igem.wiki/teams/4151/wiki/facebookdyellow.png" alt="facebook">
+          </a>
+        </span>
+        <span class="link-icon">
+          <a href="https://instagram.com/igem_csmu?igshid=YmMyMTA2M2Y=" class="p-3" target="_blank">
+            <img src="https://static.igem.wiki/teams/4151/wiki/igdyellow.png" alt="instagram">
+          </a>
+        </span>
+        <span class="link-icon">
+          <a href="mailto:twcsmu.igem2022@gmail.com" class="p-3" target="_blank">
+            <img src="https://static.igem.wiki/teams/4151/wiki/emaildyellow.png" alt="mail" style="border-radius: 20%;">
+          </a>
+        </span>
+			</div>
+      
+      <div class='col-lg-7 text-center py-2'>
+        <h4>SPONSORS</h4>
+        <div class="p-0 m-0" id="ellipse" style="background-color: #F5F5F5; border-radius: 50px;">
+          <a href="https://www.leadgenebio.com/index.php?lang=en">
+          <img src='https://static.igem.wiki/teams/4151/wiki/sponsors/leadgene.png' class="spobig" height='55' class='px-2 pb-1' alt="leadgene">
+          </a>
+          <a href="http://www.ylpeltd.com">
+          <img src='https://static.igem.wiki/teams/4151/wiki/sponsors/yuan.png' class="spobig" height='55' class='px-2 py-0' alt="Yuan">
+          </a>
+          <a href="https://www.genetex.com/">
+          <img src='https://static.igem.wiki/teams/4151/wiki/sponsors/genetex-logo.png' class="spobig" height='55' class='px-2 pb-1' alt="GeneTex">
+          </a>
+          <a href="https://www.syfmf.org/">
+          <img src='https://static.igem.wiki/teams/4151/wiki/sponsors/sunyafu.png' class="spobig" height='55' class='px-2 pb-1' alt="Sun Ya-Fu">
+          </a>
+          <br>
+          <a href="http://www.tsmh.org.tw/sites/web_dg/show_web_page.php?edsno=537" >
+          <img src="https://static.igem.wiki/teams/4151/wiki/sponsors/su.png" class="spobig" height='55' class='px-2 pb-1' alt="Su Tiansheng">
+          </a>
+          <a href="https://drgabio.com/">
+          <img src="https://static.igem.wiki/teams/4151/wiki/sponsors/great.png" class="spobig" height='55' class='px-2 py-0' alt="GreAT">
+          </a>
+          <a href="https://www.tanbead.com/en/">
+          <img src="https://static.igem.wiki/teams/4151/wiki/sponsors/naotech.png" class="spobig" height='55' class='px-2 pb-1' alt="Naotech">
+          </a>
+          <a href="https://www.foxconnfoundation.org/">
+          <img src="https://static.igem.wiki/teams/4151/wiki/sponsors/red-sea.png" class="spobig" height='55' class='px-2 pb-1' alt="Foxconn Education Foundation">
+          </a>
+          <a href="https://www.pbf.com.tw/">
+          <img src="https://static.igem.wiki/teams/4151/wiki/sponsors/pbf.png" class="spobig" height='55' class='px-2 pb-1' alt="Panion& BF biotech Inc.">
+          </a>
         </div>
-        <div class="col-md-1 footer-col1" style='border-right:3px solid #ffffff;'></div>
-        <div class="col-md-1 footer-col1"></div>
-        <div class="col-12 col-md-4 colTwo">
-          <div class="col-12 col-md-12 col-two-icon">
-            <!--cug of phone-->
-            <div>
-              <a href="tel:+86-13170915707"><img src="https://static.igem.wiki/teams/4242/wiki/brief-strokes/b-phone.png"></a>
-            </div>
-            <!--icon of mail-->
-            <div>
-              <a href="3079878493@qq.com"><img src="https://static.igem.wiki/teams/4242/wiki/brief-strokes/b-message.png"></a>
-            </div>
-            <!--icon of instagram-->
-            <div>
-              <a href="https://www.instagram.com/igemncku/" target="_blank"><img src="https://static.igem.wiki/teams/4242/wiki/brief-strokes/b-school.png"></a>
-            </div>
-            <!--icon of facebook-->
-            <div>
-              <a href="https://www.facebook.com/igem.ncku" target="_blank"><img src="https://static.igem.wiki/teams/4242/wiki/brief-strokes/b-talk.png"></a>
-            </div>
-          </div>
-          <p class="col-12 footer-text" style="font-size:1.1rem;">
-            e-mail : 3079878493@qq.com
-            <br>
-            phone : 06-2757575
-          </p>
-        </div>
-        <!--end of col-4-->
+		  </div>
+    </div>
+    <hr>
+    <!-- The following MUST be on every page: license information and link to the repository on gitlab.igem.org -->
+    <div class="row mt-4">
+      <div class="col">
+        <p class="mb-0"><small>© 2022 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+	      <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/templates/wiki-frozen-flask">gitlab.igem.org/templates/wiki-frozen-flask</a>.</small></p>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
+
