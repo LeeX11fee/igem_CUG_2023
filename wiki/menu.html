@@ -195,5 +195,54 @@
       </div>
     </div>
   </nav>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    nav_hide = document.getElementById("nav-hide")
+
+    if (nav_hide) {
+      var last_scroll_top = 0;
+      window.addEventListener("scroll", function () {
+        let scroll_top = window.scrollY;
+
+        if (scroll_top > last_scroll_top && scroll_top > 200) {
+          nav_hide.classList.remove("scroll-show");
+          nav_hide.classList.add("scroll-hide");
+        }
+        else {
+          nav_hide.classList.remove("scroll-hide");
+          nav_hide.classList.add("scroll-show");
+        }
+
+
+        last_scroll_top = scroll_top;
+      });
+    }
+  });
+
+
+  var subDrops = document.getElementsByClassName("sub-dropdown");
+
+  function subHide() {
+    
+    for(var i = 0; i < subDrops.length; i++){
+      subDrops[i].style.display = "none";
+    }
+  }
+
+  subHide();
+
+  
+  for(var i = 0; i < subDrops.length; i++) {
+    subDrops[i].parentElement.addEventListener("mouseenter", function(){
+      this.children[1].style.display = "block";
+    });
+    subDrops[i].parentElement.addEventListener("mouseleave", function(){
+      this.children[1].style.display = "none";
+    });
+  }
+
+</script>
   
 
