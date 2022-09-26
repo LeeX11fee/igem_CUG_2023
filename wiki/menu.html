@@ -217,91 +217,139 @@
   }
 </style>
 
-<header class="fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="d-inline-block d-lg-none " width="56" height="40" ></div>
-        <a class="navbar-brand d-flex align-items-center" href="https://2019.igem.org/Team:NCKU_Tainan">
-            <img class="d-none d-lg-inline-block" src="#" alt="Logo">
-            <img class="d-inline-block d-lg-none" src="#" alt="logo-mobile">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav justify-content-around align-items-stretch">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top scroll-show" id="nav-hide">
+  <div class="container">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
-                </li>
+    <!---- TEAM NAME ---->
+    <a class="navbar-brand" href="{{ url_for('index') }}">
+      <img src="https://static.igem.wiki/teams/4242/wiki/logo-title.png" width="180" height="100%">
+    </a>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span>Team</span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a>
-                    </div>
-                </li>
-            
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span>Project</span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='safety') }}">Safety</a>
-                    </div>
-                </li>
+    <!---- SMALL SCREEN MENU ICON ---->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto left-aligned">
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span>Parts</span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a>
-                    </div>
-                </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>Team</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a>
+            </div>
+        </li>
+    
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>Project</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='safety') }}">Safety</a>
+            </div>
+        </li>
 
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span>HP</span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a>
-                    </div>
-                </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>Parts</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a>
+            </div>
+        </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span>Notebook</span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a>
-                        <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Protocols</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="bread d-none d-lg-block">
-        <div class="shape">
-            <p id="breadtext"><a href="#"></a> > <a href="#"></a>
-            </p>
-        </div>  
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>HP</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>Notebook</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Protocols</a>
+            </div>
+        </li>
+
+
+      </ul>
     </div>
-</header>
+  </div>
+</nav>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    nav_hide = document.getElementById("nav-hide")
+
+    if (nav_hide) {
+      var last_scroll_top = 0;
+      window.addEventListener("scroll", function () {
+        let scroll_top = window.scrollY;
+
+        if (scroll_top > last_scroll_top && scroll_top > 200) {
+          nav_hide.classList.remove("scroll-show");
+          nav_hide.classList.add("scroll-hide");
+        }
+        else {
+          nav_hide.classList.remove("scroll-hide");
+          nav_hide.classList.add("scroll-show");
+        }
+
+
+        last_scroll_top = scroll_top;
+      });
+    }
+  });
+
+
+  var subDrops = document.getElementsByClassName("sub-dropdown");
+
+  function subHide() {
+    
+    for(var i = 0; i < subDrops.length; i++){
+      subDrops[i].style.display = "none";
+    }
+  }
+
+  subHide();
+
+  
+  for(var i = 0; i < subDrops.length; i++) {
+    subDrops[i].parentElement.addEventListener("mouseenter", function(){
+      this.children[1].style.display = "block";
+    });
+    subDrops[i].parentElement.addEventListener("mouseleave", function(){
+      this.children[1].style.display = "none";
+    });
+  }
+
+</script>
