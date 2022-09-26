@@ -1,216 +1,307 @@
 <style>
+  nav {
+    font-size: 20px;
+    font-weight: 600;
+  }
 
-    #bodyContent nav a[href ^="https://"]:hover, .link-https:hover{
-        background:#229453;
-        padding-right:none;
+  nav .nav-item {
+    margin-left: 0.3em;
+    position: relative;
+  }
+
+  nav .nav-link:before {
+    content: "";
+    margin-right: 3px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 0px 7px 10px;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #f3d258;
+    opacity: 0;
+    display: inline-block;
+    position: relative;
+    transition: all ease-in-out 0.1s;
+  }
+
+  nav .nav-link:hover:before {
+    opacity: 1;
+  }
+
+  nav .nav-link:focus:before {
+    opacity: 1;
+  }
+
+  nav .nav-link:active:before {
+    opacity: 1;
+  }
+
+  nav .nav-link[aria-expanded="true"]:before {
+    opacity: 1;
+  }
+
+  nav .nav-link {
+    color: #ffffff;
+    opacity: 0.6;
+  }
+
+  nav .nav-link:hover {
+    opacity: 1;
+  }
+
+  nav .nav-link:focus {
+    opacity: 1;
+  }
+
+  nav .nav-link:active {
+    opacity: 1;
+    transform: scale(0.95);
+  }
+
+  nav .nav-link[aria-expanded="true"] {
+    opacity: 1;
+  }
+
+  nav .dropdown-item {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  nav .dropdown-item:active {
+    color: #000000;
+    transform: scale(0.95);
+  }
+
+  nav .dropdown-item:before {
+    content: "";
+    margin-right: 0.4em;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 0px 7px 10px;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #f3d258;
+    opacity: 0;
+    display: inline-block;
+    position: relative;
+  }
+
+  nav .dropdown-item:hover:before {
+    opacity: 1;
+  }
+
+  nav .dropdown-item:focus:before {
+    opacity: 1;
+  }
+
+  nav .dropdown-item:active:before {
+    opacity: 1;
+  }
+
+  nav .dropdown-item:after {
+    content: "";
+    margin-left: 0.4em;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 10px 7px 0px;
+    border-color: rgba(0, 0, 0, 0) #f3d258 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    opacity: 0;
+    display: inline-block;
+    position: relative;
+  }
+
+  nav .dropdown-item:hover:after {
+    opacity: 1;
+  }
+
+  nav .dropdown-item:focus:after {
+    opacity: 1;
+  }
+
+  nav .dropdown-item:active:after {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 992px) {
+    nav .dropdown:hover .dropdown-menu {
+      display: block;
     }
-    /*fix public engagement oversize*/
-    #bodyContent nav a[href ^="https://"], .link-https {
-        padding-right:1.5rem;
+  }
+
+  nav .dropdown-menu {
+    text-align: center;
+    background-color: #ffffff;
+    animation-name: anime-navbar;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+  }
+
+  nav .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 1)
+  }
+
+  nav .dropdown-item:focus {
+    background-color: rgba(255, 255, 255, 1)
+  }
+
+  @keyframes anime-navbar {
+    0% {
+      transform: translateX(-1rem);
+      opacity: 0;
     }
-    /* compansate the background above */
-    #bodyContent .navbar .navbar-brand:hover{
-        background:none;
+
+    100% {
+      transform: translateX(0rem);
+      opacity: 1;
     }
-    a:visited {
-        color:black;
+
+    0% {
+      transform: translateX(-1rem);
+      opacity: 0;
     }
-    .fixed-top {
-        top: 16px;
-    }
-    nav {
-        background-color:#229453;/*Big block*/
-        opacity:0.96;
-        font-size:1.3rem;
-    }
-    .navbar {
-        padding: 0rem 1rem;
-    }
-    nav .fake {
-        width:56px;
-        height:40px;
-    }
-    .navbar-brand {
-        width: 30vw;
-        height:auto;
-        margin-right: 0;
-    }
-    
-    .navbar-brand img {
-        width: 100%;
-        height: auto;
-    }
-    
-    .navbar-dark .navbar-nav .nav-link {
-        color:white;
-    }
-    .dropdown-menu {
-        background-color: #fffdf6;
-        border-radius: 0 0 .25rem .25rem;
-        margin-top:0;
-        border-style: none;
-        display:none;
-        z-index:5;
-    }
-    .dropdown:hover .dropdown-menu {
-        display: block;
-    }
-    .dropdown-menu::before {
-        /*在menu跟dropdown中間加一塊透明的block*/
-        content: "";
-        display: block;
-        position: absolute;
-        height: 100px;
-        width:160px;
-        top: -30px;
-        left: 0;
-        background-color:transparent;
-        cursor: pointer;
-        z-index:-2;
-    }
-    
-    .dropdown > .dropdown-toggle:active {
-        pointer-events: none;
-    }
-    
-    /* Large devices (desktops, 992px and up)*/
-    @media (min-width: 992px) { 
-        .navbar-expand-lg .navbar-nav.navbar-nav {
-            flex-grow: 1;
-            padding: 0 10% 0 15%;
-        }
-        .navbar-brand {
-            width: 13vw;
-            height:auto;
-        }
-    }
-    .bread {
-        height: 2.5rem;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        opacity:0.96;
-        z-index:-5;
-    }
-    .bread .shape {
-        width: calc(20% - 2.5rem);
-        height: 100%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        background: #229453;
-    }
-    .bread::after {
-        content: ""; 
-        position: absolute;
-        left: calc(20% - 2.5rem);
-        width: 0;
-        height: 0;
-        border-top: 2.5rem solid #229453;
-        border-right: 2.5rem solid transparent;
-    }
-    #breadtext{
-      font-style:none;
-      color:white;
-      margin: 0;
-      font-size: 0.9rem;
-    }
-    #breadtext a{
-      color: #A6A7A7;
-    }
-    #breadtext a:link, #breadtext a:visited{
-      color: white;
-    }
-    #navbarDropdownMenuLink span{
-        font-size: 1.3rem;
-    }
+  }
+
+  .scroll-hide {
+    transform: translateY(-100%);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .scroll-show {
+    transform: translateY(0);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .sub-dropdown {
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    top: 0px;
+    left: 100%;
+  }
+
+  li:hover>a~.sub-dropdown {
+    display: block;
+  }
+
+  .dropdown-menu li:nth-child(1) .sub-dropdown {
+    top: 9px;
+  }
+  .dropdown-menu li:nth-child(2) .sub-dropdown {
+    top: 44px;
+  }
+  .dropdown-menu li:nth-child(3) .sub-dropdown {
+    top: 79px;
+  }
+  .dropdown-menu li:nth-child(4) .sub-dropdown {
+    top: 114px;
+  }
+  .dropdown-menu li:nth-child(5) .sub-dropdown {
+    top: 149px;
+  }
+  .dropdown-menu li:nth-child(6) .sub-dropdown {
+    top: 184px;
+  }
+  .dropdown-menu li:nth-child(7) .sub-dropdown {
+    top: 219px;
+  }
+  .dropdown-menu li:nth-child(8) .sub-dropdown {
+    top: 254px;
+  }
+  .dropdown-menu li:nth-child(9) .sub-dropdown {
+    top: 289px;
+  }
+  .dropdown-menu li:nth-child(10) .sub-dropdown {
+    top: 314px;
+  }
 </style>
-        <header class="fixed-top">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="d-inline-block d-lg-none " width="56" height="40" ></div>
-                <a class="navbar-brand d-flex align-items-center" href="https://2019.igem.org/Team:NCKU_Tainan">
-                    <img class="d-none d-lg-inline-block" src="#" alt="Logo">
-                    <img class="d-inline-block d-lg-none" src="#" alt="logo-mobile">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav justify-content-around align-items-stretch">
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
-                        </li>
+<header class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="d-inline-block d-lg-none " width="56" height="40" ></div>
+        <a class="navbar-brand d-flex align-items-center" href="https://2019.igem.org/Team:NCKU_Tainan">
+            <img class="d-none d-lg-inline-block" src="#" alt="Logo">
+            <img class="d-inline-block d-lg-none" src="#" alt="logo-mobile">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav justify-content-around align-items-stretch">
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span>Team</span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a>
-                            </div>
-                        </li>
-                    
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span>Project</span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='safety') }}">Safety</a>
-                            </div>
-                        </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                </li>
 
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span>Parts</span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a>
-                            </div>
-                        </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>Team</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a>
+                    </div>
+                </li>
+            
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>Project</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='safety') }}">Safety</a>
+                    </div>
+                </li>
 
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span>HP</span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a>
-                            </div>
-                        </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>Parts</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a>
+                    </div>
+                </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span>Notebook</span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a>
-                                <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Protocols</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="bread d-none d-lg-block">
-                <div class="shape">
-                    <p id="breadtext"><a href="#"></a> > <a href="#"></a>
-                    </p>
-                </div>  
-            </div>
-        </header>
-    
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>HP</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>Notebook</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a>
+                        <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Protocols</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="bread d-none d-lg-block">
+        <div class="shape">
+            <p id="breadtext"><a href="#"></a> > <a href="#"></a>
+            </p>
+        </div>  
+    </div>
+</header>
+
