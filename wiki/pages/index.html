@@ -1,5 +1,70 @@
-{% extends "layout.html" %}
-{% block page_content %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
+    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">
+
+    <!--<title>{% block title %}{% endblock %} | CUG-China - iGEM 2022</title>-->
+
+</head>
+<body>
+
+
+<div id="loader-wrapper">
+    <span class="loader">
+          <img src="https://static.igem.wiki/teams/4242/wiki/change-page.gif">
+    </span>
+</div>
+<style>
+
+    @media screen and (max-width: 720px) {
+      .loader {
+        width: 100% !important;
+      }
+    }
+
+    #loader-wrapper 
+    {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100000;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+    .loader 
+    {
+      width: 100%;
+    }
+
+    .loader img 
+    {
+      width: 100%;
+    }
+  </style>
+
+  <!-- Navigation -->
+  {% include 'menu.html' %}
+
+
 
 
 <style>
@@ -442,4 +507,18 @@ a.des-link {
 
 
 
-{% endblock %}
+  <!-- Wiki Tools: Teams are allowed to remove it -->
+  {% include 'wiki-tools.html' %}
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>
+
+  <script>
+    var loader = document.getElementById("loader-wrapper");
+    window.addEventListener("load", function(){
+      loader.style.display = "none"
+    })
+  </script>
+
+</body>
+</html>
