@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
+    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">
+
+    <!--<title>{% block title %}{% endblock %} | CUG-China - iGEM 2022</title>-->
+
+</head>
+<body>
+
+
+<div id="loader-wrapper">
+    <span class="loader">
+          <img src="https://static.igem.wiki/teams/4242/wiki/change-page.gif">
+    </span>
+</div>
+<style>
+
+    @media screen and (max-width: 720px) {
+      .loader {
+        width: 100% !important;
+      }
+    }
+
+    #loader-wrapper 
+    {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100000;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+    .loader 
+    {
+      width: 100%;
+    }
+
+    .loader img 
+    {
+      width: 100%;
+    }
+  </style>
+
+  <!-- Navigation -->
+  {% include 'menu.html' %}
+
+
+<style>
+
+    @font-face
+    {
+        font-family:'font_one';
+        src:url(https://static.igem.wiki/teams/4242/wiki/acme-regular.ttf)
+    }
+    .p1
+    {
+        font-family:'font_one';
+        font-size:1.5rem;
+    }
+    
+    @font-face
+    {
+        font-family:'font_two';
+        src:url(https://uploads.igem.org/teams/4242/wiki/Overlock-Regular.ttf)
+    }
+    .o
+    {
+        font-family:'font_two';
+        font-size:1rem;
+    }
+    body
+   {
+        width:100%;
+        height: auto;
+        background-color: #21373d;
+        overflow-y: scroll;
+    }
+</style>
+
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Team:CUG-China/Notebook - 2022.igem.org</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'headama.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'notebook amazing/nb.css') }}">
+</head>
+
+<body>
+    <section class="section main-banner" id="top" data-section="Intro">
+        <img src="https://static.igem.wiki/teams/4242/wiki/LP`V`Y9}M%K88``L07W2JWS.jpg" alt="">
+        <div class="header-text">
+            <div class="caption">
+                <div class="wave-text">
+                    <span>生物科学长江实践团</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!--側欄-->
+          {% include "sider.html" %}
+          <aside class="aside">
+            <br>
+            <div>
+              <a class="pointer" href="#members">Members</a>
+              <a class="pointer" href="#advisors">Advisors</a>
+              <a class="pointer" href="#pi">P.I.</a>
+              <a class="pointer" href="#"></a>
+              <a class="pointer" href="#form">Form</a>
+            </div>
+          </br>
+          </aside>
+      
+        <div class="row" id="move20">     
+          <div class="col" id="Content">
+          <!---Advisors--->
+          <p class="target-fix" id="advisors"></p>
+          <p style="margin-top: 50px;"></p>
+          <div class="p1">
+         <h1 id="Advisors;" style="color: #243136;"><b>Advisors</b></h1> 
+         </div> 
+         <div class="o">
+         <hr style="border-top:5px solid gray;">
+         <ul>
+          <p class="p1">Zhihao Luo</p1>
+            <li><p>Guided the operation of relevant molecular experiments and put forward suggestions on molecular experiments.</p></li>
+            <li><p>Ensure experimental safety and preparation of experimental instruments.</p></li>
+            <li><p>Gave us lab safety training and lessons, taught us how to protect ourselves in an experiment.</p></li>
+            <!--从这里开始录入！！！上面的白色文字别忘记删除-->
+         </ul>
+         </hr>
+         </div>
+        
+        
+      </hr>
+      </div> 
+      </div>
+    </div>
+<body>
+
+
+
+
+
+  <!-- Wiki Tools: Teams are allowed to remove it -->
+  {% include 'wiki-tools.html' %}
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>
+
+  <script>
+    var loader = document.getElementById("loader-wrapper");
+    window.addEventListener("load", function(){
+      loader.style.display = "none"
+    })
+  </script>
+
+</body>
+</html>
