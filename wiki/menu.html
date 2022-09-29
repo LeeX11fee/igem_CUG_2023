@@ -136,6 +136,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a>
                   <a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a>
+                  <a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a>
               </div>
           </li>
       
@@ -144,17 +145,13 @@
                   <span>Project</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='safety') }}">Safety</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a> 
+                <a class="dropdown-item" href="{{ url_for('pages', page='design') }}">Design</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='proof of concept') }}">Proof Of Concept</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='proposed implementation') }}">Proposed Implementation</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='safety') }}">Safety</a>
               </div>
           </li>
   
@@ -164,9 +161,11 @@
                   <span>Parts</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a>
+                  
+                <a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='engineering success') }}">Engineering Success</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='improvement') }}">Improvement</a>
               </div>
           </li>
   
@@ -176,7 +175,10 @@
                   <span>HP</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='integrated hp') }}">Integrated HP</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a>
+                <a class="dropdown-item" href="{{ url_for('pages', page='games') }}">Games</a>
               </div>
           </li>
   
@@ -186,7 +188,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a>
-                  <a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Protocols</a>
+                  <a class="dropdown-item" href="{{ url_for('pages', page='protocols') }}">Protocols</a>
               </div>
           </li>
   
@@ -244,5 +246,3 @@
   }
 
 </script>
-  
-
