@@ -4,7 +4,7 @@
 
 <style>
 
-    @font-face
+@font-face
     {
         font-family:'font_one';
         src:url(https://static.igem.wiki/teams/4242/wiki/acme-regular.ttf)
@@ -13,23 +13,39 @@
     {
         font-family:'font_one';
         font-size:1.5rem;
+        color:#f0f0f0;
     }
     
     @font-face
     {
         font-family:'font_two';
         src:url(https://uploads.igem.org/teams/4242/wiki/Overlock-Regular.ttf)
+
     }
     .o
     {
         font-family:'font_two';
         font-size:1rem;
+        color:#f0f0f0;
     }
+    .z1
+    {
+        font-family:'font_one';
+        font-size:1.5rem;
+        color:#f26b1f
+    }
+    .z2
+    {
+        font-family:'font_two';
+        font-size:0.5rem;
+        color:#f0f0f0
+    }
+    
     body
    {
         width:100%;
         height: auto;
-        background-color: #F8F5D6;
+        background-color: #21373d;
         overflow-y: scroll;
     }
 </style>
@@ -49,48 +65,43 @@
         <div class="header-text">
             <div class="caption">
                 <div class="wave-text">
-                    <span>Attributions</span>
+                    <span>Human Practices</span>
                 </div>
             </div>
         </div>
     </section>
 
     <div class="container">
-        <!--側欄-->
           {% include "sider.html" %}
           <aside class="aside">
             <br>
             <div>
-              <a class="pointer" href="#members">Members</a>
-              <a class="pointer" href="#advisors">Advisors</a>
-              <a class="pointer" href="#pi">P.I.</a>
-              <a class="pointer" href="#"></a>
-              <a class="pointer" href="#form">Form</a>
+              <a class="pointer" href="#Overview">Overview</a>
+              <a class="pointer" href="#Cycle 1">Cycle 1</a>
+              <a class="pointer" href="#Cycle 2">Cycle 2</a>
+              <a class="pointer" href="#Cycle 3">Cycle 3</a>
             </div>
           </br>
           </aside>
       
         <div class="row" id="move20">     
           <div class="col" id="Content">
-          <!---Advisors--->
-          <p class="target-fix" id="advisors"></p>
+          <!---Overview--->
+          <p class="target-fix" id="Overview"></p>
           <p style="margin-top: 50px;"></p>
           <div class="p1">
-         <h1 id="Advisors;" style="color: #243136;"><b>Advisors</b></h1> 
+         <h1 id="Overview;" style="color: #f26b1f;"><b>Overview</b></h1> 
          </div> 
          <div class="o">
-         <hr style="border-top:5px solid gray;">
+         <hr style="border-top:5px solid #f0f0f0;">
          <ul>
-          <p class="p1">Zhihao Luo</p1>
-            <li><p>Guided the operation of relevant molecular experiments and put forward suggestions on molecular experiments.</p></li>
-            <li><p>Ensure experimental safety and preparation of experimental instruments.</p></li>
-            <li><p>Gave us lab safety training and lessons, taught us how to protect ourselves in an experiment.</p></li>
-            <!--从这里开始录入！！！上面的白色文字别忘记删除-->
+            <p>Human productive activities and normal life are closely related to microbes, and biofilm presents the prevalent mode of microbial growth in natural, engineered and medical settings. The existence of biofilm has both advantages and disadvantages for human beings. If the formation and degradation of biofilm can be controlled artificially, it will bring great benefits to human production and life. Numerous studies have shown that the formation and degradation of biofilms are controlled by cyclic diguanylate (c-di-GMP) in a wide range of bacteria.  By talking with Prof. Zeng from the Institute of Hydrobiology, we knew that they urgently need an effective c-di-GMP measurement tool for their research at present. Through the interviews with experts from Biopharmaceutical Enterprises, we knew that there is still a lack of a high-throughput screening tool for c-di-GMP targeted drugs. These all spirited us build a biosensor which can monitor the intracellular c-di-GMP concentration in a certain cell in real time using synthetic biology approaches, which could provide a powerful method for biofilm research. While we conduct a series of work, we also keep in touch with experts and constitutively improve our constructions to adapt to actual production and research. As iGEMers, we are happy to share, communicate and collaborate with researchers, and are committed to introducing  synthetic biology to the public.</p>
          </ul>
          </hr>
          </div>
         
-        
+
+     
       </hr>
       </div> 
       </div>
