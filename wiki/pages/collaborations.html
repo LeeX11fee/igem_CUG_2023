@@ -1,39 +1,111 @@
 {% extends "layout.html" %}
-  
-{% block title %}Collaborations{% endblock %}
-{% block lead %}Sharing and collaboration are core values of iGEM. We encourage you to reach out and work with other teams on difficult problems that you can more easily solve together.{% endblock %}
 
 {% block page_content %}
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Silver Medal Criterion #2</h4>
-      <p>Collaborate with one (or more) 2022 iGEM team(s) in a meaningful way.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/medals">2022 Medals Page</a> for more information.</p>
-    </div>
-  </div>
-</div>
+<style>
 
-<div class="row mt-4">
-  <div class="col-lg-6">
-    <h2>Which teams can we work with?</h2>
-    <hr>
-    <p>You can work with any other iGEM 2022 team in the competition. You can also work with non-iGEM research groups, but they do not count towards the iGEM team collaboration silver medal criterion.</p>
-  </div>
-  <div class="col-lg-6">
-    <h2>Some suggestions</h2>
-    <hr>
-    <ul>
-      <li>Improve the function of another team's BioBrick Part or Device</li>
-      <li>Characterize another team's part</li>
-      <li>Debug a construct</li>
-      <li>Model or simulate another team's system</li>
-      <li>Test another team's software</li>
-      <li>Help build and test another team's hardware project</li>
-    </ul>
-  </div>
-</div>
+@font-face
+    {
+        font-family:'font_one';
+        src:url(https://static.igem.wiki/teams/4242/wiki/acme-regular.ttf)
+    }
+    .p1
+    {
+        font-family:'font_one';
+        font-size:1.5rem;
+        color:#f0f0f0;
+    }
+    
+    @font-face
+    {
+        font-family:'font_two';
+        src:url(https://uploads.igem.org/teams/4242/wiki/Overlock-Regular.ttf)
+
+    }
+    .o
+    {
+        font-family:'font_two';
+        font-size:1rem;
+        color:#f0f0f0;
+    }
+    .z1
+    {
+        font-family:'font_one';
+        font-size:1.5rem;
+        color:#f26b1f
+    }
+    .z2
+    {
+        font-family:'font_two';
+        font-size:0.5rem;
+        color:#f0f0f0
+    }
+    
+    body
+   {
+        width:100%;
+        height: auto;
+        background-color: #21373d;
+        overflow-y: scroll;
+    }
+</style>
+
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Team:CUG-China/Notebook - 2022.igem.org</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'headama.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'notebook amazing/nb.css') }}">
+</head>
+
+<body>
+    <section class="section main-banner" id="top" data-section="Intro">
+        <img src="https://static.igem.wiki/teams/4242/wiki/background/pk-2.png" alt="">
+        <div class="header-text">
+            <div class="caption">
+                <div class="wave-text">
+                    <span>Collaboration</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+          {% include "sider.html" %}
+          <aside class="aside">
+            <br>
+            <div>
+              <a class="pointer" href="#Overview">Overview</a>
+              <a class="pointer" href="#Cycle 1">Cycle 1</a>
+              <a class="pointer" href="#Cycle 2">Cycle 2</a>
+              <a class="pointer" href="#Cycle 3">Cycle 3</a>
+            </div>
+          </br>
+          </aside>
+      
+        <div class="row" id="move20">     
+          <div class="col" id="Content">
+          <!---Overview--->
+          <p class="target-fix" id="Overview"></p>
+          <p style="margin-top: 50px;"></p>
+          <div class="p1">
+         <h1 id="Overview;" style="color: #f26b1f;"><b>Overview</b></h1> 
+         </div> 
+         <div class="o">
+         <hr style="border-top:5px solid #f0f0f0;">
+         <ul>
+            <p>This is our first time to participate iGEM. Without any experience, our every step is tough. We endeavor to learn from excellent senior iGEMers from other teams such as XMU, NYCU, HUST, etc. The content of communication covers the principal part of our project, the construction of math model, human practice, preparation of materials. The communication and collaboration made us experienced and provided more new ideas. We also took part in conferences and established cooperation with other teams. As the saying goes, more hands produce a stronger flame.</p>
+         </ul>
+         </hr>
+         </div>
+        
+
+     
+      </hr>
+      </div> 
+      </div>
+    </div>
+<body>
 
 {% endblock %}
