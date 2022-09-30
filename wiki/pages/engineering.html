@@ -31,9 +31,16 @@
     .z1
     {
         font-family:'font_one';
-        font-size:1.0rem;
+        font-size:1.5rem;
         color:#f26b1f
     }
+    .z2
+    {
+        font-family:'font_two';
+        font-size:0.5rem;
+        color:#f0f0f0
+    }
+    
     body
    {
         width:100%;
@@ -80,7 +87,7 @@
         <div class="row" id="move20">     
           <div class="col" id="Content">
           <!---Overview--->
-          <p class="target-fix" id="advisors"></p>
+          <p class="target-fix" id="Overview"></p>
           <p style="margin-top: 50px;"></p>
           <div class="p1">
          <h1 id="Overview;" style="color: #f26b1f;"><b>Overview</b></h1> 
@@ -94,7 +101,7 @@
          </div>
         
         <!---Cycle 1--->
-        <p class="target-fix" id="advisors"></p>
+        <p class="target-fix" id="Cycle 1"></p>
         <p style="margin-top: 50px;"></p>
         <div class="p1">
        <h1 id="Cycle 1;" style="color: #f26b1f;"><b>Cycle 1: Test the performance of promotor P<span class="z1">pel</span> in <i>E.coli</i>  and <i>S. oneidensis</i></b></h1> 
@@ -102,16 +109,16 @@
        <div class="o">
        <hr style="border-top:5px solid #f0f0f0;">
        <ul>
-        <p class="p1">Zhihao Luo</p1>
-          <li><p>Guided the operation of relevant molecular experiments and put forward suggestions on molecular experiments.</p></li>
-          <li><p>Ensure experimental safety and preparation of experimental instruments.</p></li>
-          <li><p>Gave us lab safety training and lessons, taught us how to protect ourselves in an experiment.</p></li>
+          <p>Theoretically, the gene under <i>pel</i> promoter can be constitutively expressed in the bacteria that have no repressor FleQ. To test this hypothesis, we directly fused <i>pel</i> promoter to <i>gfp</i> and we and our first plasmid, pHYD-1. Then we transferred the construct into two module organisms, <i>Escherichia coli</i> and <i>Shewanella oneidensis</i>. However, no detectable fluorescence was observed, which suggests the promoter P<span class="z2">pel</span> is non-functional in these two bacteria.</p>
+          
+
+
        </ul>
        </hr>
        </div>
 
        <!---Cycle 2--->
-       <p class="target-fix" id="advisors"></p>
+       <p class="target-fix" id="Cycle 2"></p>
        <p style="margin-top: 50px;"></p>
        <div class="p1">
       <h1 id="Cycle 2;" style="color: #f26b1f;"><b>Cycle 2: Construct the tandem promotor</b></h1> 
@@ -119,10 +126,7 @@
       <div class="o">
       <hr style="border-top:5px solid #f0f0f0">
       <ul>
-       <p class="p1">Zhihao Luo</p1>
-         <li><p>Guided the operation of relevant molecular experiments and put forward suggestions on molecular experiments.</p></li>
-         <li><p>Ensure experimental safety and preparation of experimental instruments.</p></li>
-         <li><p>Gave us lab safety training and lessons, taught us how to protect ourselves in an experiment.</p></li>
+        <p>To overcome the difficulty we met in cycle1, we designed a tandem promoter P<z2>cI/pel</z2> in which the transcription start site of the constitutive promoter P<z2>cI</z2> is immediately followed by the FleQ binding site of the promoter P<z2>pel</z2>. Transcription of the reporter gene <i>gfp</i> is promoted by <i>cI</i> promoter in the absence of FleQ. We found that the fluorescence of recombinant <i>E. coli</i>/pHYD-2 and <i>S. oneidensis</i>/pHYD-2 was drastically higher than that of the strains harboring pHYD-1, indicating that the tandem promoter is capable of constitutively promoting <i>gfp</i> expression in the absence of FleQ in both strains.</p>
       </ul>
       </hr>
       </div>
@@ -136,10 +140,7 @@
      <div class="o">
      <hr style="border-top:5px solid #f0f0f0;">
      <ul>
-      <p class="p1">Zhihao Luo</p1>
-        <li><p>Guided the operation of relevant molecular experiments and put forward suggestions on molecular experiments.</p></li>
-        <li><p>Ensure experimental safety and preparation of experimental instruments.</p></li>
-        <li><p>Gave us lab safety training and lessons, taught us how to protect ourselves in an experiment.</p></li>
+        <p>To test whether FleQ can repress <i>gfp</i> expression under the control of the tandem promoter, we cloned <i>fleQ</i> gene from the genome of <i>P. aeruginosa</i> and inserted it into pHYD-2, generating the plasmid pHYD-3 that contains the complete c-di-GMP biosensor. FleQ represses the transcription of <i>gfp</i> though inhibition of the RNA polymerase to access DNA by binding to P<span class="z2">pel</span> when the level of c-di-GMP is low. At high intracellular c-di-GMP, FleQ undergoes a conformational change when it binds c-di-GMP, which relieves FleQ from <i>pel</i> promoter and leads to <i>gfp</i> gene expression under the control of the tandem promoter. As FleQ represses the expression of gfp by binding to the promoter Ppel, the fluorescence of <i>E. coli</i>/pHYD-3 and <i>S. oneidensis</i>/pHYD-3 expressing the repressor FleQ was significantly decreased compared to that of the strains with pHYD-2 that has no FleQ. Taken together, the results showed the tandem promoter is effective in promoting expression of the reporter gene (<i>gfp</i>), and the transcription factor FleQ is able to decrease <i>gfp</i> expression level. <p>
      </ul>
      </hr>
      </div>
