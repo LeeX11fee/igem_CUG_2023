@@ -45,13 +45,12 @@
     cursor: pointer;
     padding-top: 30px;
     font-size: 15px;
-    color: #333;
     margin: 0 30px;
     position: relative;
 }
 .parHd li:after {
     content: '';
-    background: url(https://static.igem.org/mediawiki/2021/c/ca/T--XMU-China--timelineDot.png) no-repeat;
+    background: url(https://static.igem.wiki/teams/4242/wiki/notebook/timelinedot.png) no-repeat;
     background-size: 100%;
     width: 24px;
     height: 24px;
@@ -73,13 +72,11 @@
     width: 25vw;
     display: inline-block;
     text-align: center;
-    color: #222;
     line-height: 100%;
     overflow: visible;
 }
 .parBd h1:after {
     content: '';
-    background: #222;
     width: 15vw;
     height: 1px;
     display: inline-block;
@@ -89,7 +86,6 @@
 }
 .parBd h1:before {
     content: '';
-    background: #222;
     width: 15vw;
     height: 1px;
     display: inline-block;
@@ -102,7 +98,6 @@
     font-size: 16px;
     width: 95%;
     margin: 10px auto 0;
-    color: #555;
 }
 div#listBox {
     width: 100%;
@@ -133,7 +128,7 @@ div#listBox {
     width: 24px;
     height: 24px;
     overflow: hidden;
-    background: url(https://static.igem.org/mediawiki/2021/0/07/T--XMU-China--timelineCat.png) no-repeat;
+    background: url(https://static.igem.wiki/teams/4242/wiki/notebook/timelinecat.png) no-repeat;
     background-size: 100%;
     position: absolute;
     top: -12px;
