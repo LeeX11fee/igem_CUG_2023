@@ -36,11 +36,7 @@ $( document ).ready(function() {
         }
     });
     
-    // set the position of carousel
-    $('.carousel').css('margin-top', $('nav').height());
-    $(window).resize(function () {
-        $('.carousel').css('margin-top', $('nav').height());
-   });
+    
 
 });
 
