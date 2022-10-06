@@ -2,6 +2,62 @@
 
 {% block page_content %}
 
+<style>
+
+@font-face
+    {
+        font-family:'font_one';
+        src:url(https://static.igem.wiki/teams/4242/wiki/acme-regular.ttf)
+    }
+    .p1
+    {
+        font-family:'font_one';
+        font-size:1.5rem;
+        color:#f0f0f0;
+    }
+    
+    @font-face
+    {
+        font-family:'font_two';
+        src:url(https://uploads.igem.org/teams/4242/wiki/Overlock-Regular.ttf)
+
+    }
+    .o
+    {
+        font-family:'font_two';
+        font-size:1rem;
+        color:#f0f0f0;
+    }
+    .z1
+    {
+        font-family:'font_one';
+        font-size:1.5rem;
+        color:#f26b1f
+    }
+    .z2
+    {
+        font-family:'font_two';
+        font-size:0.5rem;
+        color:#f0f0f0
+    }
+    
+    body
+   {
+        width:100%;
+        height: auto;
+        background-color: #21373d;
+        overflow-y: scroll;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Team:CUG-China/Notebook - 2022.igem.org</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'headama.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'notebook amazing/nb.css') }}">
+</head>
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i,800,800i,900,900i|Sansita:400,400i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
@@ -35,37 +91,15 @@ body {
     width:100%;
     height: auto;
     background-color: #f0f0f0;
-    font-family: 'Nunito',"微軟正黑體",sans-serif;
     overflow-y: scroll;
 }
 /*Be selected*/
 ::selection {
     background-color: rgb(139, 190, 213);
   }
-/* Page Name */
-.h1, h1 {
-    font-family: 'Sansita',"微軟正黑體",sans-serif;
-    font-size:4rem;
-    font-weight: 800;
-}
-/* Subtitle */
-.h2, h2 {
-    font-family: 'Sansita',"微軟正黑體",sans-serif;
-    font-size: 2.3rem;
-    font-weight: 700;
-    padding-bottom: .5em;
-}
-/* Sub-Subtitle */
-.h3, h3 {
-    font-family: 'Sansita',"微軟正黑體",sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-.h4, h4 {
-    font-family: 'Sansita',"微軟正黑體",sans-serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-}
+
+
+
 .main p ,main p, main .p{
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -160,11 +194,6 @@ nav .fake {
     z-index:-2;
 }
 
-.dropdown > .dropdown-toggle:active {
-    /*Without this, clicking will make it sticky*/
-    /*target active才不會讓滑鼠滑上去的時候沒改變*/
-    pointer-events: none;
-}
 
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { 
@@ -516,13 +545,11 @@ table{
     <!--protocols start from here-->
   <main class="overall">
     <div class="color-block" style="margin-top:3%">
-      <h3 style="color: #A55E65;">This page is about our protocols, you can find all the experimental process you need.<br> Enjoy!</h3>
     </div>
     <div>&#8195;</div>
     <div class="container" style="margin-top:3%;">
       <div class="row">
         <div class="col-12">
-          <!--中間protocols的部分--> 
           <div class="accordion" id="accordionExample">
             <!--start of every card1111111-->
             <div class="card">
