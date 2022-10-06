@@ -492,21 +492,39 @@ a.des-link {
   </section>
   </main>
 <script src="https://2019.igem.org/Team:NCKU_Tainan/js/jquery-3_4_1_min_js?action=raw&amp;ctype=text/javascript"></script>
-<script type="text/javascript" src="https://2019.igem.org/Team:NCKU_Tainan/js/fullPage.js-master/vendors/scrolloverflow_min_js?action=raw&amp;ctype=text/javascript"></script>
+<!--<script type="text/javascript" src="https://2019.igem.org/Team:NCKU_Tainan/js/fullPage.js-master/vendors/scrolloverflow_min_js?action=raw&amp;ctype=text/javascript"></script>-->
 <script type="text/javascript" src="https://2019.igem.org/Team:NCKU_Tainan/js/fullPage.js-master/dist/fullpage_min_js?action=raw&amp;ctype=text/javascript"></script>
-<!--<script src="https://2019.igem.org/Team:NCKU_Tainan/js/home?action=raw&amp;ctype=text/javascript"></script>-->
 
 
 <script>
 $(".bread").removeClass('d-lg-block'); 
 $(window).on("load", function(){
-    // Handler when all assets (including images) are loaded
     $('#fullpage').fullpage({
         keyboardScrolling: true,
         scrollOverflow: true,
         navigation: true,
 		navigationPosition: 'right'
 	});
+
+    $("a.down").click(function(e){
+        try {
+            e.preventDefault();
+            fullpage_api.moveSectionDown();
+        } catch(exp) {
+            alert('An error occurred and I need to write some code to handle this!');
+            console.log(exp)
+        }
+    });
+    $("a.down").hover(function(){
+        $(this).removeClass("bounce")
+    },function(){
+        $(this).addClass("bounce")
+    })
+    $('.center-adjust').css('padding-top', $('nav').height());
+    $(window).resize(function () {
+        $('.center-adjust').css('padding-top', $('nav').height());
+    });
+  });
 </script>
 
        <div class="visualClear"></div>
