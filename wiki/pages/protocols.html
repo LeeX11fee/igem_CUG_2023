@@ -2,99 +2,646 @@
 
 {% block page_content %}
 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i,800,800i,900,900i|Sansita:400,400i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
+</head>
 <style>
+/*before get rid of #HQ_page*/
+#HQ_page p {
+    font-size: 1.1rem;
+}
+/* Compete with HQ */
+#mw-content-text {
+    background-color: #f0f0f0;
+    color: #2C2C2C;
+}
+#mw-content-text p{
+    font-family: 'Nunito',"微軟正黑體",sans-serif;
+}
+#mw-content-text .p{
+    font-family: 'Nunito',"微軟正黑體",sans-serif;
+}
+#mw-content-text h1, h2, h3, h4, h5 {
+    font-family: 'Sansita',"微軟正黑體",MS Serif;
+}
 
-    @font-face
-    {
-        font-family:'font_one';
-        src:url(https://static.igem.wiki/teams/4242/wiki/acme-regular.ttf)
-    }
-    .p1
-    {
-        font-family:'font_one';
-        font-size:1.5rem;
-    }
-    
-    @font-face
-    {
-        font-family:'font_two';
-        src:url(https://uploads.igem.org/teams/4242/wiki/Overlock-Regular.ttf)
-    }
-    .o
-    {
-        font-family:'font_two';
-        font-size:1rem;
-    }
-    body
-   {
-        width:100%;
-        height: auto;
-        background-color: #F8F5D6;
-        overflow-y: scroll;
-    }
+html {
+    scroll-behavior: smooth;
+    color: #2C2C2C;
+}
+body {
+    position: relative;
+    width:100%;
+    height: auto;
+    background-color: #f0f0f0;
+    font-family: 'Nunito',"微軟正黑體",sans-serif;
+    overflow-y: scroll;
+}
+/*Be selected*/
+::selection {
+    background-color: rgb(139, 190, 213);
+  }
+/* Page Name */
+.h1, h1 {
+    font-family: 'Sansita',"微軟正黑體",sans-serif;
+    font-size:4rem;
+    font-weight: 800;
+}
+/* Subtitle */
+.h2, h2 {
+    font-family: 'Sansita',"微軟正黑體",sans-serif;
+    font-size: 2.3rem;
+    font-weight: 700;
+    padding-bottom: .5em;
+}
+/* Sub-Subtitle */
+.h3, h3 {
+    font-family: 'Sansita',"微軟正黑體",sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.h4, h4 {
+    font-family: 'Sansita',"微軟正黑體",sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+.main p ,main p, main .p{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: left;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+.main figcaption, main figcaption {
+    font-size: 0.9rem;
+}
+main a {
+    color: #2C2C2C;
+    text-decoration:underline;
+}
+main a:hover {
+    color: #8BBED5;
+    text-decoration:underline;
+}
+
 </style>
 
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Team:CUG-China/Notebook - 2022.igem.org</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'headama.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'notebook amazing/nb.css') }}">
-</head>
+<style>
+/* Navagation Bar */
+/* Works only in media wiki */
+#bodyContent nav a[href ^="https://"]:hover, .link-https:hover{
+    background:#afcee2;
+    padding-right:none;
+}
+/*fix public engagement oversize*/
+#bodyContent nav a[href ^="https://"], .link-https {
+    padding-right:1.5rem;
+}
+/* compansate the background above */
+#bodyContent .navbar .navbar-brand:hover{
+    background:none;
+}
+a:visited {
+    color:black;
+}
+.fixed-top {
+    top: 16px;
+}
+nav {
+    background-color: #172544;
+    opacity:0.96;
+    font-size:1.3rem;
+}
+.navbar {
+    padding: 0rem 1rem;
+}
+nav .fake {
+    width:56px;
+    height:40px;
+}
+.navbar-brand {
+    width: 30vw;
+    height:auto;
+    margin-right: 0;
+}
 
+.navbar-brand img {
+    width: 100%;
+    height: auto;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color:white;
+}
+.dropdown-menu {
+    background-color: #fffdf6;
+    border-radius: 0 0 .25rem .25rem;
+    margin-top:0;
+    border-style: none;
+    display:none;
+    z-index:5;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu::before {
+    /*在menu跟dropdown中間加一塊透明的block*/
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100px;
+    width:160px;
+    top: -30px;
+    left: 0;
+    background-color:transparent;
+    cursor: pointer;
+    z-index:-2;
+}
+
+.dropdown > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    /*target active才不會讓滑鼠滑上去的時候沒改變*/
+    pointer-events: none;
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+    .navbar-expand-lg .navbar-nav.navbar-nav {
+        flex-grow: 1;
+        padding: 0 10% 0 15%;
+    }
+    .navbar-brand {
+        width: 13vw;
+        height:auto;
+    }
+}
+.bread {
+    height: 2.5rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    opacity:0.96;
+    z-index:-5;
+}
+.bread .shape {
+    width: calc(20% - 2.5rem);
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: #172544;
+}
+.bread::after {
+    content: ""; 
+    position: absolute;
+    left: calc(20% - 2.5rem);
+    width: 0;
+    height: 0;
+    border-top: 2.5rem solid #172544;
+    border-right: 2.5rem solid transparent;
+}
+#breadtext{
+  font-style:none;
+  color:white;
+  margin: 0;
+  font-size: 0.9rem;
+}
+#breadtext a{
+  color: #A6A7A7;
+}
+#breadtext a:link, #breadtext a:visited{
+  color: white;
+}
+#navbarDropdownMenuLink span{
+    font-size: 1.3rem;
+}
+
+/*carousel start here*/
+.carousel .pageName  {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+}
+/*page name*/
+.carousel h1 {
+    font-size: 4rem;
+    color:#172544;
+    /*for wiki*/
+    padding: 0;
+}
+.carousel .carousel-item {
+    height: auto;
+}
+#carousel-team .carousel-item img {
+    min-height: 55vh;
+    max-height: 55vh;
+    object-fit: cover;
+    filter: opacity(50%);
+}
+.carousel-inner .carousel-item img {
+    min-height: 55vh;
+    max-height: 100vh;
+}
+
+/*carousel end here*/
+/*----------Joe's preset---------*/
+/*page name*/
+.carousel h1 {
+    font-size: 5rem;
+    color:#172544;
+    padding: 0;
+    text-align: center;
+    font-weight: 700;
+}
+/*half hr setting*/
+.content-hr-half{
+    /*border-color:#620E15;*/
+    position: relative;
+    left: 25%;
+    width: 50%;
+    border-width: 5px;
+}
+/*layout settings*/
+.margin-up-bottom-m{
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.margin-top-10{
+    margin-top: 10%;
+}
+.margin-top-5{
+    margin-top: 5%;
+}
+.margin-bottom-5{
+    margin-bottom: 5%;
+}
+.margin-bottom-10{
+    margin-bottom: 10%;
+}
+.center-flex{
+    display: flex;
+    justify-content: center;
+}
+.margin-auto{
+    margin:auto;
+}
+/*figure default settings*/
+.figure-default{
+    margin:1rem;
+}
+.figure-default a{
+    width: 100%;
+}
+.figure-default a img{
+    width: 100%;
+}
+/*font settings*/
+figcaption{
+    font-weight: 700;
+}
+.center-font{
+    text-align: center;
+}
+.bold-font{
+    font-weight: bold;
+}
+.h5-font{
+    font-size: 1.2rem;
+}
+.text-color-deepBlue{
+    color: #172544;
+}
+.text-color-lightBlue{
+    color:#3490B9;
+}
+/*overall media setting*/
+@media (max-width:576px){
+    .pageName h1{
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+}
+/*----------Joe's preset END---------*/
+/*protocol.css start*/
+.align-font{
+    text-align: center;
+}
+.bold-font{
+    font-weight: bold;
+}
+.margin-bottom-lg{
+    margin-bottom:5%;
+}
+.margin-bottom-m{
+    margin-bottom:2rem;
+}
+.margin-top-small{
+    margin-top:1rem;
+}
+.margin-top-lg{
+    margin-top:5%;
+}
+.half-hr{
+    width:50%;
+    border-width: 5px;
+    background-color:#172544;
+    margin: 1rem auto;
+}
+.small-table{
+    width: 50%;
+}
+.small-font{
+    font-size: 14px;
+}
+.item-center-align{
+    justify-content: center;
+}
+.table-relative-center-align{
+    position: relative;
+    left: 20%;
+}
+.margin-up-bottom-m{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+h2{
+    padding:0;
+}
+.color-block{
+    height:100px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+.card-header{
+    background-color: #f0f0f0;
+    padding:0;
+    /* 邊界 看要不要
+    border-style: dashed;
+    */
+    border-bottom:0px;
+}
+.card-header:hover{
+    transition: 1s;
+}
+.btn{
+    padding:0;  
+    padding:15px 0px 15px 0;
+    border-radius: 0;
+    font-weight: bold;
+    text-align: left;
+    display:inline-block;
+}
+.btn:focus{
+    box-shadow: none;
+}
+.card{
+    border:none;
+    background-color: #f0f0f0;
+}
+.card-body{
+    width: 99%;
+    margin:0 2rem 2rem 0rem;
+    padding:1rem 0.5rem 1rem 0.5rem;
+    z-index: 5;
+    border:2px solid #172544;
+    border-radius: 0 0 8px 8px;
+    border-top:0;
+}
+.col{
+    padding:0 1rem;
+}
+#firstOne{
+    border-top: 1px solid #A6A7A7;
+}
+.mb-0{
+    width:95%;
+    border-bottom: 1px solid #A6A7A7;
+    border-top: 1px solid #A6A7A7;
+    position: relative;
+    left: 2%;
+    text-align: left;
+    background: #f0f0f0;
+    cursor: pointer;
+}
+.mb-0:after,.mb-0:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #E3E5E8;
+    z-index:-2;
+}
+.mb-0:hover{
+    z-index:1;
+    background:transparent;
+}            
+.mb-0:before {
+    transition: .5s;
+    background: #DBDBDB;
+    z-index:-1;
+    border-radius: 4px;
+}          
+.mb-0:hover:after,.mb-0:hover:before {
+    width: 100%;
+}
+.accordion{
+    justify-content: center;
+    justify-items: center;
+    display: contents;
+    width:20%;
+    left:300px;
+}
+.title-fontStyle{
+    font-size: 24px;
+    font-family: 'Sansita';
+}
+.plusClass:after{
+    position: absolute;
+    font-family: sans-serif;
+    content: "+";
+    top:15%;
+    left:94%;
+    
+}
+.minusClass:after{
+    position: absolute;
+    font-family: sans-serif;
+    content: "-";
+    top:14%;
+    left:94%;
+}
+
+.minusClass{
+    display: none;
+}
+/*protocols table start*/
+.table-Border{
+    border:1.5px solid #7E3B40;
+    padding-right: 1rem;
+}
+.table-Border td{
+    text-align: center;
+}
+.table-Border th,
+.table-Border td{
+    border:1.5px solid #7E3B40;
+    padding:.3rem;
+    vertical-align: middle;
+}
+.table thead th {
+    border:1.5px solid #7E3B40;
+}
+/*protocols table end*/
+</style>
+
+
+<style>
+#content{
+  background:#f0f0f0;
+}
+table{
+  background:#f0f0f0;
+}
+
+</style>
 <body>
-    <section class="section main-banner" id="top" data-section="Intro">
-        <img src="https://static.igem.wiki/teams/4242/wiki/background/pk-2.png" alt="">
-        <div class="header-text">
-            <div class="caption">
-                <div class="wave-text">
-                    <span>Attributions</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <div class="container">
-        <!--側欄-->
-          {% include "sider.html" %}
-          <aside class="aside">
-            <br>
-            <div>
-              <a class="pointer" href="#members">Members</a>
-              <a class="pointer" href="#advisors">Advisors</a>
-              <a class="pointer" href="#pi">P.I.</a>
-              <a class="pointer" href="#"></a>
-              <a class="pointer" href="#form">Form</a>
+    <!--protocols start from here-->
+  <main class="overall">
+    <div class="color-block" style="margin-top:3%">
+      <h3 style="color: #A55E65;">This page is about our protocols, you can find all the experimental process you need.<br> Enjoy!</h3>
+    </div>
+    <div>&#8195;</div>
+    <div class="container" style="margin-top:3%;">
+      <div class="row">
+        <div class="col-12">
+          <!--中間protocols的部分--> 
+          <div class="accordion" id="accordionExample">
+            <!--start of every card1111111-->
+            <div class="card">
+              <div class="card-header" id="headingEleven">
+                <h2 class="mb-0"data-toggle="collapse" data-target="#collapseEleven">
+                  <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapseEleven">
+                    Bacterial Glycerol Stock
+                  </div>
+                  <span class="plusClass"></span>
+                  <span class="minusClass"></span>
+                </h2>
+              </div>
+              <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven">
+                <!--start of card-body-->
+                <div class="card-body">
+                  <div class="container margin-top-small">
+                    <div class="row">
+                      <div class="col">
+                        <div style="font-size: 2rem; text-align: center;margin-bottom: 1rem; font-weight: bold;">Materials:</div>
+                        <!--sub sub sub title-->
+                        <p><h4>Equipment:</h4></p>
+                        <p>1. Pipette and pipette tips</p>
+                        <p>2. Cryovial</p> 
+                        <span style="font-size: 1rem;font-weight: bold;"><h4>Consumables:</h4></span>
+                        <p>1. 50% glycerol (autoclaved)</p>
+                        <p>2. Bacterial overnight culture with an antibiotic if necessary</p>
+                      </div>
+                      <div class="col">
+                        <div style="font-size: 2rem; text-align: center;margin-bottom: 1rem; font-weight: bold;">Protocol:</div>
+                        <p>1. Put 1 ml of bacterial overnight culture into the cryovial and add 500 μl of 50% glycerol. Mix it well.</p>
+                        <p>2. Keep it in the -80°C freezer.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--end of card-body-->
+              </div>
+            </div> 
+            
+          <!--start of every card6666666-->
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <h2 class="mb-0" data-toggle="collapse" data-target="#collapseFive">
+                <div class="btn title-fontStyle" aria-expanded="true" aria-controls="collapseFive">
+                  Gel Extraction and Purification
+                </div>
+                <span class="plusClass"></span>
+                <span class="minusClass"></span>
+              </h2>
             </div>
-          </br>
-          </aside>
-      
-        <div class="row" id="move20">     
-          <div class="col" id="Content">
-          <!---Advisors--->
-          <p class="target-fix" id="advisors"></p>
-          <p style="margin-top: 50px;"></p>
-          <div class="p1">
-         <h1 id="Advisors;" style="color: #243136;"><b>Advisors</b></h1> 
-         </div> 
-         <div class="o">
-         <hr style="border-top:5px solid gray;">
-         <ul>
-          <p class="p1">Zhihao Luo</p1>
-            <li><p>Guided the operation of relevant molecular experiments and put forward suggestions on molecular experiments.</p></li>
-            <li><p>Ensure experimental safety and preparation of experimental instruments.</p></li>
-            <li><p>Gave us lab safety training and lessons, taught us how to protect ourselves in an experiment.</p></li>
-            <!--从这里开始录入！！！上面的白色文字别忘记删除-->
-         </ul>
-         </hr>
-         </div>
-        
-        
-      </hr>
-      </div> 
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive">
+              <div class="card-body">
+                <div class="container margin-top-small">
+                  <div class="row">
+                    <div class="col">
+                      <div style="font-size: 2rem; text-align: center;margin-bottom: 1rem; font-weight: bold;">Materials:</div>
+                      <p><h4>Equipment:</h4></p>
+                      <p>1. Eppendorf tubes</p>
+                      <p>2. Collection tubes</p>
+                      <p>3. Spin column</p>
+                      <p>4. Pipette and pipette tips</p>
+                      <p>5. Centrifuge</p>
+                      <p>6. Scalpel</p>
+                      <p>7. Dry Thermounit</p>
+                      <p><h4>Consumables:</h4></p>
+                      <p>1. Isopropanol</p>
+                      <p>2. Binding buffer</p>
+                      <p>3. Washing buffer</p>
+                      <p>4. Elution buffer</p>
+                    </div>
+                    <div class="col">
+                      <div style="font-size: 2rem; text-align: center;margin-bottom: 1rem; font-weight: bold;">Protocol:</div>
+                      <p><h5>Gel excision, solubilization and DNA binding:</h5></p>
+                      <p>1. Excise band with scalpel and transfer to a new eppendorf tube.</p>
+                      <p>2. Weigh the gel slice in a tube (by measuring the weight difference of an empty eppendorf and the eppendorf with gel slice in the tube).</p>
+                      <p>3. Add 3 volumes of binding buffer to 1 volume of gel (100 mg = 100 μl).</p>
+                      <p>4. Incubate at 60°C for 2-10 mins (or until the gel has completely dissolved).</p>
+                      <p>5. Add 1.5 volume of isopropanol and invert the eppendorf 10 times.</p>
+                      <p>6. Place a spin column in a provided collection tube. Transfer 700 μl sample to the spin column and centrifuge for 30 secs, 12,000 rpm.</p>
+                      <p>7. Discard flow-through and place the spin column back into the collection tube.</p>
+                      <p><h5>2. Wash:</h5></p>
+                      <p>1. Add 500 μl of washing buffer to the spin column and centrifuge for 30 secs, 12,000 rpm.</p>
+                      <p>2. Discard flow-through and place the spin column back into the collection tube.</p>
+                      <p>3. Add 200 μl of washing buffer to the spin column and centrifuge for 5 mins, 12,000 rpm.</p>
+                      <p>4. Discard flow-through and place the spin column back into the collection tube.</p>
+                      <p><h5>3. DNA elution:</h5></p>
+                      <p>1. Transfer spin column to clean eppendorf. Add 50 μl of elution buffer to the spin column. Centrifuge for 2 mins, 12,000 rpm.</p>
+                      <p>2. Collect the pure sample in the eppendorf and discard the spin column.</p>
+                      <p>Keep the DNA solution in -20°C freezer.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--start of every card7777777-->
+         
+            
+          </div>
+          <div class="color-block">&#8195;</div>
+        </div>  
       </div>
     </div>
-<body>
+  </div>
+</div>
+</main>
+<script src="https://2019.igem.org/Team:NCKU_Tainan/js/jquery-3_4_1_min_js?action=raw&amp;ctype=text/javascript"></script>
+<script src="https://2019.igem.org/Team:NCKU_Tainan/js/4.3.1/bootstrap_min_js?action=raw&amp;ctype=text/javascript"></script>
+
+</body>
+
+
+
+
+
+</div>        <div class="visualClear"></div>
+      </div>
+    </div>
+  </div>
+</html>
 
 {% endblock %}
