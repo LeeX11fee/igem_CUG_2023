@@ -40,7 +40,24 @@
         font-size:0.5rem;
         color:#f0f0f0
     }
-    
+    .z22
+    {
+        font-family:'font_two';
+        font-size:0.2rem;
+        color:#f0f0f0
+    }
+    .z3
+    {
+        font-family:'font_one';
+        font-size:1.5rem;
+        color:#f0f0f0
+    }
+    .z4
+    {
+        font-family:'font_two';
+        font-size:1.0rem;
+        color:#f26b1f
+    }
     body
    {
         width:100%;
@@ -71,13 +88,135 @@
         </div>
     </section>
 
+    
+
     <div class="container">
-        <p style="text-align: center"><span class="z1">1.Construct  Ppel + RBS + gfp + TT and test its florescence intensity(pHYD-1)</span></p>
-        <p style="text-align: center"><span class="z1">2.Add constitutive promoter Pci (pHYD-2)</span></p>
-        <p style="text-align: center"><span class="z1">3.Add fleQ (pHYD-3)</span></p>
-        <p style="text-align: center"><span class="z1">4.Test gfp under different disassociating agent and measure c-di-GMP using HPLC(or kit)</span></p>
-      
+
+        {% include "sider.html" %}
+          <aside class="aside">
+            <br>
+            <div>
+              <a class="pointer" href="#Part I">Part I</a>
+              <a class="pointer" href="#Part II">Part II</a>
+              <a class="pointer" href="#Part III">Part III</a>
+              <a class="pointer" href="#Part IV">Part IV</a>
+              <a class="pointer" href="#Part V">Part V</a>
+            </div>
+          </br>
+          </aside>
+
+          <div class="row" id="move20">     
+            <div class="col" id="Content">
+              <!---Part I--->
+               <p class="target-fix" id="Part I"></p>
+               <p style="margin-top: 50px;"></p>
+               <div class="p1">
+              <h1 id="Part I" style="color: #f26b1f">Part I: Biobrick Construction and transformation</h1> 
+              </div> 
+              <div class="o">
+              <hr style="border-top:5px solid gray;">
+              <ul>
+                  <p class="z3"> Work we have done</p>     
+                  <p>We have constructed biobrick pHYD-1(<a href="http://parts.igem.org/Part:BBa_K4242011" class="z4">BBa_K4242011</a>) in which reporter gene <i>gfp</i> is cloned at the downstream of promoter P<span class="z2">pel</span> for testing the performance of promotor P<span class="z2">pel</span> in <i>E.coli</i> and <i>S. oneidensis</i>. The key gene parts are shown in Fig. 1a. The ligation products were transferred to <i>E.coli</i>. To select colonies with pHYD-1, colony PCR was conducted, and the result is shown in Fig. 2b. Finally, the constructs were sequenced.</p>         
+                  <p style="text-align: center">
+                    <img src="https://static.igem.wiki/teams/4242/wiki/wet-pho/13.png" alt="Pulpit rock" width="600" height="230"> 
+                  </p>
+                  <p style="text-align: center" class="z2">Fig. 1  a|Structure of pHYD-1    b| Colony PCR result of pHYD-1</p>
+                  <p>We have constructed a tandem promoter P<span class="z2">cI/pel</span> by using overlap PCR to fusing a constitutive promoter P<span class="z2">cI</span> with P<span class="z2">pel</span>. The PCR products directly were inserted at the upstream of <i>gfp</i> with a RBS. The resultant biobrick is named as pHYD-2 <a href="http://parts.igem.org/Part:BBa_K4242012" class="z4">BBa_K4242012</a>) for testing the performance of tandem promotor P<span class="z2">cI/pel</span> in <i>E.coli</i> and <i>S. oneidensis</i>.. The structure of pHYD-2 is shown in Fig 2a. The ligation products were transferred into E .coli. Then, we conducted colony PCR to select colonies with pHYD-1, and the result is shown in Fig. 2b. Finally, the constructs were sequenced.</p>
+                  <p style="text-align: center">
+                    <img src="https://static.igem.wiki/teams/4242/wiki/wet-pho/14.png" alt="Pulpit rock" width="590" height="220"> 
+                  </p>
+                  <p style="text-align: center" class="z2">Fig. 2  a|Structure of pHYD-2  b|Colony RPC result of pHYD-2</p>
+                  <p>To test whether the <i>fleQ</i> can repress the <i>gfp</i> transcription driven by the tandem promoter P<span class="z2">cI/pel</span> in <i>E.coli</i> and <i>S. oneidensis</i>, we have constructed biobrick pHYD-3 (<a href="http://parts.igem.org/Part:BBa_K4242013" class="z4">BBa_K4242013</a>) in which the operon of <i>fleQ</i> is placed in the front of P<span class="z2">cI/pel</span>- <i>gfp</i>. <i>fleQ</i> was cloned from Pseudomonas aeruginosa genome. The transcription of <i>fleQ</i> is promoted by a constitutive promoter P<span class="z2">cI</span>. Additionally, double terminators were placed after <i>fleQ</i> and reporter genes, in order to minimize the background signal caused by gene expression leakage. The key gene parts are shown in Fig 3a. The constructs were selected by colony PCR and sequenced (Fig. 3b).</p>
+                  <p style="text-align: center">
+                    <img src="https://static.igem.wiki/teams/4242/wiki/wet-pho/15.png" alt="Pulpit rock" width="630" height="230"> 
+                  </p>
+                  <p style="text-align: center" class="z2">Fig.3 a|Structure of pHYD-3 b| Colony PCR result of pHYD-3</p>
+                  <p>To decrease intracellular c-di-GMP levels in <i>E.coli</i> and <i>S. oneidensis</i> for testing the performance of c-di-GMP biosensor, We have constructed the part P<span class="z2">tac</span>-<i>yhjH</i> (<a href="http://parts.igem.org/Part:BBa_K4242017" class="z4">BBa_K4242017</a>) based on the existing part (<a href="http://parts.igem.org/Part:BBa_K2471001" class="z4">BBa_K2471001</a>). <i>yhjH</i> gene was cloned using <i>E.coli</i> genome as templates. The expression of <i>yhjH</i> is controlled by IPTG-inducible promoter P<span class="z2">tac</span> (Fig. 4a). By adding different concentration of IPTG to control the expression level of <i>yhjH</i>, the intracellular c-di-GMP concentrations can be controlled at different levels. Fig 4b shows the results of electrophoresis gel of pSB3C5 cut by EcoRI.</p>
+                  <p style="text-align: center">
+                    <img src="https://static.igem.wiki/teams/4242/wiki/wet-pho/16.png" alt="Pulpit rock" width="628" height="250"> 
+                  </p>
+                  <p style="text-align: center" class="z2">Fig.4 a|Structure of pSB3C5-<i>yhjH</i> b| The result of pSB3C5-<i>yhjH</i> digested by restriction enzyme EcoR I</p>
+                  <p style="text-align: center">
+                    <img src="https://static.igem.wiki/teams/4242/wiki/wet-pho/17.png" alt="Pulpit rock" width="413" height="225"> 
+                  </p>
+                  <p style="text-align: center" class="z2">Fig.5 P<span class="z22">cI/pel</span> constitutively promotes expression of <i>gfp</i>. <i>fleQ</i> represses expression level of gene under the control of P<span class="z22">cI/pel</span></p>
+                </ul>
+              </hr>
+              </div>
+
+              <!---Part II--->
+              <p class="target-fix" id="Part II"></p>
+              <p style="margin-top: 50px;"></p>
+              <div class="p1">
+             <h1 id="Part II" style="color: #f26b1f">Part II : Demonstration of tandem promotor and <i>fleQ</i></h1> 
+             </div> 
+             <div class="o">
+             <hr style="border-top:5px solid gray;">
+             <ul>
+                <p>In this work, we describe the design of a transcription-based fluorescent biosensor that is readily adaptable for gauging c-di-GMP levels in different bacteria. The components of the reporter comprise a transcription factor <i>fleQ</i> that is originated from P. aeruginosa, a tandem promoter P<span class="z2">cI/pel</span> that is composed of a constitutive promoter P<span class="z2">cI</span> and a c-di-GMP responsive promoter P<span class="z2">pel</span>, as well as a fluorescent protein <i>gfp</i> as a reporter. In P. aeruginosa, the transcriptional factor <i>fleQ</i> represses expression of the pel operon for Pel exopolysaccharide biosynthesis by a simple roadblock mechanism in which <i>fleQ</i> sits at the pel promoter and prevents RNA polymerase from binding, while <i>fleQ</i> derepresses gene expression due to the conformational change of <i>fleQ</i> upon binding c-di-GMP. Theoretically, the gene under pel promoter can be constitutively expressed in the bacteria that have no repressor <i>fleQ</i>. To test this hypothesis, we directly fused pel promoter to <i>gfp</i> and transferred the construct into two module organisms, E. coli BL21 and <i>S. oneidensis</i> MR-1. However, MR-1/pHYD-1 and BL21/pHYD-1 produced very low fluorescence, which suggests the promoter P<span class="z2">pel</span> is non-functional in these two bacteria (Fig. 5a). To address this challenge, we designed a tandem promoter P<span class="z2">cI/pel</span> in which the transcription start site of the constitutive promoter P<span class="z2">cI</span> is immediately followed by the <i>fleQ</i> binding site (Box1) of the promoter P<span class="z2">pel</span>. Transcription of the reporter gene <i>gfp</i> is promoted by cI promoter in the absence of <i>fleQ</i>. As shown in Fig. 5, the result shows that MR-1/pHYD-2 and BL21/pHYD-2 produced high fluorescence, indicting the tandem promotor is able to trigger the reporter gene expression. Then we added the regulator <i>fleQ</i> into the system. The <i>fleQ</i> successfully binds to the box and reduced the <i>gfp</i> expression in MR-1/pHYD-3 and BL21/pHYD-3 as we expected, indicating the whole system is functional in chassis like <i>E.coli</i> and <i>S. oneidensis</i>. For more information and details about this engineering cycles, please check <a href="https://2022.igem.wiki/cug-china/engineering" class="z4">https://2022.igem.wiki/cug-china/engineering.</a></p>
+            </ul>
+            </hr>
+            </div>
+
+            <!---Part III--->
+            <p class="target-fix" id="Part III"></p>
+            <p style="margin-top: 50px;"></p>
+            <div class="p1">
+           <h1 id="Part III" style="color: #f26b1f">Part III : Demonstration of c-di-GMP responding to c-di-GMP</h1> 
+           </div> 
+           <div class="o">
+           <hr style="border-top:5px solid gray;">
+           <ul>
+              <p>The native c-di-GMP can bind with <i>fleQ</i>, making biosensor produce a background fluorescence. When c-di-GMP decreases, <i>fleQ</i> further represses the <i>gfp</i> expression to decrease fluorescent outputs.  To proof that our biosensor can respond to different intracellular c-di-GMP concentration and indicate its decrease, we decided to achieve the decrease gradient of intracellular c-di-GMP. To achieve this, we improved an existing part (<a href="http://parts.igem.org/Part:BBa_K2471001" class="z4">BBa_K2471001</a>) encoding the <i>yhjH</i> protein, a c-di-GMP hydrolase. By changing the promotor from T7 to P<span class="z2">tac</span>, we can use IPTG to control the expression level of YjhH, reducing c-di-GMP concentration at different level (Fig. 6a). We transform this biobrick into the BL21/pHYD-3 and MR-1/pHYD-3, obtaining the strains BL21/(pHYD-3+pSB3C5-<i>yhjH</i>) and MR-1/(pHYD-3+pSB3C5-<i>yhjH</i>), as well as their responding control strain BL21/(pHYD-3+pSB3C5-P<span class="z2">tac</span>) and MR-1/(pHYD-3+pSB3C5-P<span class="z2">tac</span>.) We cultured them with different IPTG levels. Compared with the control strains, we observed a significant decrease in fluorescence when the IPTG concentration is above 0.01 mM and 0.1 mM in BL21 and 0.1 mM and 1 mM in MR-1, respectively (Fig. 6b and c), after cultured 12 hours. This result shows that, the fluorescence intensity of strains with pHYD-3 and pSB3C5-<i>yhjH</i> decreased with increasing the concentration of IPTG, whereas the fluorescence intensities of the control strains, i.e., BL21/(pHYD-3+pSB3C5-P<span class="z2">tac</span>) and MR-1/(pHYD-3+pSB3C5-P<span class="z2">tac</span>), had no change with the increase in IPTG concentration.</p>
+              <p style="text-align: center">
+                <img src="https://static.igem.wiki/teams/4242/wiki/wet-pho/18.png" alt="Pulpit rock" width="736" height="463"> 
+              </p>
+              <p style="text-align: center" class="z2">Fig.6 a|Structure of the pSB3C5-P<span class="z22">tac</span> and pSB3C5-<i>yhjH</i>. b|Fluorescence in S.oneidensis MR-1/pHYD-3. c|Fluorescence intensity of <i>E.coli</i> BL21/pHYD-3 with different c-di-GMP levels.</p>
+            </ul>
+          </hr>
+          </div>
+
+          <!---Part IV--->
+          <p class="target-fix" id="Part IV"></p>
+          <p style="margin-top: 50px;"></p>
+          <div class="p1">
+         <h1 id="Part IV" style="color: #f26b1f">Part IV : Verification of biosensor screening biofilm dispersal agents</h1> 
+         </div> 
+         <div class="o">
+         <hr style="border-top:5px solid gray;">
+         <ul>
+            <p>A group of structurally diverse compounds are known to hinder the formation of bacterial biofilm or trigger the dispersal of biofilm. It is also known that biofilm dispersal can be induced by sequestering cellular c-di-GMP by over-expressing c-di-GMP binding proteins, which indicates that a low c-di-GMP level could directly lead to biofilm dispersal. By using the biosensor, we asked whether some of the biofilm-dispersing compounds can cause a reduction in cellular c-di-GMP levels in E. coli and <i>S. oneidensis</i>. The answer to the question would determine whether we can adapt our biosensor into the field of developing new chemicals or technical to repress the biofilm formation. The compounds under investigation include D-Tyrosine, 3-Iodolylacetonitrile and Resveratrol. The concentrations of the biofilm-dispersing compounds used in this project are listed in Table S1 in the page  <a href="https://2022.igem.wiki/cug-china/proof of concept" class="z4">https://2022.igem.wiki/cug-china/proof of concept</a>. These compounds were chosen based on the reports that they are able to disperse biofilm in E. coli and other bacterial strains. Measurement of the fluorescence intensity were performed following the protocol in the protocol page.<a href="https://2022.igem.wiki/cug-china/protocol" class="z4">https://2022.igem.wiki/cug-china/protocol</a></p>
+            <p>The strains BL21/pHYD-3 and MR-1/pHYD-3 were treated with biofilm-dispersal agents mentioned above. The individual compounds were added separately to the medium at the beginning of the cell culture. Then they were incubated at 37℃ and 30 ℃ for 12 hours, respectively. Then we harvested the cells and measured fluorescence by the protocol. As shown in Fig7 a and b, a decrease of the fluorescence intensity was observed for all three compounds in both BL21 and MR-1 strains. In BL21, compared with the control group, these three compounds respectively reduced fluorescence intensity about 23%, 27% and 13%. In MR-1, the fluorescence also decreased by 18%, 10% and 14%. Furthermore, we cultured the strains again under the same condition and harvest the cells to measure its intracellular c-di-GMP concentration. On the basis of the curves measured by HPLC, we estimate that the compounds caused a drop of intracellular c-di-GMP concentration from 0.91-2.17 pM/μg total protein to 0.305-0.537 pM/μg total protein, which was reduced by 66%~75%. These results suggested that our biosensor is able to monitor these compounds inducing biofilm dispersal by reducing cellular c-di-GMP level.</p>
+            <p>The biosensors revealed a decline of c-di-GMP level when the cells were treated with biofilm-dispersing agents. The result establishes the biosensor as valuable tool for using in chemical biology and biofilm-dispersal agent screening. However, analyzing the data of our experiments also exhibit some problems in our biosensor. As shown in Fig.7, when treated with biofilm dispersal agents for 6 hours, the reduce of fluorescence varies about between 10%-27%, which is out of proportion with the decrease of c-di-GMP level (about 66%~75%). This means the dynamic range of the detection is not large enough. Although it can indicate the drop of c-di-GMP level, it can’t precisely reflect the c-di-GMP dynamics due to its narrow dynamic range.</p>
+            <p style="text-align: center">
+              <img src="https://static.igem.wiki/teams/4242/wiki/wet-pho/19.png" alt="Pulpit rock" width="612" height="466"> 
+            </p>
+            <p style="text-align: center" class="z2">Fig.7 a|Fluorescence intensity of MR-1/pHYD-3, cultured with different dispersal agents. b|Fluorescence intensity of BL21/pHYD-3. c|C-di-GMP level in MR-1/pHYD-3(measured by HPLC). Two-sided Student’s t test was used to analyze the statistical significance (*P< 0.05)</p>
+          </ul>
+        </hr>
+        </div>
+
+        <!---Part V--->
+        <p class="target-fix" id="Part V"></p>
+        <p style="margin-top: 50px;"></p>
+        <div class="p1">
+       <h1 id="Part V" style="color: #f26b1f">Part V Work has not finished yet</h1> 
+       </div> 
+       <div class="o">
+       <hr style="border-top:5px solid gray;">
+       <ul>
+          <p>Based on our current data, we found that our biosensor exhibits a narrow dynamic range. We will preliminary improve the dynamic range of our biosensor by controlling the expression of regulator <i>fleQ</i> and adding another regulator FleN. Although we have constructed these biobricks (<a href="http://parts.igem.org/Part:BBa_K4242014" class="z4">BBa_K4242014</a>,<a href="http://parts.igem.org/Part:BBa_K4242015" class="z4">BBa_K4242015</a>) and added these parts in the registry, we don't have enough time to finish the experiments for their demonstration.</p>
+          <p>We have constructed the gene part pSB3C5-<i>yhjH</i> to decrease intracellular c-di-GMP concentration at different levels for testing the performance of c-di-GMP biosensor, simulating the effect of biofilm-dispersing agents that can induce biofilm dispersal by decreasing c-di-GMP levels. In addition to “bad” biofilms, there are a lot of “good” biofilms which have a wide range of biotechnology applications. For example, <i>S. oneidensis</i> is a model electroactive bacteria that can exchange electron with electrodes in bioelectrochemical systems (BESs). Specially, it shows promise as biocatalysts for efficient conversion of a wide range of organic wastes and renewable biomass to electricity. This application is greatly associated with the formation of <i>S. oneidensis</i> biofilms on the anode. Increasing c-di-GMP level to enhance anode biofilms of <i>S. oneidensis</i> is a promising strategy to promote electron transfer and increase electricity generation. Our biosensors can be used to screening the c-di-GMP synthase with high enzyme activity. Therefore, we need to check whether our biosensor can detect the increase in c-di-GMP levels. To increase intracellular c-di-GMP level, we cloned a c-di-GMP synthase gene, yedQ. We have finished the construction of this part (<a href="http://parts.igem.org/Part:BBa_K4242016" class="z4">BBa_K4242016</a>) and plan to finish its demonstration in next year.</p>
+          <p>Collectively, we can see a clear path of the engineering cycles and construction of the biosensor, testing its reaction to both endogeneity and exogenous decrease of c-di-GMP level. The biosensor also revealed a decline of c-di-GMP level wen the cells were treated with biofilm dispersing agents. Now we can come to conclusion that we have successfully developed a broadly applicable biosensor for gauging intracellular c-di-GMP levels, which can be used to screening biofilm dispersal agents and other biofilm/c-di-GMP associated researches. By studying the biosensor-containing cells embedded in biofilm matrixes, we will also be able to gain a better understanding of the roles c-di-GMP played in the highly dynamic and complex processes of biofilm formation and dispersal, In future we will continue to widen the dynamic range of our biosensor and explore its wider applications, applying synthetic biology to make the world better.</p>
+          </ul>
+      </hr>
+      </div>
+
+            
+      </div>
+      </div>
     </div>
-<body>
+</body>
 
 {% endblock %}
