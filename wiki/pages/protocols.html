@@ -31,14 +31,14 @@
     .z1
     {
         font-family:'font_one';
-        font-size:1.5rem;
-        color:#f26b1f
+        font-size:1.2rem;
+        color:#f0f0f0;
     }
     .z2
     {
-        font-family:'font_two';
-        font-size:0.5rem;
-        color:#f0f0f0
+        font-family:'font_one';
+        font-size:1.8rem;
+        color:#f26b1f;
     }
     
     body
@@ -58,34 +58,21 @@
     <link rel="stylesheet" href="{{ url_for('static', filename = 'notebook amazing/nb.css') }}">
 </head>
 
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i,800,800i,900,900i|Sansita:400,400i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
-</head>
+
 <style>
-/*before get rid of #HQ_page*/
-#HQ_page p {
-    font-size: 1.1rem;
-}
-/* Compete with HQ */
-#mw-content-text {
-    background-color: #f0f0f0;
-    color: #2C2C2C;
-}
 
 html {
     scroll-behavior: smooth;
     color: #2C2C2C;
 }
-body {
-    position: relative;
+body 
+{
     width:100%;
     height: auto;
-    background-color: #f0f0f0;
+    background-color: #21373d;
     overflow-y: scroll;
 }
 
-/*----------Joe's preset END---------*/
 /*protocol.css start*/
 .align-font{
     text-align: center;
@@ -108,7 +95,7 @@ body {
 .half-hr{
     width:50%;
     border-width: 5px;
-    background-color:#172544;
+    background-color:#21373d;
     margin: 1rem auto;
 }
 .small-table{
@@ -133,15 +120,12 @@ h2{
 }
 .color-block{
     height:100px;
-    background-color: #f0f0f0;
+    background-color: #21373d;
     text-align: center;
 }
 .card-header{
-    background-color: #f0f0f0;
+    background-color: #21373d;
     padding:0;
-    /* 邊界 看要不要
-    border-style: dashed;
-    */
     border-bottom:0px;
 }
 .card-header:hover{
@@ -160,14 +144,14 @@ h2{
 }
 .card{
     border:none;
-    background-color: #f0f0f0;
+    background-color: #21373d;
 }
 .card-body{
     width: 99%;
     margin:0 2rem 2rem 0rem;
     padding:1rem 0.5rem 1rem 0.5rem;
     z-index: 5;
-    border:2px solid #172544;
+    border:2px solid #21373d;
     border-radius: 0 0 8px 8px;
     border-top:0;
 }
@@ -184,7 +168,7 @@ h2{
     position: relative;
     left: 2%;
     text-align: left;
-    background: #f0f0f0;
+    background: #21373d;
     cursor: pointer;
 }
 .mb-0:after,.mb-0:before {
@@ -194,7 +178,7 @@ h2{
     top: 0;
     width: 0;
     height: 100%;
-    background: #E3E5E8;
+    background: #f0f0f0;
     z-index:-2;
 }
 .mb-0:hover{
@@ -203,7 +187,7 @@ h2{
 }            
 .mb-0:before {
     transition: .5s;
-    background: #DBDBDB;
+    background: #f0f0f0;
     z-index:-1;
     border-radius: 4px;
 }          
@@ -217,18 +201,9 @@ h2{
     width:20%;
     left:300px;
 }
-.title-fontStyle{
-    font-size: 24px;
-    font-family: 'Sansita';
-}
 
-
-.minusClass{
-    display: none;
-}
-/*protocols table start*/
 .table-Border{
-    border:1.5px solid #7E3B40;
+    border:1.5px solid #f0f0f0;
     padding-right: 1rem;
 }
 .table-Border td{
@@ -236,20 +211,19 @@ h2{
 }
 .table-Border th,
 .table-Border td{
-    border:1.5px solid #7E3B40;
+    border:1.5px solid #f0f0f0;
     padding:.3rem;
     vertical-align: middle;
 }
 .table thead th {
-    border:1.5px solid #7E3B40;
+    border:1.5px solid #f0f0f0;
 }
-/*protocols table end*/
 </style>
 
 
 <style>
 #content{
-  background:#f0f0f0;
+  background:#21373d;
 }
 table{
   background:#f0f0f0;
@@ -267,101 +241,89 @@ table{
       <div class="row">
         <div class="col-12">
           <div class="accordion" id="accordionExample">
-            <!--start of every card1111111-->
+            <!--card text-->
             <div class="card">
               <div class="card-header" id="headingEleven">
                 <h2 class="mb-0"data-toggle="collapse" data-target="#collapseEleven">
-                  <div class="btn title-fontStyle" aria-expanded="false" aria-controls="collapseEleven">
-                    Bacterial Glycerol Stock
+                  <div class="z2" aria-expanded="false" aria-controls="collapseEleven">
+                    Plasmid Extraction Protocol
                   </div>
-                  <span class="plusClass"></span>
-                  <span class="minusClass"></span>
+
                 </h2>
               </div>
               <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven">
-                <!--start of card-body-->
+                <!--card-body-->
                 <div class="card-body">
                   <div class="container margin-top-small">
                     <div class="row">
                       <div class="col">
-                        <div style="font-size: 2rem; text-align: center;margin-bottom: 1rem; font-weight: bold;">Materials:</div>
-                        <!--sub sub sub title-->
-                        <p><h4>Equipment:</h4></p>
-                        <p>1. Pipette and pipette tips</p>
-                        <p>2. Cryovial</p> 
-                        <span style="font-size: 1rem;font-weight: bold;"><h4>Consumables:</h4></span>
-                        <p>1. 50% glycerol (autoclaved)</p>
-                        <p>2. Bacterial overnight culture with an antibiotic if necessary</p>
+                        <p style="text-align: center" class="z2">Material</p>
+                        <p class="z1">AG SteadyPure Plasmid DNA Extraction Kit<br>
+                            Pipettes and pipette tips<br>
+                            Vortex<br>
+                            Microcentrifuge<br>
+                            Nuclease-free 1.5 mL microcentrifuge tubes<br>
+                            Sterile deionized water<br>
+                            100% ethanol</p>
                       </div>
                       <div class="col">
-                        <div style="font-size: 2rem; text-align: center;margin-bottom: 1rem; font-weight: bold;">Protocol:</div>
-                        <p>1. Put 1 ml of bacterial overnight culture into the cryovial and add 500 μl of 50% glycerol. Mix it well.</p>
-                        <p>2. Keep it in the -80°C freezer.</p>
+                        <p class="z1">Before Starting<br>
+                            Add the RNase A Solution included in the kit to the Resuspension Solution and mix throughly. After the additon of RNase A, the Resuspension Solution should be stored at 4 ℃.<br>
+                            Add the indicated volume of ethanol (96-100%) to Wash Solution II (concentrated) prior to first use.<br>                  
+                            Make sure to wear gloves.</p>
+                            <br>
+                            <p style="text-align: center" class="z2">Protocol</p>
+                            <p class="z1">1.Add a 1.5 mL of bacterial culture to microcentrifuge tubes and harvest the cells by centrifugation for 10 min at 5,000 x g. Discard the supernatant.<br>
+                                2.Resuspend the pelleted cells in 250 uL of the Resuspension Solution. The bacteria should be resuspended completely by vortexing and no cell clumps remain.<br>
+                                3.Add 250 uL of the Lysis Solution and mix throughly by inverting the tube 4-6 times until the solution becomes viscous and slightly clear. <br>
+                                Note:Do not vortex to avoid shearing of chromosomal DNA. Do not incubate for more than 5 min to avoid denaturation of supercoiled plasmid DNA.<br>
+                                4.Add 350 uL of the Neutralization Solution and mix immediately and throughly by inverting the tube 4-6 times. The neutralized bacterial lysate should become cloudy.<br>
+                                5. Centrifuge at 12,000 x g for 5 min to pellet cell debris and chromosomal DNA.<br>
+                                6. Transfer the supernatant to the supplied GeneJET spin column bt decanting or pipetting. Avoid disturbing or transferring the white precipitate.<br>
+                                7. Centrifuge at 12,000 x g for 1 min. Discard the flow-through and place the column back into the same collection tube.<br>
+                                8. Add 500 uL of the Wash Solution to the spin column. Centrifuge at 12,000 x g for 1 min and discard the flow-through. Then place the column back into the same collection tube.<br>
+                                9. Repeat the step 8.<br>
+                                10.Centrifuge the empty tube for an additional 1 min to remove residual Wash Solution.<br>
+                                11.Transfer the spin column into a fresh 1.5 mL microcentrifuge tube. Add 50 uL of the sterile deionized water to the center of spin column membrane to elute the plasmid DNA. Incubate for 2 min at room temperature.<br>
+                                12.Discard the column and store the purified plasmid DNA at -20℃.</p>
+                        
                       </div>
                     </div>
                   </div>
                 </div>
-                <!--end of card-body-->
+                <!--card-body-->
               </div>
             </div> 
-            
-          <!--start of every card6666666-->
-          <div class="card">
-            <div class="card-header" id="headingFive">
-              <h2 class="mb-0" data-toggle="collapse" data-target="#collapseFive">
-                <div class="btn title-fontStyle" aria-expanded="true" aria-controls="collapseFive">
-                  Gel Extraction and Purification
-                </div>
-                <span class="plusClass"></span>
-                <span class="minusClass"></span>
-              </h2>
-            </div>
-            <div id="collapseFive" class="collapse" aria-labelledby="headingFive">
-              <div class="card-body">
-                <div class="container margin-top-small">
-                  <div class="row">
-                    <div class="col">
-                      <div style="font-size: 2rem; text-align: center;margin-bottom: 1rem; font-weight: bold;">Materials:</div>
-                      <p><h4>Equipment:</h4></p>
-                      <p>1. Eppendorf tubes</p>
-                      <p>2. Collection tubes</p>
-                      <p>3. Spin column</p>
-                      <p>4. Pipette and pipette tips</p>
-                      <p>5. Centrifuge</p>
-                      <p>6. Scalpel</p>
-                      <p>7. Dry Thermounit</p>
-                      <p><h4>Consumables:</h4></p>
-                      <p>1. Isopropanol</p>
-                      <p>2. Binding buffer</p>
-                      <p>3. Washing buffer</p>
-                      <p>4. Elution buffer</p>
+
+            <!--card text-->
+            <div class="card">
+                <div class="card-header" id="headingEleven">
+                  <h2 class="mb-0"data-toggle="collapse" data-target="#collapseEleven">
+                    <div class="z2" aria-expanded="false" aria-controls="collapseEleven">
+                      Bacterial Glycerol Stock
                     </div>
-                    <div class="col">
-                      <div style="font-size: 2rem; text-align: center;margin-bottom: 1rem; font-weight: bold;">Protocol:</div>
-                      <p><h5>Gel excision, solubilization and DNA binding:</h5></p>
-                      <p>1. Excise band with scalpel and transfer to a new eppendorf tube.</p>
-                      <p>2. Weigh the gel slice in a tube (by measuring the weight difference of an empty eppendorf and the eppendorf with gel slice in the tube).</p>
-                      <p>3. Add 3 volumes of binding buffer to 1 volume of gel (100 mg = 100 μl).</p>
-                      <p>4. Incubate at 60°C for 2-10 mins (or until the gel has completely dissolved).</p>
-                      <p>5. Add 1.5 volume of isopropanol and invert the eppendorf 10 times.</p>
-                      <p>6. Place a spin column in a provided collection tube. Transfer 700 μl sample to the spin column and centrifuge for 30 secs, 12,000 rpm.</p>
-                      <p>7. Discard flow-through and place the spin column back into the collection tube.</p>
-                      <p><h5>2. Wash:</h5></p>
-                      <p>1. Add 500 μl of washing buffer to the spin column and centrifuge for 30 secs, 12,000 rpm.</p>
-                      <p>2. Discard flow-through and place the spin column back into the collection tube.</p>
-                      <p>3. Add 200 μl of washing buffer to the spin column and centrifuge for 5 mins, 12,000 rpm.</p>
-                      <p>4. Discard flow-through and place the spin column back into the collection tube.</p>
-                      <p><h5>3. DNA elution:</h5></p>
-                      <p>1. Transfer spin column to clean eppendorf. Add 50 μl of elution buffer to the spin column. Centrifuge for 2 mins, 12,000 rpm.</p>
-                      <p>2. Collect the pure sample in the eppendorf and discard the spin column.</p>
-                      <p>Keep the DNA solution in -20°C freezer.</p>
+  
+                  </h2>
+                </div>
+                <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven">
+                  <!--card-body-->
+                  <div class="card-body">
+                    <div class="container margin-top-small">
+                      <div class="row">
+                        <div class="col">
+                          
+                        </div>
+                        <div class="col">
+                          
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  <!--card-body-->
                 </div>
-              </div>
-            </div>
-          </div>
-          <!--start of every card7777777-->
+              </div> 
+            
+          
          
             
           </div>
