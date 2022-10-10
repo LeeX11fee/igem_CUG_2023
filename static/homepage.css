@@ -54,8 +54,14 @@ html {
     .p1
     {
         font-family:'font_one';
-        font-size:1.2rem;
+        font-size:1.5rem;
         color:#f0f0f0;
+    }
+    .p2
+    {
+        font-family:'font_one';
+        font-size:3rem;
+        color:#f26b1f;
     }
     
     @font-face
