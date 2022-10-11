@@ -5,138 +5,150 @@
 <style>
 
 @font-face
-    {
-        font-family:'font_one';
-        src:url(https://static.igem.wiki/teams/4242/wiki/acme-regular.ttf)
-    }
-    .p1
-    {
-        font-family:'font_one';
-        font-size:1.5rem;
-        color:#f0f0f0;
-    }
-    
-    @font-face
-    {
-        font-family:'font_two';
-        src:url(https://uploads.igem.org/teams/4242/wiki/Overlock-Regular.ttf)
+  {
+    font-family:'font_one';
+    src:url(https://static.igem.wiki/teams/4242/wiki/acme-regular.ttf)
+  }
+  .p1
+  {
+    font-family:'font_one';
+    font-size:1.5rem;
+    color:#f0f0f0;
+  }
+  
+  @font-face
+  {
+    font-family:'font_two';
+    src:url(https://uploads.igem.org/teams/4242/wiki/Overlock-Regular.ttf)
 
-    }
-    .o
-    {
-        font-family:'font_two';
-        font-size:1.2rem;
-        color:#f0f0f0;
-    }
-    .z1
-    {
-        font-family:'font_one';
-        font-size:1.5rem;
-        color:#f26b1f
-    }
-    .z2
-    {
-        font-family:'font_two';
-        font-size:0.7rem;
-        color:#f0f0f0
-    }
-    
-    body
-   {
-        width:100%;
-        height: auto;
-        background-color: #21373d;
-        overflow-y: scroll;
-    }
-    #move20
-    {
-      margin-left: 20%;
-    }
+  }
+  .o
+  {
+    font-family:'font_two';
+    font-size:1.2rem;
+    color:#f0f0f0;
+  }
+  .z1
+  {
+    font-family:'font_one';
+    font-size:1.5rem;
+    color:#f26b1f
+  }
+  .z2
+  {
+    font-family:'font_two';
+    font-size:0.7rem;
+    color:#f0f0f0
+  }
+  
+  body
+  {
+    width:100%;
+    height: auto;
+    background-color: #21373d;
+    overflow-y: scroll;
+  }
+  #move20
+  {
+   margin-left: 20%;
+  }
 
-    @media screen and (max-width: 992px) 
-    {
-      #move20 {
-      margin-left: 0%;
-    }
-    }
+  @media screen and (max-width: 992px) 
+  {
+   #move20 {
+   margin-left: 0%;
+  }
+  }
 
 </style>
 
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Team:CUG-China/Notebook - 2022.igem.org</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-    <link rel="stylesheet" href="{{ url_for('static',filename = 'headama.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename = 'notebook amazing/nb.css') }}">
+  <meta charset="UTF-8" />
+  <title>Team:CUG-China/Notebook - 2022.igem.org</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="{{ url_for('static',filename = 'headama.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename = 'notebook amazing/nb.css') }}">
 </head>
 
 <body>
-    <section class="section main-banner" id="top" data-section="Intro">
-        <img src="https://static.igem.wiki/teams/4242/wiki/background/edu2.png" alt="">
-        <div class="header-text">
-            <div class="caption">
-                <div class="wave-text">
-                    <span>Communication</span>
-                </div>
-            </div>
+  <section class="section main-banner" id="top" data-section="Intro">
+    <img src="https://static.igem.wiki/teams/4242/wiki/background/edu2.png" alt="">
+    <div class="header-text">
+      <div class="caption">
+        <div class="wave-text">
+          <span>Communication</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <div class="container">
-          {% include "sider.html" %}
-          <aside class="aside">
-            <br>
-            <div>
-              <a class="pointer" href="#Overview">Overview</a>
-              <a class="pointer" href="#Presentation">Presentation</a>
-            </div>
-          </br>
-          </aside>
-      
-        <div class="row" id="move20">     
-          <div class="col" id="Content">
-          <!---Overview--->
-          <p class="target-fix" id="Overview"></p>
-          <p style="margin-top: 50px;"></p>
-          <div class="p1">
-         <h1 id="Overview" style="color: #f26b1f;"><b>Overview</b></h1> 
-         </div> 
-         <div class="o">
-         <hr style="border-top:5px solid #f0f0f0;">
-         <ul>
-            <p>At present, resource shortage, environmental pollution and climate change are becoming increasingly prominent and global problems. Synthetic biotechnology provides a new and novel strategy for realizing the harmonious development of "society and ecology,environment and economy". However, the concepts and applications of synthetic biology are still not widely known by the public. One of the main reasons is the lack of publicity for this frontier discipline. In this regard, we hope that more people can know and participate in the construction and development of synthetic biology through our own efforts.We jointly with the HUST-China held a seminar for undergraduate students, aiming to promote synthetic biology and iGEM. By inviting the professor to give a talk about the concept and development of synthetic biology, we hope to arouse students'interest in this new subject. We also shared our project and encouraged them to learn synthetic biology and become new iGEMers in the future.</p>
-        </ul>
-         </hr>
-         </div>
-        
-        <!---Presentation--->
-        <p class="target-fix" id="Presentation"></p>
-        <p style="margin-top: 50px;"></p>
-        <div class="p1">
-       <h1 id="Presentation" style="color: #f26b1f;"><b>Presentation</b></h1> 
-       </div> 
-       <div class="o">
-       <hr style="border-top:5px solid #f0f0f0;">
-       <ul>
-          <p>Together with the iGEM team, HUST-China, we held a seminar for undergraduate students of the School of Environmental Sciences, China University of Geosciences (Wuhan). About 60 members attended the conference. There were four activities. First, we delivered science popularization about the basic concept of synthetic biology, including its fundamentals, characteristics and application. To our audience, it's like the founding of a new continent.</p>
-          <p>Then there came the centerpiece. We invited Prof. Liang Shi to introduce the development and applications of synthetic biology. Based on his own research, Prof. Shi showed the big progress in this subject achieved in the past 20 years and provided exmaples of its potential applications in the future, including carbon dioxide fixation and electronic microbiology. We all felt excited about that.</p>
-          
-          <p style="text-align: center">
-            <img src="https://static.igem.wiki/teams/4242/wiki/partnership/4.png" alt="Pulpit rock" width="600" height="338"> 
-          </p>
-        <p style="text-align: center"><span class="z2">Seminar for undergraduate students</span></p>
-          <p>Thirdly, HUST-China and we introduced our own projects and shared iGEM experiences. HUST-China showed us how to collect the rare earth element in the acid mine drainage, and we shared the concept and engineering process of our biosensor. Both projects triggered the interest of our audiences.</p>
-          <p>In the Q&A session, many students shared their fantastic imaginations about synthetic biology and iGEM. We were even asked when to recruit new members for 2023 iGEM.</p>
-          <p>This event not only successfully helped students to understand the concepts of synthetic biology and arouse their interest in iGEM, but also gave us good experiences of how to set up the seminar for the Popularization of Science on synthetic biology and iGEM.</p>
-        </ul>
-       </hr>
-       </div>
+  <div class="container">
+     {% include "sider.html" %}
+     <aside class="aside">
+      <br>
+      <div>
+       <a class="pointer" href="#Overview">Overview</a>
+       <a class="pointer" href="#Presentation">Presentation</a>
+      </div>
+     </br>
+     </aside>
+   
+    <div class="row" id="move20">   
+     <div class="col" id="Content">
+     <!---Overview--->
+     <p class="target-fix" id="Overview"></p>
+     <p style="margin-top: 50px;"></p>
+     <div class="p1">
+     <h1 id="Overview" style="color: #f26b1f;"><b>Overview</b></h1> 
+     </div> 
+     <div class="o">
+     <hr style="border-top:5px solid #f0f0f0;">
+     <ul>
+      <p>At present, resource shortage, environmental pollution and climate change are becoming increasingly prominent and global problems. Synthetic biotechnology provides a new and novel strategy for realizing the harmonious development of 'society and ecology, environment and economy'. However, the concepts and pplications of synthetic biology are still not widely known by the public. One of the main reasons is the lack of publicity for this frontier discipline. In this regard, we hope that more people can know and participate in the construction and development of synthetic biology through our own efforts. We jointly with the HUST - China held a seminar for undergraduate students, aiming to promote synthetic biology and iGEM. By inviting professor to give a talk about the concept and development of synthetic biology, we hope to arouse students' interest in this new subject. We also shared our project and encouraged them to learn synthetic biology and become new iGEMers in the future.</p>
+    </ul>
+     </hr>
+     </div>
+    
+    <!---Presentation--->
+    <p class="target-fix" id="Presentation"></p>
+    <p style="margin-top: 50px;"></p>
+    <div class="p1">
+    <h1 id="Presentation" style="color: #f26b1f;"><b>Presentation</b></h1> 
+    </div> 
+    <div class="o">
+    <hr style="border-top:5px solid #f0f0f0;">
+    <ul>
+     <p>Together with the iGEM team, HUST-China, we held a seminar for undergraduate students of the School of Environmental Sciences, China University of Geosciences (Wuhan). About 60 members attended the conference. There were four activities. First, we delivered science popularization about the basic concept of synthetic biology, including its fundamentals, characteristics and application. To our audience, it's like the founding of a new continent.</p>
+     <p style="text-align: center">
+        <img src="https://static.igem.wiki/teams/4242/wiki/partnership/10.png" alt="Pulpit rock" width="566" height="309"> 
+       </p>
+       <p style="text-align: center;" class="z2">A general introduction to synthetic biology and iGEM competition</p>
+     <p>Then there came the centerpiece. We invited Prof. Liang Shi to introduce the development and applications of synthetic biology. Based on his own research, Prof. Shi showed the big progress in this subject achieved in the past 20 years and provided exmaples of its potential applications in the future, including carbon dioxide fixation and electronic microbiology. We all felt excited about that.</p>
+     
+     <p style="text-align: center">
+      <img src="https://static.igem.wiki/teams/4242/wiki/partnership/4.png" alt="Pulpit rock" width="533" height="300"> 
+      <img src="https://static.igem.wiki/teams/4242/wiki/partnership/11.png" alt="Pulpit rock" width="529" height="300"> 
+     </p>
+    <p style="text-align: center"><span class="z2">Prof. Shi introduced the frontiers in synthetic biology</span></p>
+     <p>Thirdly, HUST-China and we introduced our own projects and shared iGEM experiences. HUST-China showed us how to collect the rare earth element in the acid mine drainage, and we shared the concept and engineering process of our biosensor. Both projects triggered the interest of our audiences.</p>
+     <p style="text-align: center">
+        <img src="https://static.igem.wiki/teams/4242/wiki/partnership/12.png" alt="Pulpit rock" width="712" height="400"> 
+       </p>
+       <p style="text-align: center">
+        <img src="https://static.igem.wiki/teams/4242/wiki/partnership/13.png" alt="Pulpit rock" width="712" height="380">
+    </p>
+    <p style="text-align: center" class="z2">Both team share their project this year</p>
+     <p>In the Q&A session, many students shared their fantastic imaginations about synthetic biology and iGEM. We were even asked when to recruit new members for 2023 iGEM.</p>
+     <p>This event not only successfully helped students to understand the concepts of synthetic biology and arouse their interest in iGEM, but also gave us good experiences of how to set up the seminar for the Popularization of Science on synthetic biology and iGEM.</p>
+    </ul>
+    </hr>
+    </div>
 
-       
-    </div>
-    </div>
-    </div>
+    
+  </div>
+  </div>
+  </div>
 <body>
 
 {% endblock %}
