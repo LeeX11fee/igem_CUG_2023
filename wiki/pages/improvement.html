@@ -4,7 +4,7 @@
 
 <style>
 
-    @font-face
+@font-face
     {
         font-family:'font_one';
         src:url(https://static.igem.wiki/teams/4242/wiki/acme-regular.ttf)
@@ -13,23 +13,39 @@
     {
         font-family:'font_one';
         font-size:1.5rem;
+        color:#f0f0f0;
     }
     
     @font-face
     {
         font-family:'font_two';
         src:url(https://uploads.igem.org/teams/4242/wiki/Overlock-Regular.ttf)
+
     }
     .o
     {
         font-family:'font_two';
         font-size:1.2rem;
+        color:#f0f0f0;
     }
+    .z1
+    {
+        font-family:'font_one';
+        font-size:1.5rem;
+        color:#f26b1f
+    }
+    .z2
+    {
+        font-family:'font_two';
+        font-size:0.7rem;
+        color:#f0f0f0
+    }
+    
     body
    {
         width:100%;
         height: auto;
-        background-color: #F8F5D6;
+        background-color: #21373d;
         overflow-y: scroll;
     }
     #move20
@@ -56,52 +72,115 @@
 
 <body>
     <section class="section main-banner" id="top" data-section="Intro">
-        <img src="https://static.igem.wiki/teams/4242/wiki/background/pk-2.png" alt="">
+        <img src="https://static.igem.wiki/teams/4242/wiki/background/b-notebook.png" alt="">
         <div class="header-text">
             <div class="caption">
                 <div class="wave-text">
-                    <span>Attributions</span>
+                    <span>Improvement</span>
                 </div>
             </div>
         </div>
     </section>
 
     <div class="container">
-        <!--側欄-->
           {% include "sider.html" %}
           <aside class="aside">
             <br>
             <div>
-              <a class="pointer" href="#members">Members</a>
-              <a class="pointer" href="#advisors">Advisors</a>
-              <a class="pointer" href="#pi">P.I.</a>
-              <a class="pointer" href="#"></a>
-              <a class="pointer" href="#form">Form</a>
+              <a class="pointer" href="#Overview">Overview</a>
+              <a class="pointer" href="#Background">Background</a>
+              <a class="pointer" href="#Design">Design</a>
+              <a class="pointer" href="#Result">Result</a>
+              <a class="pointer" href="#Reference">Reference</a>
             </div>
           </br>
           </aside>
       
         <div class="row" id="move20">     
           <div class="col" id="Content">
-          <!---Advisors--->
-          <p class="target-fix" id="advisors"></p>
+          <!---Overview--->
+          <p class="target-fix" id="Overview"></p>
           <p style="margin-top: 50px;"></p>
           <div class="p1">
-         <h1 id="Advisors;" style="color: #243136;"><b>Advisors</b></h1> 
+         <h1 id="Overview" style="color: #f26b1f;"><b>Overview</b></h1> 
          </div> 
          <div class="o">
-         <hr style="border-top:5px solid gray;">
+         <hr style="border-top:5px solid #f0f0f0;">
          <ul>
-          <p class="p1">Zhihao Luo</p1>
-            <li><p>Guided the operation of relevant molecular experiments and put forward suggestions on molecular experiments.</p></li>
-            <li><p>Ensure experimental safety and preparation of experimental instruments.</p></li>
-            <li><p>Gave us lab safety training and lessons, taught us how to protect ourselves in an experiment.</p></li>
-            <!--从这里开始录入！！！上面的白色文字别忘记删除-->
+            <p>We built a transcription-based biosensor for gauging intracellular c-di-GMP levels in this year. To prove the function of our biosensor for detecting the decrease in c-di-GMP levels, we need to build a gradient reduced intracellular c-di-GMP concentration. We targeted <i>yhjH</i> gene from <i>E. coli</i>, which encodes a c-di-GMP hydrolase. After searching, we found the part (BBa_K2471001) which constitutively expresses the <i>yhjH</i> gene under the T7 promotor. However, after testing, we found that this promotor T7 doesn't work in the strains without the T7 RNA polymerase, such as <i>E. coli</i> DH5α and <i>S. oneidensis</i> MR-1. To overcome this limitation, we decided to improve this part. By replacing the T7 promotor with the IPTG inducible promotor P<sub>tac</sub>, we created a new part (BBa_K4242017) which can not only control the <i>yhjH</i> expression level by adding IPTG, but also make it functional in a wider variety of strains which lack the T7 expression systems.</p>
          </ul>
          </hr>
          </div>
         
-        
+        <!---Background--->
+        <p class="target-fix" id="Background"></p>
+        <p style="margin-top: 50px;"></p>
+        <div class="p1">
+       <h1 id="Background" style="color: #f26b1f;"><b>Background</b></h1> 
+       </div> 
+       <div class="o">
+       <hr style="border-top:5px solid #f0f0f0;">
+       <ul>
+          <p><i>yhjH</i> is a c-di-GMP hydrolase protein from <i>E. coli</i>. It contains EAL domain which can hydrolyze c-di-GMP into GMP<sup>[1]</sup>. Earlier studies have shown that c-di-GMP plays an important role in mediating biofilm formation. With the overexpression of <i>yhjH</i>, we can create low levels of c-di-GMP that reduce biofilm formation by decreasing bacterial motility and EPS <sup>[2]</sup>.</p>
+        </ul>
+       </hr>
+       </div>
+
+       <!---Design--->
+       <p class="target-fix" id="Design"></p>
+       <p style="margin-top: 50px;"></p>
+       <div class="p1">
+      <h1 id="Design" style="color: #f26b1f;"><b>Design</b></h1> 
+      </div> 
+      <div class="o">
+      <hr style="border-top:5px solid #f0f0f0;">
+      <ul>
+        <p>We have improved the function of <i>yhjH</i> expressed by the gene in the biobrick of BBa_K2471001. The <i>yhjH</i> protein expressed by the BBa_K2471001 can hydrolyze the c-di-GMP into GMP, resulting in the decrease of intracellular c-di-GMP level and biofilm dispersal. However, there is a limitation. In this part, <i>yhjH</i> is expressed under the control of constitutive promotor T7, which is from T7 phage. Thus, this promotor only works in the chassis that contains the T7 RNA polymerase. Since one of our chassis, <i>S. oneidensis</i> MR-1 has no T7 RNA polymerase. Theoretically, this system is not functional in our strain<sup>[3]</sup>. The result of biofilm formation experiment also proved this theory(Fig .2). Thus, using an inducible promotor to control the expression of <i>yhjH</i> seems to be an ideal option to expand the scope of use and accurately control the expression of target gene.</p>
+        <p>Among many inducible systems, we chose the IPTG-inducible system. This small molecular was added in the process of cell culture and triggered the expression of the gene under IPTG-inducible promotes. In this case, we decided to use IPTG-inducible promotor P<sub>tac</sub> to replace the constitutive promotor T7 for controlling the expression of <i>yhjH</i> and created a new part (BBa_K4242017). We assume that, with the higher IPTG concentration, overexpression of <i>yhjH</i> can significantly reduce the c-di-GMP level, leading to a decrease of biofilm formation.</p>
+      </ul>
+      </hr>
+      </div>
+
+      <!---Result--->
+      <p class="target-fix" id="Result"></p>
+      <p style="margin-top: 50px;"></p>
+      <div class="p1">
+     <h1 id="Result" style="color: #f26b1f;"><b>Result</b></h1> 
+     </div> 
+     <div class="o">
+     <hr style="border-top:5px solid #f0f0f0;">
+     <ul>
+        <p>To verify the function improvement of our part, we constructed three parts (Fig. 1) and separately transferred them into the <i>S. oneidensis</i> MR-1 wild type, resulting in MR-1/pSB3C5-P<sub>tac</sub>, MR-1/pSB3C5-T7-<i>yhjH</i> and MR-1/pSB3C5-P<sub>tac</sub>-<i>yhjH</i>. Among them, MR-1/pSB3C5-P<sub>tac</sub> is a control strain. </p>
+        <p style="text-align: center">
+            <img src="https://static.igem.wiki/teams/4242/wiki/model/88.png" alt="Pulpit rock" width="640" height="320"> 
+        </p>
+        <p style="text-align: center" class="z2">Fig. 1 a|Structure of control biobrick pSB3C5-P<sub>tac</sub>  b|Structure of pSB3C5-T7-<i>yhjH</i>  c|Structure of improved part pSB3C5-<i>yhjH</i></p>
+        <p>All three engineered strains were cultured and harvested at 8000 rpm, 10 min. </p>
+        <p>MR-1/pSB3C5-P<sub>tac</sub>-<i>yhjH</i> was cultured under the IPTG concentrations of 0 mM, 0.01 mM, 0.1 mM and 1mM. Then we use PBS to resuspend and centrifuge again, discard the supernatant twice. Next, the bacteria were resuspending with mm1 liquid medium and OD<sub>600</sub> measurement was controlled at 0.1. 1 mL of bacterial fluid was added to 24-well plate with triplicates. The 24-well plates were incubated in 30℃ for 24 hours. Then the supernatant was removed, leaving the biofilm at the bottom of the wells. Biofilm was stained by crystal violet to quantify biofilm biomass. After staining, biofilm was dissolved by 95% ethanol and measured at OD<sub>570</sub>. As shown in Fig. 2, pSB3C5-T7-<i>yhjH</i> didn't reduce the biofilm formation in <i>S. oneidensis</i> MR-1. The biofilm formation of the MR-1/pSB3C5-P<sub>tac</sub>-<i>yhjH</i>, however, was reduced with the existence of IPTG.</p>
+        <p style="text-align: center">
+            <img src="https://static.igem.wiki/teams/4242/wiki/model/99.png" alt="Pulpit rock" width="640" height="500"> 
+        </p>
+        <p style="text-align: center" class="z2">Fig. 2 Biofilm biomass of different engineered <i>S. oneidensis</i> MR-1 strains</p>
+    </ul>
+     </hr>
+     </div>
+
+     <!---Reference--->
+     <p class="target-fix" id="Reference"></p>
+     <p style="margin-top: 50px;"></p>
+     <div class="p1">
+    <h1 id="Reference" style="color: #f26b1f;"><b>Reference</b></h1> 
+    </div> 
+    <div class="o">
+    <hr style="border-top:5px solid #f0f0f0;">
+    <ul>
+       <p><span class="z2">[1]	Jenal U, Reinders A, Lori C. Cyclic di-GMP: second messenger extraordinaire[J]. Nat Rev Microbiol, 2017,15(5):271-284.</span></p>
+       <p><span class="z2">[2]	Hengge R. Principles of c-di-GMP signalling in bacteria[J]. Nat Rev Microbiol, 2009,7(4):263-273.</span></p>
+       <p><span class="z2">[3]	Yi Y, Ng I. Establishment of toolkit and T7RNA polymerase/promoter system in Shewanella oneidensis MR-1[J]. Journal of the Taiwan Institute of Chemical Engineers, 2020,109:8-14.</span></p>
+    </ul>
+    </hr>
+    </div>
+
       </hr>
       </div> 
       </div>
