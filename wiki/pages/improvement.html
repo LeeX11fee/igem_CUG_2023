@@ -40,7 +40,12 @@
         font-size:0.7rem;
         color:#f0f0f0
     }
-    
+    .z3
+    {
+        font-family:'font_two';
+        font-size:1.2rem;
+        color:#f26b1f;
+    }
     body
    {
         width:100%;
@@ -109,7 +114,7 @@
          <div class="o">
          <hr style="border-top:5px solid #f0f0f0;">
          <ul>
-            <p>We built a transcription-based biosensor for gauging intracellular c-di-GMP levels in this year. To prove the function of our biosensor for detecting the decrease in c-di-GMP levels, we need to build a gradient reduced intracellular c-di-GMP concentration. We targeted <i>yhjH</i> gene from <i>E. coli</i>, which encodes a c-di-GMP hydrolase. After searching, we found the part (BBa_K2471001) which constitutively expresses the <i>yhjH</i> gene under the T7 promotor. However, after testing, we found that this promotor T7 doesn't work in the strains without the T7 RNA polymerase, such as <i>E. coli</i> DH5α and <i>S. oneidensis</i> MR-1. To overcome this limitation, we decided to improve this part. By replacing the T7 promotor with the IPTG inducible promotor P<sub>tac</sub>, we created a new part (BBa_K4242017) which can not only control the <i>yhjH</i> expression level by adding IPTG, but also make it functional in a wider variety of strains which lack the T7 expression systems.</p>
+            <p>We built a transcription-based biosensor for gauging intracellular c-di-GMP levels in this year. To prove the function of our biosensor for detecting the decrease in c-di-GMP levels, we need to build a gradient reduced intracellular c-di-GMP concentration. We targeted <i>yhjH</i> gene from <i>E. coli</i>, which encodes a c-di-GMP hydrolase. After searching, we found the part (<a href="http://parts.igem.org/Part:BBa_K2471001" class="z3">BBa_K2471001</a>) which constitutively expresses the <i>yhjH</i> gene under the T7 promotor. However, after testing, we found that this promotor T7 doesn't work in the strains without the T7 RNA polymerase, such as <i>E. coli</i> DH5α and <i>S. oneidensis</i> MR-1. To overcome this limitation, we decided to improve this part. By replacing the T7 promotor with the IPTG inducible promotor P<sub>tac</sub>, we created a new part (<a href="http://parts.igem.org/Part:BBa_K4242017" class="z3">BBa_K4242017</a>) which can not only control the <i>yhjH</i> expression level by adding IPTG, but also make it functional in a wider variety of strains which lack the T7 expression systems.</p>
          </ul>
          </hr>
          </div>
@@ -137,8 +142,8 @@
       <div class="o">
       <hr style="border-top:5px solid #f0f0f0;">
       <ul>
-        <p>We have improved the function of <i>yhjH</i> expressed by the gene in the biobrick of BBa_K2471001. The <i>yhjH</i> protein expressed by the BBa_K2471001 can hydrolyze the c-di-GMP into GMP, resulting in the decrease of intracellular c-di-GMP level and biofilm dispersal. However, there is a limitation. In this part, <i>yhjH</i> is expressed under the control of constitutive promotor T7, which is from T7 phage. Thus, this promotor only works in the chassis that contains the T7 RNA polymerase. Since one of our chassis, <i>S. oneidensis</i> MR-1 has no T7 RNA polymerase, theoretically, this system is not functional in our strain<sup>[3]</sup>. The result of biofilm formation experiment also proved this theory(Fig .2). Thus, using an inducible promotor to control the expression of <i>yhjH</i> seems to be an ideal option to expand the scope of use and accurately control the expression of target gene.</p>
-        <p>Among many inducible systems, we chose the IPTG-inducible system. This small molecular was added in the process of cell culture and triggered the expression of the gene under IPTG-inducible promotes. In this case, we decided to use IPTG-inducible promotor P<sub>tac</sub> to replace the constitutive promotor T7 for controlling the expression of <i>yhjH</i> and created a new part (BBa_K4242017). We assume that, with the higher IPTG concentration, overexpression of <i>yhjH</i> can significantly reduce the c-di-GMP level, leading to a decrease of biofilm formation.</p>
+        <p>We have improved the function of <i>yhjH</i> expressed by the gene in the biobrick of <a href="http://parts.igem.org/Part:BBa_K2471001" class="z3">BBa_K2471001</a>. The <i>yhjH</i> protein expressed by the <a href="http://parts.igem.org/Part:BBa_K2471001" class="z3">BBa_K2471001</a> can hydrolyze the c-di-GMP into GMP, resulting in the decrease of intracellular c-di-GMP level and biofilm dispersal. However, there is a limitation. In this part, <i>yhjH</i> is expressed under the control of constitutive promotor T7, which is from T7 phage. Thus, this promotor only works in the chassis that contains the T7 RNA polymerase. Since one of our chassis, <i>S. oneidensis</i> MR-1 has no T7 RNA polymerase, theoretically, this system is not functional in our strain<sup>[3]</sup>. The result of biofilm formation experiment also proved this theory(Fig .2). Thus, using an inducible promotor to control the expression of <i>yhjH</i> seems to be an ideal option to expand the scope of use and accurately control the expression of target gene.</p>
+        <p>Among many inducible systems, we chose the IPTG-inducible system. This small molecular was added in the process of cell culture and triggered the expression of the gene under IPTG-inducible promotes. In this case, we decided to use IPTG-inducible promotor P<sub>tac</sub> to replace the constitutive promotor T7 for controlling the expression of <i>yhjH</i> and created a new part (<a href="http://parts.igem.org/Part:BBa_K4242017" class="z3">BBa_K4242017</a>). We assume that, with the higher IPTG concentration, overexpression of <i>yhjH</i> can significantly reduce the c-di-GMP level, leading to a decrease of biofilm formation.</p>
       </ul>
       </hr>
       </div>
