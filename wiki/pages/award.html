@@ -1,1 +1,125 @@
+{% extends "layout.html" %}
 
+{% block page_content %}
+
+<style>
+
+@font-face
+    {
+        font-family:'font_one';
+        src:url(https://static.igem.wiki/teams/4242/wiki/acme-regular.ttf)
+    }
+    .p1
+    {
+        font-family:'font_one';
+        font-size:1.5rem;
+        color:#f0f0f0;
+    }
+    
+    @font-face
+    {
+        font-family:'font_two';
+        src:url(https://uploads.igem.org/teams/4242/wiki/Overlock-Regular.ttf)
+
+    }
+    .o
+    {
+        font-family:'font_two';
+        font-size:1.2rem;
+        color:#f0f0f0;
+    }
+    .o1
+    {
+        font-family:'font_two';
+        font-size:0.7rem;
+        color:#f0f0f0;
+    }
+    .z1
+    {
+        font-family:'font_one';
+        font-size:3rem;
+        color:#f26b1f
+    }
+    .z3
+    {
+        font-family:'font_one';
+        font-size:1.2rem;
+        color:#f26b1f;
+
+    }
+    .z2
+    {
+        font-family:'font_two';
+        font-size:1.5rem;
+        color:#f0f0f0;
+    }
+    
+    body
+   {
+        width:100%;
+        height: auto;
+        background-color: #21373d;
+        overflow-y: scroll;
+    }
+
+    @media screen and (max-width: 992px) {
+    #dna {
+      max-height:300px !important;
+    }
+    
+  }
+</style>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Team:CUG-China/Notebook - 2022.igem.org</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'headama.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'notebook amazing/nb.css') }}">
+</head>
+
+<section class="section main-banner" id="top" data-section="Intro">
+    <img src="https://static.igem.wiki/teams/4242/wiki/background/b-part.png" alt="">
+    <div class="header-text">
+        <div class="caption">
+            <div class="wave-text">
+                <span>Award</span>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+  <div class="row mt-4">
+    <div class="col">
+      <p style="margin-top: 50px;"></p>
+      <h1 class="z1"><b>Overview</b></h1>
+      <hr style="border-top:5px solid #f0f0f0;">
+      <p class="o">
+        This year we built a c-di-GMP biosensor based on the P<sub>pel</sub> and FleQ system from <i>P. aeruginosa</i>. So we have to add these relative promotor and gene to the part registry. Among the 25 parts we designed this year, six of them are basic parts, the rest are composite parts. You can click on the part numbers to browse more detailed information. Most of the parts were used in our project, and there are a few part that we haven't finish the performance testing due to the time limit.
+        </p>
+      <p style="margin-top: 25px;"></p>
+      <h1 class="z1"><b>Parts List</b></h1>
+      <hr style="border-top:5px solid#f0f0f0;">
+
+        <div class="container-fluid wrapper text-wrapper center-adjust">
+          <div class="container-fluid py-2 d-flex flex-column justify-content-center align-items-center" style="min-height: 100%;">
+            <div class="row">
+              <div class="col-lg py-lg-0 py-2">
+                <figure class="d-flex flex-column justify-content-center align-items-center px-lg-3">
+                  <a class="img-full" href="https://static.igem.wiki/teams/4242/wiki/index/2.png" target="_blank"><img src="https://static.igem.wiki/teams/4242/wiki/index/2.png" alt="" title="" style="width:80%;"></a>
+                </figure>      
+              </div>
+              <div class="col-lg py-lg-0 py-2">
+                <p><span class="p1">Some chemicals often affect biofilm formation by interfering with chemical signaling systems essential in biofilm formation. One of essential signaling networks, mediated by intracellular secondary messenger bis-(3'-5') cyclic dimeric guanosine monophosphate (c-di-GMP) which regulates important events in biofilm formation and dispersal in a wide range of bacteria, has attracted much interest as a target for biofilm control. There have been numerous studies showing that maintaining a low level of c-di-GMP efficiently attenuates biofilm formation and provoking a decrease in intracellular c-di-GMP levels can disperse preformed biofilms. Therefore, the development of biofilm-inhibiting/dispersing agents targeting c-di-GMP signaling would efficiently combat biofilm formation or induce the dispersal of preformed biofilms.</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      <p style="margin-bottom:50px"></p>
+    </div>
+  </div>
+</div>
+{% endblock %}
